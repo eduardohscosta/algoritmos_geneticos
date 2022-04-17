@@ -1,0 +1,97 @@
+% ----------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------
+% All new command documantation can be found in utils/comandos_doc.tex
+% ----------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------
+
+% Multiline comment in Latex script. 
+% ----------------------------------------------------------------------------------------------------
+\newcommand{\multilinecomment}[1]{}
+
+% Table macro insertion.
+% ----------------------------------------------------------
+
+
+\newcommand{\simpletable}[7][c]{%
+    \begin{table}[h!]
+            \centering
+            \caption{\uppercase{#3}}
+            \vspace{2pt}
+            \begin{tabular}[#1]{#2}
+                \hline
+                {#4}
+                \label{tab:#5}
+            \end{tabular}
+            \\
+            \begin{minipage}{#7 \textwidth}
+                \centering
+                \vspace{6pt}
+                FONTE:~\textcite{#6}
+            \end{minipage}
+    \end{table}
+}
+        
+% Figure insertion macro
+% ----------------------------------------------------------
+
+\newcommand{\figura}[5]{%
+    \begin{center}\small
+        \begin{figure}[H] % Places the float at precisely the location in the LATEX code
+            \centering
+                \uppercase{\caption{\uppercase{#1}}} % Define figure title
+                \includegraphics[width=#2\textwidth]{#3} % Define figure proportion and the figure path
+                \label{fig:#4}
+            %ajustado p/ a largura da imagem
+            \begin{minipage}{#2\textwidth} 
+                \vspace{0mm}
+                \centering
+                    \par FONTE:~#5 % Define the figure source
+            \end{minipage}
+        \end{figure}
+    \end{center}
+}
+
+% Quadro insertion macro
+% ----------------------------------------------------------
+%
+\newcommand{\figuraquadro}[5]{%
+    \begin{center}\small%
+        \begin{quadro}[H] % Places the float at precisely the location in the LATEX code
+            \centering%
+                \uppercase{\caption{\uppercase{#1}}} % Define quadro title
+                \includegraphics[width=#2\textwidth]{#3} % Define figure proportion and the figure path
+                \label{tab:#4}%
+            %ajustado p/ a largura da imagem
+            \begin{minipage}{#2\textwidth}%
+                \vspace{0mm}%
+                \centering%
+                    \par FONTE:~#5 % Define the figure source
+            \end{minipage}%
+        \end{quadro}%
+    \end{center}%
+}%
+%
+% Quadro insertion macro (tabular)
+% ----------------------------------------------------------
+
+\newcommand{\figuraquadrotabular}[5]{%
+\noindent
+\begin{center}\small
+    \begin{quadro}[h!] % Places the float at precisely the location in the LATEX code
+        \centering
+            \uppercase{\caption{\uppercase{#1}}} % Define quadro title
+            \vspace{2mm}
+            {#2} % Define figure proportion and the figure path
+            \label{tab:#3}
+        %ajustado p/ a largura da imagem
+        \begin{minipage}{#4\textwidth} 
+            \vspace{2mm}
+            \centering
+                \par FONTE:~#5 % Define the figure source
+        \end{minipage}
+    \end{quadro}
+\end{center}
+}
+
+
+\newcommand{\citeapud}[2]{(\Citealp{#1} apud \Citealp{#2})}

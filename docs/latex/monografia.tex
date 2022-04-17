@@ -1,0 +1,336 @@
+% ----------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------
+% Projeto Latex de Monografia apresentada à Universidad Federal do Paraná (UFPR)
+% ---------------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ALGORITMO GENÉTICO APLICADO A PROBLEMAS NA ECONOMIA
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt,openright,oneside]{book}	
+\usepackage[english,brazil]{babel}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{appendix}
+\usepackage{longtable}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{csquotes}
+\usepackage{xcolor}               %Extend color definitions
+\usepackage{amsfonts}             %Use fonts   from AMS - American Mathematical Society 
+\usepackage{amssymb}              %Use symbols from AMS - American Mathematical Society
+\usepackage{amsmath}
+\usepackage[authoryear]{natbib}   %Use package to bibliography - author(year)
+\usepackage{makeidx}
+\usepackage{supertabular}         %permite tabela continuar em sucessivas p�ginas 
+%\usepackage{subfigure}            %manusear figuras (p.ex.: sub-fuguras dentro de figuras)
+\usepackage{marvosym}             %Simbolos diversos
+\usepackage[pdftex,colorlinks,linkcolor=blue, 
+                             citecolor= red!50!black,
+                             hyperindex]{hyperref} %Permite fazer hypertexto
+
+
+
+\hypersetup{pdfstartview=FitH}
+
+\lstset{morekeywords=[1]{to,to-report,end, extensions,to-report,globals,breed,directed-link-breed, link-breed},
+	extendedchars=true, 
+	breaklines=true,
+	breakatwhitespace=true,
+	basicstyle=\ttfamily\scriptsize,
+	columns=fullflexible,
+	tabsize=4,
+	keywordstyle=[1]\color[rgb]{0.25,0.5,0.35},%\color[rgb]{0.4,0.8,0.2}\bfseries,
+	morekeywords=[2]{let,set,loop, if, report, foreach, print, tick, while, every, ifelse, ask},
+	keywordstyle=[2]\color{blue},
+	alsoletter={-,?,.},
+	morekeywords=[3]{position, not, reverse, fput, substring, length, word, timer,is-number?,filter,first, bf, butfirst, last, empty?, n-of, color, who, shape},
+	keywordstyle=[3]\color[rgb]{0.6,0,0.8},
+	comment=[l]{\;},
+	commentstyle=\color[rgb]{0.75,0.75,0.75},
+	string=[d]{"},
+	stringstyle=\color{orange},
+	otherkeywords={1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+	morekeywords=[4]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, true, false},
+	keywordstyle=[4]{\color{orange}}}
+
+
+
+%Defini��es de Margens
+\addtolength{\textwidth}{2.0cm}
+\addtolength{\textheight}{2.0cm}
+\addtolength{\voffset}{-0.5cm}
+\addtolength{\hoffset}{-0.5cm}
+
+\title{{\color{black}\textbf{Algoritmo Genético Aplicado a Problemas na Economia}}}
+\author{\Large\textbf{Eduardo Henrique Silveira da Costa}\\
+                      Departamento de Economia\\ 
+                      Universidade Federal do Paraná - UFPR \\
+                      Curitiba - Paraná\\
+                      Brasil\\ \\ \\ \\
+                      \textbf{eduardohsdacosta@gmail.com} \\ \\ \\ \\ \\ \\ \\ \\}
+%\date{\today}
+\pagestyle{plain}
+\includeonly{./capitulos/capitulo-1, ./capitulos/capitulo-2}
+
+\input{estrutura/pretextual}
+\input{utils/comandos/comandos}
+
+%,
+%				 ./Capitulo-2/Capitulo-2,
+%				 ./Capitulo-3/Capitulo-3,
+%				 ./Capitulo-4/Capitulo-4,
+%				 ./Capitulo-5/Capitulo-5}
+%\makeindex
+\begin{document}
+
+\bibliographystyle{apa}  %Estilo deve ser compativel com o pacote NATBIB [author(year) citation] - Usa um arquivo xxxx.bst
+\pagenumbering{roman}
+\renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand\appendixname{Appendix}
+\renewcommand\appendixpagename{Appendices}
+	
+	\lstdefinelanguage{python}{
+	morekeywords=[1]{to,to-report,end, extensions,to-report,globals,breed,directed-link-breed, link-breed},
+	extendedchars=true, 
+    breaklines=true,
+    breakatwhitespace=true,
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+	tabsize=4,
+    keywordstyle=[1]\color[rgb]{0.25,0.5,0.35},%\color[rgb]{0.4,0.8,0.2}\bfseries,
+    morekeywords=[2]{let,set,loop, if, report, foreach, print, tick, while, every, ifelse, ask},
+    keywordstyle=[2]\color{blue},
+    alsoletter={-,?,.},
+    morekeywords=[3]{position, not, reverse, fput, substring, length, word, timer,is-number?,filter,first, bf, butfirst, last, empty?, n-of, color, who, shape},
+    keywordstyle=[3]\color[rgb]{0.6,0,0.8},
+    comment=[l]{\;},
+    commentstyle=\color[rgb]{0.75,0.75,0.75},
+    string=[d]{"},
+    stringstyle=\color{orange},
+    otherkeywords={1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+    morekeywords=[4]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, true, false},
+    keywordstyle=[4]{\color{orange}},
+}
+	
+
+%--------------------------------------------------------------------------------------------
+
+\capa
+    {Universidade Federal do Paraná}
+    {Eduardo Henrique Silveira da Costa}
+    {Algoritmo Genético Aplicado a Problemas na Economia}
+    {Curitiba}
+    {2022}
+
+%--------------------------------------------------------------------------------------------
+\newpage
+\begin{center}
+{\normalsize Eduardo Henrique Silveira da Costa}
+
+\vspace{6cm}
+{\textbf{Algoritmo Genético Aplicado a Problemas na Economia}}
+\end{center}
+
+\vspace{2cm}
+\begin{center}
+\begin{quotation}
+\noindent Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná.
+
+\vspace{1cm}
+\noindent Orientador: Dr. João Basilio Pereima
+\end{quotation}
+
+\vspace{5.5cm}
+Curitiba 
+
+2022
+\end{center}
+
+%--------------------------------------------------------------------------------------------
+\newpage
+\begin{center}
+{\Large \textbf{TERMO DE APROVAÇÃO}}
+
+\vspace{1cm}
+{\Large \textbf{Algoritmo Genético Aplicado a Problemas na Economia}}
+
+\vspace{1cm}
+\begin{quotation}
+\noindent Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná:
+\end{quotation}
+
+\vspace{1cm}
+\begin{tabular}{c}
+\hline
+Prof. Dr. João Basilio Pereima \\
+(Orientador/UFPR)   \\
+\vspace{25pt}  \\
+\hline
+XXXXXXXXXXXXXXXX \\
+(Membro/UFPR)\\
+\vspace{25pt}   \\
+\hline
+XXXXXXXXXXXXXXXX \\
+(Membro/UFPR)\\
+\vspace{25pt}   \\
+\hline
+XXXXXXXXXXXXXXXX \\
+(Membro/Unicamp)\\
+\vspace{25pt}   \\
+\hline
+XXXXXXXXXXXXXXXX \\
+(Membro/UFSC)\\
+\vspace{25pt} \\
+\end{tabular}
+\vspace{40pt} \\
+Curitiba, XX de Abril de 2022.   
+\end{center}
+
+
+%--------------------------------------------------------------------------------------------
+
+
+%--------------------------------------------------------------------------------------------
+\newpage
+\begin{center}
+{\Large\textbf{AKNOWLEDGEMENTS}}
+\end{center}
+\vspace{2cm}
+
+\begin{itemize}
+   \item To my parents, my heroes and ultimate examples of kindness, responsibility and character, for all the love and cherish throughout my entire life.
+   \item To my love, CAssia Lorenza, for the unconditional love and support in difficult times when I had to exchange our talks and caresses for a computer screen. For making me always want to become a better person and specially for these big eyes I have the pleasure to see opening in the morning and closing at night. 
+	\item To my advisor, Prof. Dra, whom, through his brilliant expositions on economics and complexity, managed to broaden and renew my view and interest towards economic science.
+	\item To my friends Alan, Augusto and e friendship I had to neglect numerous times in order to achieve knowledge and accomplishment, but even so they never gave up on offering words of encouragement.
+	\item To all the professors on the Department of Economics at Federal University of Parmy second home for so long, and to all my colleagues in PPGDE.
+	\item Finally, to all the hard-working Brazilian tax payers who paid for my scholarship without which I would not be able to become a PhD.
+
+ \end{itemize}
+ 
+
+%--------------------------------------------------------------------------------------------
+\newpage
+\vspace*{10cm}
+\begin{flushright}
+``O importantevencer, tudo e sempre"'
+\\
+\textit{\textbf{(Ayrton Senna)}}
+\end{flushright}
+
+\vspace{2cm}
+\begin{flushright}
+``I think the next century (21st) will be the century of complexity"'
+\\
+\textit{\textbf{(Stephen Hawking)}}
+\end{flushright}
+
+%-------------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+
+%-------------------------------------------------------------------------------------
+\newpage
+\listoftables
+
+%-------------------------------------------------------------------------------------
+\newpage
+\listoffigures
+
+%-------------------------------------------------------------------------------------
+\newpage
+\begin{center}
+{\Large \textbf{RESUMO}}
+\end{center}
+\vspace{2cm}
+
+ASDFASDFSADFASDF
+
+\vspace{1cm}
+
+Palavras-chave: 
+
+%-------------------------------------------------------------------------------------
+\newpage
+\begin{center}
+{\Large \textbf{ABSTRACT}}\color[rgb]{0,0,0}
+\end{center}
+\vspace{2cm}
+
+ASDFSAFDAF   
+
+\vspace{1cm}
+
+Keywords: Innovation. Bandwagon Behaviour. Demand Saturation. Product Life Cycle. Complexity.
+%-------------------------------------------------------------------------------------
+\pagenumbering{arabic}
+\newpage
+\input{./capitulos/capitulo-1.tex}	% Instrodução
+\input{./capitulos/capitulo-2.tex}	% Computação Evolucionária
+%\input{./Capitulo-3/Capitulo-3.tex}	% Inequality Led Decisions of Process and Product Innovation  {ch:TBemEst}
+%\input{./Capitulo-4/Capitulo-4.tex}	% Detailed Literature Review  {ch:TBemEst}
+%\input{./Capitulo-5/Capitulo-5.tex}	% Agent-Based Schumpeterian Growth with Demand Effects on LSD  {ch:TBemEst}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{utils/referencias}
+
+
+\appendixpage
+\begin{appendices}
+
+\chapter{Sumário de Terminologia Natural e Terminologia Artificial}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | >{\centering\arraybackslash}m{0.15 \textwidth} | >{\centering\arraybackslash}m{0.15 \textwidth} | >{\centering\arraybackslash}m{0.15 \textwidth} | >{\centering\arraybackslash}m{0.5 \textwidth} | } \hline
+        Terminologia Natural               &   Terminologia Artificial            &   Terminologia Artificial (Inglês)   & Descrição Curta                                                                     \\ \hline
+        Locus                              &   Locus                              &   \textit{Locus}                              & Posição de um gene (ou característica) dentro de uma cadeia de caracteres. \\ \hline
+        Alelo                              &   Alelo                              &   \textit{Alelle}                             & Valor do gene (ou característica), sendo 0 ou 1.                           \\ \hline
+        Gene                               &   Característica                     &   \textit{Gene}                               & Característica, caractere ou algoritmo de uma cadeia de caracteres.        \\ \hline
+        Bloco de construção                &   Bloco de Construção                &   \textit{Building Block}                     & Subvetor de alto desempenho. Responsável por formar novos vetores.         \\ \hline
+        Cromossomo ou Indivíduo            &   Vetor ou Cadeia de caracteres      &   \textit{String}                             & Conjunto de características agrupadas através de um conjunto de caracteres. Cada matriz pode ser uma possível solução para um problema ou fazer parte de uma solução global.                                                                                                                        \\ \hline
+        Genótipo                           &   Estrutura                          &   \textit{Structure}                          & Conjunto de vetores que mantém uma carga ou estrutura genética.            \\ \hline
+        Fenótipo                           &   Estrutura decodificada             &   \textit{Decoded structure}                  & Nova carga ou estrutura genética após as alterações das características principais de uma \\ \hline
+        População.                         &   População                          &   \textit{Population}                         & Conjunto de indivíduos construídos, inicialmente, de forma aleatória, onde o AG irá realizar suas buscas. Cada geração é composta por uma população que pode ser uma possível solução para o problema de otimização.                                                                                                   \\ \hline                           Geração                            &   Iteração                           &   \textit{Iteration}                          & Formação de uma nova população após a aplicação dos operadores de reprodução, cruzamento e mutação. \\ \hline 
+        Reprodução ou Seleção              &   Operador de Reprodução             &   \textit{Reproduction}                       & Seleção dos indivíduos com maior aptidão ao ambiente. \\ \hline 
+        Cruzamento                         &   Operador de Cruzamento             &   \textit{Crossover}                          & Troca de genes, ou características, entre os indivíduos de uma população. \\ \hline 
+        Mutação                            &   Operador de Mutação                &   \textit{Mutation}                           & Processo aleatório de alteração de uma ou mais características de um indivíduo. \\ \hline 
+        Valor de Aptidão                   &   Valor de Aptidão                   &   \textit{Fitness value}                      & Quantificação da qualidade de um indivíduo ou sua aptidão em relação ao ambiente. \\ \hline
+        Paisagem ou Horizonte de aptidão   &   Paisagem de Aptidão                &   \textit{Fitness landscape}                  & Espaço pelo qual o AG faz sua busca por soluções, ou seja, diz respeito ao problema a ser resolvido. \\ \hline
+        Função de aptidão                  &   Função objetivo                    &   \textit{objective function}                 & Função contendo os parâmetros para resolução do problema.
+\end{tabular}
+\\
+\begin{minipage}{1 \textwidth}
+\end{minipage}
+\end{table}
+\label{appx:TerminologiaNaturalComputacional}
+
+\chapter{Capítulo 5 Code}
+
+\begin{lstlisting}
+
+def teste_func():
+	return ...
+
+\end{lstlisting}
+
+\end{appendices}
+
+
+\end{document} 
+
+
+
+
+
+
+
+
+

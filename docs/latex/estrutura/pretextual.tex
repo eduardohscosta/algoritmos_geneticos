@@ -1,0 +1,26 @@
+% Impressão da Capa
+%----------------------------------------------------------------------------- 
+\newcommand{\capa}[5]{%
+    \thispagestyle{empty}
+    \begin{center}
+    
+        % Universidade
+        \vfill
+        \MakeUppercase{#1}
+        
+        % Autor
+        \vspace{4cm}
+        \MakeUppercase{#2}
+        
+        % Nome Monografia
+        \vspace{4cm}
+        \MakeUppercase{#3}
+        
+        % Cidade
+        \vspace{12cm}
+        \MakeUppercase{#4}
+        
+        % Ano
+        {#5}
+    \end{center}
+}

@@ -1,0 +1,85 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: monografia.aux
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+The style file: apa.bst
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+Database file #1: utils/referencias.bib
+Repeated entry---line 5290 of file utils/referencias.bib
+ : @book{rechenberg_cybernetic_1965
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5321 of file utils/referencias.bib
+ : @book{rechenberg_cybernetic_1965
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5330 of file utils/referencias.bib
+ : @article{cavicchio_adaptive_1970
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5341 of file utils/referencias.bib
+ : @collection{university_of_michigan_artificial_1971
+ :                                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5355 of file utils/referencias.bib
+ : @book{holland_adaptation_1975
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5369 of file utils/referencias.bib
+ : @article{jong_analysis_1975
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in noauthor_editorial_1993
+Warning--empty author in noauthor_editorial_1993
+Warning--empty journal in bremermann_optimization_1962
+Warning--empty year in search_evolution_biophysics_1965
+Warning--empty journal in search_evolution_biophysics_1965
+Warning--empty journal in cavicchio_adaptive_1970
+Warning--empty booktitle in Fogel1966ArtificialIT
+Warning--empty year in holland_1967
+Warning--empty journal in holland_1967
+Warning--can't use both author and editor fields in university_of_michigan_artificial_1971
+Warning--empty publisher in university_of_michigan_artificial_1971
+Warning--empty journal in jong_analysis_1975
+You've used 17 entries,
+            1940 wiz_defined-function locations,
+            572 strings with 6376 characters,
+and the built_in function-call counts, 5764 in all, are:
+= -- 552
+> -- 185
+< -- 13
++ -- 62
+- -- 58
+* -- 464
+:= -- 1005
+add.period$ -- 53
+call.type$ -- 17
+change.case$ -- 110
+chr.to.int$ -- 17
+cite$ -- 30
+duplicate$ -- 259
+empty$ -- 421
+format.name$ -- 80
+if$ -- 1130
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 23
+newline$ -- 87
+num.names$ -- 48
+pop$ -- 120
+preamble$ -- 1
+purify$ -- 114
+quote$ -- 0
+skip$ -- 198
+stack$ -- 0
+substring$ -- 308
+swap$ -- 51
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 90
+warning$ -- 12
+while$ -- 39
+width$ -- 0
+write$ -- 214
+(There were 6 error messages)
