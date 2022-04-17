@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt,openright,oneside]{book}
+\usepackage[english,brazil]{babel}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{appendix}
+\usepackage{longtable}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{csquotes}
+\usepackage{xcolor}               %Extend color definitions
+\usepackage{amsfonts}             %Use fonts   from AMS - American Mathematical Society 
+\usepackage{amssymb}              %Use symbols from AMS - American Mathematical Society
+\usepackage{amsmath}
+\usepackage[authoryear]{natbib}   %Use package to bibliography - author(year)
+\usepackage{makeidx}
+\usepackage{supertabular}         %permite tabela continuar em sucessivas p�ginas 
+%\usepackage{subfigure}            %manusear figuras (p.ex.: sub-fuguras dentro de figuras)
+\usepackage{marvosym}             %Simbolos diversos
+\usepackage[pdftex,colorlinks,linkcolor=blue, 
+citecolor= red!50!black,
+hyperindex]{hyperref} %Permite fazer hypertexto
+
+
+
+\hypersetup{pdfstartview=FitH}
+
+\lstset{morekeywords=[1]{to,to-report,end, extensions,to-report,globals,breed,directed-link-breed, link-breed},
+	extendedchars=true, 
+	breaklines=true,
+	breakatwhitespace=true,
+	basicstyle=\ttfamily\scriptsize,
+	columns=fullflexible,
+	tabsize=4,
+	keywordstyle=[1]\color[rgb]{0.25,0.5,0.35},%\color[rgb]{0.4,0.8,0.2}\bfseries,
+	morekeywords=[2]{let,set,loop, if, report, foreach, print, tick, while, every, ifelse, ask},
+	keywordstyle=[2]\color{blue},
+	alsoletter={-,?,.},
+	morekeywords=[3]{position, not, reverse, fput, substring, length, word, timer,is-number?,filter,first, bf, butfirst, last, empty?, n-of, color, who, shape},
+	keywordstyle=[3]\color[rgb]{0.6,0,0.8},
+	comment=[l]{\;},
+	commentstyle=\color[rgb]{0.75,0.75,0.75},
+	string=[d]{"},
+	stringstyle=\color{orange},
+	otherkeywords={1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+	morekeywords=[4]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, true, false},
+	keywordstyle=[4]{\color{orange}}}
+
+
+
+%Defini��es de Margens
+\addtolength{\textwidth}{2.0cm}
+\addtolength{\textheight}{2.0cm}
+\addtolength{\voffset}{-0.5cm}
+\addtolength{\hoffset}{-0.5cm}
+
+\title{{\color{black}\textbf{Algoritmo Genético Aplicado a Problemas na Economia}}}
+\author{\Large\textbf{Eduardo Henrique Silveira da Costa}\\
+	Departamento de Economia\\ 
+	Universidade Federal do Paraná - UFPR \\
+	Curitiba - Paraná\\
+	Brasil\\ \\ \\ \\
+	\textbf{eduardohsdacosta@gmail.com} \\ \\ \\ \\ \\ \\ \\ \\}
+\pagestyle{plain}
+\includeonly{%
+	./capitulos/capitulo-1,
+	./capitulos/capitulo-2
+}
