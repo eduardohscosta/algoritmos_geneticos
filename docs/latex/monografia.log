@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.16)  17 APR 2022 01:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.16)  17 APR 2022 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -493,24 +493,24 @@ File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 (monografia.aux)
 \openout1 = `monografia.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count320
@@ -540,7 +540,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count326
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring ON on input line 93.
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -553,9 +553,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count327
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
 
 (monografia.out) (monografia.out)
 \@outlinefile=\write3
@@ -563,39 +563,88 @@ LaTeX Info: Redefining \nameref on input line 90.
 
  [1
 
-{C:/Users/eduhenrique/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 172
-.
+{C:/Users/eduhenrique/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 1946) in paragraph at lines 149--149
+[]\OT1/cmr/m/n/8 Monografia apre-sen-tada como re-qui-sito ^^Ra ob-ten^^Xc~ao d
+o
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 149
+.
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 172
+LaTeX Font Info:    Trying to load font information for U+msb on input line 149
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3] [4] [5]
-(monografia.toc)
-\tf@toc=\write4
-\openout4 = `monografia.toc'.
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.163 	{xx de Abril de 2022}
+                             [2]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.169 	{XXXXXXX}
+                 [1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.178 ...ization; inovation; adaptative learning.}
+                                                   [1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.183 \listafiguras
+                    [1] (monografia.lof)
+\tf@lof=\write4
+\openout4 = `monografia.lof'.
 
- [6
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.188 \listatabelas
+                    [1
 
 ] (monografia.lot)
 \tf@lot=\write5
 \openout5 = `monografia.lot'.
 
- [7
 
-] (monografia.lof)
-\tf@lof=\write6
-\openout6 = `monografia.lof'.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.199 	}
+         [1
 
- [8
+]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.204 \sumario
+               [1] (monografia.toc)
+\tf@toc=\write6
+\openout6 = `monografia.toc'.
 
-] [9] [1]
-(capitulos/capitulo-1.tex
+ [1
+
+] (capitulos/capitulo-1.tex
 Cap\'{\i }tulo 1.
 ) (capitulos/capitulo-2.tex [2
 
@@ -608,19 +657,19 @@ Cap\'{\i }tulo 2.
 ]) [10] [11
 
 ]
-Appendix A.
+Apêndice A.
 
-Overfull \hbox (4.18422pt too wide) in paragraph at lines 296--296
+Overfull \hbox (4.18422pt too wide) in paragraph at lines 229--229
  []|\OT1/cmr/m/n/12 Caracter^^S^^Pstica| 
  []
 
 
-Overfull \hbox (0.77585pt too wide) in paragraph at lines 302--302
+Overfull \hbox (0.77585pt too wide) in paragraph at lines 235--235
  []|\OT1/cmr/m/it/12 Reproduction| 
  []
 
 
-Overfull \hbox (27.6465pt too wide) in paragraph at lines 292--309
+Overfull \hbox (27.6465pt too wide) in paragraph at lines 225--242
  [][] 
  []
 
@@ -630,36 +679,34 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [12
 
 ] [13]
-Appendix B.
+Apêndice B.
 [14
 
 ] (monografia.aux)
 Package rerunfilecheck Info: File `monografia.out' has not changed.
-(rerunfilecheck)             Checksum: A0BDC9E62F69ED93453344A9EDD9AD83;1497.
+(rerunfilecheck)             Checksum: 8E628E32D65EDC72FFE94F64EB6E0D0C;1495.
  ) 
 Here is how much of TeX's memory you used:
- 16275 strings out of 478552
- 253313 string characters out of 2851735
- 577811 words of memory out of 3000000
- 34175 multiletter control sequences out of 15000+600000
- 480396 words of font info for 71 fonts, out of 8000000 for 9000
+ 16267 strings out of 478552
+ 253180 string characters out of 2851735
+ 579858 words of memory out of 3000000
+ 34177 multiletter control sequences out of 15000+600000
+ 480305 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,79p,1809b,1229s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmtt8.pfb>
-Output written on monografia.pdf (23 pages, 232047 bytes).
+ 69i,11n,79p,1468b,1229s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmtt8.pfb>
+Output written on monografia.pdf (22 pages, 224988 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

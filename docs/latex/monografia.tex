@@ -1,12 +1,15 @@
 % ----------------------------------------------------------------------------------------------------
 % ----------------------------------------------------------------------------------------------------
-% Projeto Latex de Monografia apresentada à Universidad Federal do Paraná (UFPR)
+% Projeto Latex de Monografia apresentada à Universidade Federal do Paraná (UFPR)
+% Distribuição Tex: MikTeX (https://miktex.org);
+% Construção/Edição: TeXstudio (https://www.texstudio.org);
+% Compilação: Texstudio/Texworks (https://www.texstudio.org; https://tug.org/texworks/);
 % ---------------------------------------------------------------------------------------------------
 % ---------------------------------------------------------------------------------------------------
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ALGORITMO GENÉTICO APLICADO A PROBLEMAS NA ECONOMIA
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper,12pt,openright,oneside]{book}	
 \usepackage[english,brazil]{babel}
@@ -91,12 +94,13 @@
 
 \bibliographystyle{apa}  %Estilo deve ser compativel com o pacote NATBIB [author(year) citation] - Usa um arquivo xxxx.bst
 \pagenumbering{roman}
-\renewcommand{\bibname}{References}
-\renewcommand{\contentsname}{Table of Contents}
-\renewcommand{\listfigurename}{List of Figures}
-\renewcommand{\listtablename}{List of Tables}
-\renewcommand\appendixname{Appendix}
-\renewcommand\appendixpagename{Appendices}
+\renewcommand{\bibname}{Bibliografia}
+\renewcommand{\contentsname}{\centering \large \uppercase{Sumário}}
+\renewcommand{\listfigurename}{\centering \large \uppercase{Lista de Figuras}}
+\renewcommand{\listtablename}{\centering \large \uppercase{Lista de Tabelas}}
+\renewcommand{\abstractname}{Resumo}
+\renewcommand\appendixname{Apêndice}
+\renewcommand\appendixpagename{Apêndices}
 	
 	\lstdefinelanguage{python}{
 	morekeywords=[1]{to,to-report,end, extensions,to-report,globals,breed,directed-link-breed, link-breed},
@@ -121,155 +125,84 @@
     keywordstyle=[4]{\color{orange}},
 }
 	
-
-%--------------------------------------------------------------------------------------------
+% ---------------------------------------------------------------------------------------------------
+% Construção da Capa
+% ---------------------------------------------------------------------------------------------------
 
 \capa
-    {Universidade Federal do Paraná}
-    {Eduardo Henrique Silveira da Costa}
-    {Algoritmo Genético Aplicado a Problemas na Economia}
-    {Curitiba}
-    {2022}
+	{Universidade Federal do Paraná}
+	{Eduardo Henrique Silveira da Costa}
+	{Algoritmo Genético Aplicado a Problemas na Economia}
+	{Curitiba}
+	{2022}
 
-%--------------------------------------------------------------------------------------------
-\newpage
-\begin{center}
-{\normalsize Eduardo Henrique Silveira da Costa}
+% ---------------------------------------------------------------------------------------------------
+% Construção da Folha de Rosto
+% ---------------------------------------------------------------------------------------------------
 
-\vspace{6cm}
-{\textbf{Algoritmo Genético Aplicado a Problemas na Economia}}
-\end{center}
+\folharosto
+	{Eduardo Henrique Silveira da Costa}
+	{Algoritmo Genético Aplicado a Problemas na Economia}
+	{Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná.}
+	{Orientador: Dr. João Basilio Pereima}
+	{Curitiba}
+	{2022}
 
-\vspace{2cm}
-\begin{center}
-\begin{quotation}
-\noindent Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná.
+% ---------------------------------------------------------------------------------------------------
+% Construção da Folha com Termos de Aprovação
+% ---------------------------------------------------------------------------------------------------
 
-\vspace{1cm}
-\noindent Orientador: Dr. João Basilio Pereima
-\end{quotation}
+\folhatermoaprovacao
+	{Eduardo Henrique Silveira da Costa}
+	{Algoritmo Genético Aplicado a Problemas na Economia}
+	{Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná:}
+	{Prof. Dr. João Basilio Pereima}
+	{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}
+	{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}
+	{Curitiba}
+	{xx de Abril de 2022}
 
-\vspace{5.5cm}
-Curitiba 
+% ---------------------------------------------------------------------------------------------------
+% Construção da Folha de Agradecimentos
+% ---------------------------------------------------------------------------------------------------
+\agradecimentos
+	{XXXXXXX}
 
-2022
-\end{center}
+% ---------------------------------------------------------------------------------------------------
+% Construção da Folha Resumo e Abstract
+% ---------------------------------------------------------------------------------------------------
+\resumo
+{Em economia, embora haja algumas teorias estabelecidas, não há um consenso de como se analisar certos comportamentos dos agentes econômicos. Algumas linhas de pensamento se destacaram e se tornaram a principal forma de análise e previsão de conjecturas econômicas ao redor do mundo em diferentes momentos do século XX e XXI. A partir do desenvolvimento computacional na metade do século passado, ambas as áreas se tornaram intrinsecamente ligadas, e os modelos econômicos cada vez testados em sistemas computacionais aproveitando o poder de processamento dos computadores para a realização de cálculos. Dessa forma, a presente monografia objetiva apresentar os algoritmos genéticos como alternativa para análise e previsão de cenários econômicos, especialmente, no que diz respeito a problemas de otimização, inovação e aprendizado adaptativo. Para isso, realizou-se uma breve introdução à história do desenvolvimento dos algoritmos genéticos, assim como um aprofundamento em seus componentes para a construção de um algoritmo genético simples e alguns exemplos de aplicações em problemas econômicos.}
+{algoritmo genético; otimização; inovação; aprendizado adaptativo.}
+{In economics, although there are some established theories, there is no consensus on how to analyze certain behaviors of economic agents. Some lines of thought stood out and became the main way of analyzing and forecasting economic conjectures around the world at different times in the 20th and 21st. From the computational development in the middle of the last century, both areas became intrinsically linked, and the economic models were tested in computational systems taking advantage of the processing power of computers to perform calculations. Thus, the present monograph aims to present genetic algorithms as an alternative for the analysis and prediction of economic scenarios, especially regarding problems of optimization, innovation, and adaptive learning. For this, a brief introduction to the history of the development of genetic algorithms was carried out, as well as a deepening of its components for the construction of a simple genetic algorithm and some examples of applications in economic problems.}
+{genetic algorithm; optimization; inovation; adaptative learning.}
 
-%--------------------------------------------------------------------------------------------
-\newpage
-\begin{center}
-{\Large \textbf{TERMO DE APROVAÇÃO}}
-
-\vspace{1cm}
-{\Large \textbf{Algoritmo Genético Aplicado a Problemas na Economia}}
-
-\vspace{1cm}
-\begin{quotation}
-\noindent Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná:
-\end{quotation}
-
-\vspace{1cm}
-\begin{tabular}{c}
-\hline
-Prof. Dr. João Basilio Pereima \\
-(Orientador/UFPR)   \\
-\vspace{25pt}  \\
-\hline
-XXXXXXXXXXXXXXXX \\
-(Membro/UFPR)\\
-\vspace{25pt}   \\
-\hline
-XXXXXXXXXXXXXXXX \\
-(Membro/UFPR)\\
-\vspace{25pt}   \\
-\hline
-XXXXXXXXXXXXXXXX \\
-(Membro/Unicamp)\\
-\vspace{25pt}   \\
-\hline
-XXXXXXXXXXXXXXXX \\
-(Membro/UFSC)\\
-\vspace{25pt} \\
-\end{tabular}
-\vspace{40pt} \\
-Curitiba, XX de Abril de 2022.   
-\end{center}
-
-
-%--------------------------------------------------------------------------------------------
-
-
-%--------------------------------------------------------------------------------------------
-\newpage
-\begin{center}
-{\Large\textbf{AKNOWLEDGEMENTS}}
-\end{center}
-\vspace{2cm}
-
-\begin{itemize}
-   \item To my parents, my heroes and ultimate examples of kindness, responsibility and character, for all the love and cherish throughout my entire life.
-   \item To my love, CAssia Lorenza, for the unconditional love and support in difficult times when I had to exchange our talks and caresses for a computer screen. For making me always want to become a better person and specially for these big eyes I have the pleasure to see opening in the morning and closing at night. 
-	\item To my advisor, Prof. Dra, whom, through his brilliant expositions on economics and complexity, managed to broaden and renew my view and interest towards economic science.
-	\item To my friends Alan, Augusto and e friendship I had to neglect numerous times in order to achieve knowledge and accomplishment, but even so they never gave up on offering words of encouragement.
-	\item To all the professors on the Department of Economics at Federal University of Parmy second home for so long, and to all my colleagues in PPGDE.
-	\item Finally, to all the hard-working Brazilian tax payers who paid for my scholarship without which I would not be able to become a PhD.
-
- \end{itemize}
+% ---------------------------------------------------------------------------------------------------
+% Construção da Lista de Figuras
+% ---------------------------------------------------------------------------------------------------
+\listafiguras
  
+% ---------------------------------------------------------------------------------------------------
+% Construção da Lista de Tabelas
+% ---------------------------------------------------------------------------------------------------
+\listatabelas
+ 
+% ---------------------------------------------------------------------------------------------------
+% Construção da Lista de Siglas
+% ---------------------------------------------------------------------------------------------------
+\listasiglas
+	{%
+		AG - Algoritmo Genético
+		CE - Computação Evolucionária
+		PE - Programação Evolucionária
+		EE - Estratégias Evolutivas
+	}
 
-%--------------------------------------------------------------------------------------------
-\newpage
-\vspace*{10cm}
-\begin{flushright}
-``O importantevencer, tudo e sempre"'
-\\
-\textit{\textbf{(Ayrton Senna)}}
-\end{flushright}
+% ---------------------------------------------------------------------------------------------------
+% Construção do Sumário
+% ---------------------------------------------------------------------------------------------------
+\sumario
 
-\vspace{2cm}
-\begin{flushright}
-``I think the next century (21st) will be the century of complexity"'
-\\
-\textit{\textbf{(Stephen Hawking)}}
-\end{flushright}
-
-%-------------------------------------------------------------------------------------
-\newpage
-\tableofcontents
-
-%-------------------------------------------------------------------------------------
-\newpage
-\listoftables
-
-%-------------------------------------------------------------------------------------
-\newpage
-\listoffigures
-
-%-------------------------------------------------------------------------------------
-\newpage
-\begin{center}
-{\Large \textbf{RESUMO}}
-\end{center}
-\vspace{2cm}
-
-ASDFASDFSADFASDF
-
-\vspace{1cm}
-
-Palavras-chave: 
-
-%-------------------------------------------------------------------------------------
-\newpage
-\begin{center}
-{\Large \textbf{ABSTRACT}}\color[rgb]{0,0,0}
-\end{center}
-\vspace{2cm}
-
-ASDFSAFDAF   
-
-\vspace{1cm}
-
-Keywords: Innovation. Bandwagon Behaviour. Demand Saturation. Product Life Cycle. Complexity.
 %-------------------------------------------------------------------------------------
 \pagenumbering{arabic}
 \newpage
@@ -279,7 +212,7 @@ Keywords: Innovation. Bandwagon Behaviour. Demand Saturation. Product Life Cycle
 %\input{./Capitulo-4/Capitulo-4.tex}	% Detailed Literature Review  {ch:TBemEst}
 %\input{./Capitulo-5/Capitulo-5.tex}	% Agent-Based Schumpeterian Growth with Demand Effects on LSD  {ch:TBemEst}
 
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{chapter}{Referências}
 \bibliography{utils/referencias}
 
 

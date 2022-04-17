@@ -24,3 +24,188 @@
         {#5}
     \end{center}
 }
+
+% Impressão da Folha de Rosto
+%----------------------------------------------------------------------------- 
+\newcommand{\folharosto}[6]{%
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\begin{center}
+	        
+		% Autor
+		\vspace{4cm}
+		\MakeUppercase{#1}	
+	        
+		% Nome Monografia
+		\vspace{4cm}
+		\MakeUppercase{#2} \linebreak[2]
+	
+		% Orientador
+		\hspace{6cm}
+		\begin{minipage}{.5\textwidth}
+			\small
+			\scriptsize
+			{#3}
+			\\
+			\\
+			{#4}
+		\end{minipage}
+	
+		% Cidade
+		\vspace{14cm}
+		\MakeUppercase{#5}
+	        
+		% Ano
+		{#6}
+		\vfill
+	\end{center}
+}
+
+% Impressão da Folha do Termo de aprovação
+%----------------------------------------------------------------------------- 
+\newcommand{\folhatermoaprovacao}[8]{%
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\begin{center}
+		\uppercase{\textbf{Termo de Aprovação}}
+	
+		% Nome Autor
+		\vspace{2cm}
+		\uppercase{#1}
+	
+		% Nome Monogfaria
+		\vspace{2cm}
+		\uppercase{#2}
+	\end{center}
+
+	% Informações sobre a monofrafia
+	\vspace{2cm}
+	\noindent {#3}
+
+	\vspace{2cm}
+	\begin{tabular}{l}
+		\hline \\
+		\small
+		% Professor orientador
+		Orientador: {#4} \\
+		Setor de Ciências Sociais Aplicadas \\
+		Universidade Federal do Paraná   \\
+		\vspace{25pt}  \\
+		\hline \\
+		\small
+		% Professor 1 da banca
+		{#5} \\
+		Setor de Ciências Sociais Aplicadas \\
+		Universidade Federal do Paraná   \\
+		\vspace{25pt}   \\
+		\hline \\
+		\small
+		% Professor 2 da banca
+		{#6} \\
+		Setor de Ciências Sociais Aplicadas \\
+		Universidade Federal do Paraná   \\
+		\vspace{25pt}   \\
+	\end{tabular}
+
+\begin{center}
+	\small
+	% {Dia} de {Mês} de {Ano}
+	{#7}, {#8}.
+\end{center}
+}
+
+% Impressão da Folha de Agradecimentos
+%----------------------------------------------------------------------------- 
+\newcommand{\agradecimentos}[1]{%
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\begin{center}
+		\uppercase{\textbf{Agradecimentos}}
+	\end{center}
+
+	% Agradecimentos
+	\vspace{2cm}
+	#1
+}
+
+% Impressão da Folha de Resumo/Abstract
+%----------------------------------------------------------------------------- 
+\newcommand{\resumo}[4]{%
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+
+	\begin{center}
+		{\large \uppercase{\textbf{Resumo}}}
+	\end{center}
+
+	% Resumo
+	\vspace{0.5cm}
+	\noindent
+	{#1} 
+	
+	% Palavras-Chave
+	\vspace{0.5cm}
+	\noindent Palavras-chave: {#2}
+	
+	\vspace{2cm}
+	
+	\begin{center}
+		{\large \uppercase{\textbf{Abstract}}}
+	\end{center}
+
+	% Abstract
+	\vspace{0.5cm}
+	\noindent
+	{#3}
+	
+	% Keywords
+	\vspace{0.5cm}
+	\noindent Keywords: {#4}
+}
+
+% Impressão da Folha de Lista de Figuras
+%----------------------------------------------------------------------------- 
+\newcommand{\listafiguras}{
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\listoffigures
+}
+
+% Impressão da Folha de Lista de Tebelas
+%----------------------------------------------------------------------------- 
+\newcommand{\listatabelas}{
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\listoftables
+}
+
+% Impressão da Folha do Sumário
+%----------------------------------------------------------------------------- 
+\newcommand{\sumario}{
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	\tableofcontents
+}
+
+% Impressão da Folha de Siglas
+%-----------------------------------------------------------------------------
+\newcommand{\listasiglas}[1]{%
+	\newpage
+	\thispagestyle{empty}
+	\pagenumbering{gobble}
+	
+	\begin{center}
+		{\large \uppercase{\textbf{Lista de Siglas}}}
+	\end{center}
+	
+	% Siglas
+	\vspace{0.5cm}
+	\noindent
+	{#1}
+}
