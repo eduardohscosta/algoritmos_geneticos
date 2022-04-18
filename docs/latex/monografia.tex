@@ -13,7 +13,10 @@
 
 \input{estrutura/preambulo}
 \input{estrutura/pretextual}
-\input{utils/comandos/comandos}
+\input{auxiliar/comandos/comandos}
+
+\captionsetup{figurename=FIGURA}
+\captionsetup[table]{name=TABELA}
 
 % ---------------------------------------------------------------------------------------------------
 % Início do Documento
@@ -21,8 +24,8 @@
 
 \begin{document}
 
-\bibliographystyle{apa}  %Estilo deve ser compativel com o pacote NATBIB [author(year) citation] - Usa um arquivo xxxx.bst
-\pagenumbering{roman}
+%Estilo deve ser compativel com o pacote NATBIB [author(year) citation] - Usa um arquivo xxxx.bst
+\bibliographystyle{apa} 
 \renewcommand{\bibname}{Referências}
 \renewcommand{\contentsname}{\centering \large \uppercase{Sumário}}
 \renewcommand{\listfigurename}{\centering \large \uppercase{Lista de Figuras}}
@@ -30,29 +33,6 @@
 \renewcommand{\abstractname}{Resumo}
 \renewcommand\appendixname{Apêndice}
 \renewcommand\appendixpagename{Apêndices}
-	
-	\lstdefinelanguage{python}{
-	morekeywords=[1]{to,to-report,end, extensions,to-report,globals,breed,directed-link-breed, link-breed},
-	extendedchars=true, 
-    breaklines=true,
-    breakatwhitespace=true,
-    basicstyle=\ttfamily,
-    columns=fullflexible,
-	tabsize=4,
-    keywordstyle=[1]\color[rgb]{0.25,0.5,0.35},%\color[rgb]{0.4,0.8,0.2}\bfseries,
-    morekeywords=[2]{let,set,loop, if, report, foreach, print, tick, while, every, ifelse, ask},
-    keywordstyle=[2]\color{blue},
-    alsoletter={-,?,.},
-    morekeywords=[3]{position, not, reverse, fput, substring, length, word, timer,is-number?,filter,first, bf, butfirst, last, empty?, n-of, color, who, shape},
-    keywordstyle=[3]\color[rgb]{0.6,0,0.8},
-    comment=[l]{\;},
-    commentstyle=\color[rgb]{0.75,0.75,0.75},
-    string=[d]{"},
-    stringstyle=\color{orange},
-    otherkeywords={1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
-    morekeywords=[4]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, true, false},
-    keywordstyle=[4]{\color{orange}},
-}
 	
 % ---------------------------------------------------------------------------------------------------
 % Construção da Capa
@@ -124,7 +104,8 @@
 		AG - Algoritmo Genético \\
 		CE - Computação Evolucionária \\
 		PE - Programação Evolucionária \\
-		EE - Estratégias Evolutivas
+		EE - Estratégias Evolutivas \\
+		PIB - Produto Interno Bruto
 	}
 
 % ---------------------------------------------------------------------------------------------------
@@ -137,55 +118,51 @@
 \newpage
 \input{./capitulos/capitulo-1.tex}	% Instrodução
 \input{./capitulos/capitulo-2.tex}	% Computação Evolucionária
-%\input{./Capitulo-3/Capitulo-3.tex}	% Inequality Led Decisions of Process and Product Innovation  {ch:TBemEst}
-%\input{./Capitulo-4/Capitulo-4.tex}	% Detailed Literature Review  {ch:TBemEst}
-%\input{./Capitulo-5/Capitulo-5.tex}	% Agent-Based Schumpeterian Growth with Demand Effects on LSD  {ch:TBemEst}
+\input{./capitulos/capitulo-3.tex}	% Algoritmos Genéticos
+\input{./capitulos/capitulo-4.tex}	% Aplicação de Algoritmos Genéticos na Economia
+\input{./capitulos/capitulo-5.tex}	% Exemplos de Aplicações de Algoritmos Genéticos
 
 \addcontentsline{toc}{chapter}{Referências}
-\bibliography{utils/referencias}
+\bibliography{auxiliar/referencias}
 
 
 \appendixpage
 \begin{appendices}
 
 \chapter{Sumário de Terminologia Natural e Terminologia Artificial}
-\begin{table}[h!]
-\centering
-\begin{tabular}{ | >{\centering\arraybackslash}m{0.15 \textwidth} | >{\centering\arraybackslash}m{0.15 \textwidth} | >{\centering\arraybackslash}m{0.15 \textwidth} | >{\centering\arraybackslash}m{0.5 \textwidth} | } \hline
-        Terminologia Natural               &   Terminologia Artificial            &   Terminologia Artificial (Inglês)   & Descrição Curta                                                                     \\ \hline
-        Locus                              &   Locus                              &   \textit{Locus}                              & Posição de um gene (ou característica) dentro de uma cadeia de caracteres. \\ \hline
-        Alelo                              &   Alelo                              &   \textit{Alelle}                             & Valor do gene (ou característica), sendo 0 ou 1.                           \\ \hline
-        Gene                               &   Característica                     &   \textit{Gene}                               & Característica, caractere ou algoritmo de uma cadeia de caracteres.        \\ \hline
-        Bloco de construção                &   Bloco de Construção                &   \textit{Building Block}                     & Subvetor de alto desempenho. Responsável por formar novos vetores.         \\ \hline
-        Cromossomo ou Indivíduo            &   Vetor ou Cadeia de caracteres      &   \textit{String}                             & Conjunto de características agrupadas através de um conjunto de caracteres. Cada matriz pode ser uma possível solução para um problema ou fazer parte de uma solução global.                                                                                                                        \\ \hline
-        Genótipo                           &   Estrutura                          &   \textit{Structure}                          & Conjunto de vetores que mantém uma carga ou estrutura genética.            \\ \hline
-        Fenótipo                           &   Estrutura decodificada             &   \textit{Decoded structure}                  & Nova carga ou estrutura genética após as alterações das características principais de uma \\ \hline
-        População.                         &   População                          &   \textit{Population}                         & Conjunto de indivíduos construídos, inicialmente, de forma aleatória, onde o AG irá realizar suas buscas. Cada geração é composta por uma população que pode ser uma possível solução para o problema de otimização.                                                                                                   \\ \hline                           Geração                            &   Iteração                           &   \textit{Iteration}                          & Formação de uma nova população após a aplicação dos operadores de reprodução, cruzamento e mutação. \\ \hline 
-        Reprodução ou Seleção              &   Operador de Reprodução             &   \textit{Reproduction}                       & Seleção dos indivíduos com maior aptidão ao ambiente. \\ \hline 
-        Cruzamento                         &   Operador de Cruzamento             &   \textit{Crossover}                          & Troca de genes, ou características, entre os indivíduos de uma população. \\ \hline 
-        Mutação                            &   Operador de Mutação                &   \textit{Mutation}                           & Processo aleatório de alteração de uma ou mais características de um indivíduo. \\ \hline 
-        Valor de Aptidão                   &   Valor de Aptidão                   &   \textit{Fitness value}                      & Quantificação da qualidade de um indivíduo ou sua aptidão em relação ao ambiente. \\ \hline
-        Paisagem ou Horizonte de aptidão   &   Paisagem de Aptidão                &   \textit{Fitness landscape}                  & Espaço pelo qual o AG faz sua busca por soluções, ou seja, diz respeito ao problema a ser resolvido. \\ \hline
-        Função de aptidão                  &   Função objetivo                    &   \textit{objective function}                 & Função contendo os parâmetros para resolução do problema.
-\end{tabular}
-\\
-\begin{minipage}{1 \textwidth}
-\end{minipage}
-\end{table}
 \label{appx:TerminologiaNaturalComputacional}
+\tabelalonga
+	{%
+		| >{\centering\arraybackslash}m{0.15\textwidth}
+		| >{\centering\arraybackslash}m{0.15\textwidth}
+		| >{\centering\arraybackslash}m{0.15\textwidth}
+		| >{\centering\arraybackslash}m{0.50\textwidth} |
+		}
+	{%	
+		Terminologia Natural &   Terminologia Artificial & Terminologia Artificial (Inglês) & Descrição Curta \\ \hline
+		Locus & Locus &   \textit{Locus} & Posição de um gene (ou característica) dentro de uma cadeia de caracteres. \\ \hline
+		Alelo & Alelo &   \textit{Alelle} & Valor do gene (ou característica), sendo 0 ou 1. \\ \hline
+		Gene & Característica &   \textit{Gene} & Característica, caractere ou algoritmo de uma cadeia de caracteres. \\ \hline
+		Bloco de construção & Bloco de Construção &   \textit{Building Block} & Subvetor de alto desempenho. Responsável por formar novos vetores. \\ \hline
+		Cromossomo ou Indivíduo & Vetor ou Cadeia de caracteres &   \textit{String} & Conjunto de características agrupadas através de um conjunto de caracteres. Cada matriz pode ser uma possível solução para um problema ou fazer parte de uma solução global. \\ \hline
+		Genótipo & Estrutura &   \textit{Structure} & Conjunto de vetores que mantém uma carga ou estrutura genética. \\ \hline
+		Fenótipo & Estrutura decodificada &   \textit{Decoded structure} & Nova carga ou estrutura genética após as alterações das características principais de uma \\ \hline
+		População & População &   \textit{Population} & Conjunto de indivíduos construídos, inicialmente, de forma aleatória, onde o AG irá realizar suas buscas. Cada geração é composta por uma população que pode ser uma possível solução para o problema de otimização. \\ \hline
+		Geração & Iteração & \textit{Iteration} & Formação de uma nova população após a aplicação dos operadores de reprodução, cruzamento e mutação. \\ \hline 
+		Reprodução ou Seleção & Operador de Reprodução & \textit{Reproduction} & Seleção dos indivíduos com maior aptidão ao ambiente. \\ \hline 
+		Cruzamento & Operador de Cruzamento & \textit{Crossover} & Troca de genes, ou características, entre os indivíduos de uma população. \\ \hline 
+		Mutação & Operador de Mutação & \textit{Mutation} & Processo aleatório de alteração de uma ou mais características de um indivíduo. \\ \hline 
+		Valor de Aptidão & Valor de Aptidão & \textit{Fitness value} & Quantificação da qualidade de um indivíduo ou sua aptidão em relação ao ambiente. \\ \hline
+		Paisagem ou Horizonte de aptidão & Paisagem de Aptidão & \textit{Fitness landscape} & Espaço pelo qual o AG faz sua busca por soluções, ou seja, diz respeito ao problema a ser resolvido. \\ \hline
+		Função de aptidão & Função objetivo & \textit{objective function} & Função contendo os parâmetros para resolução do problema. \\ \hline
+	}
 
-\chapter{Capítulo 5 Code}
+\chapter{Exemplo de Aplicação de um AG simples em Python}
+\label{pythoncode:ConstrucaoAlgoritmoGenetico}
 
-\begin{lstlisting}
-
-def teste_func():
-	return ...
-
-\end{lstlisting}
+\pythonexternal{auxiliar/monolito_algoritmo_genetico.py}
 
 \end{appendices}
-
-
 \end{document} 
 
 

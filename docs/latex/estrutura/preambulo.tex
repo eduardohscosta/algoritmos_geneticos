@@ -1,4 +1,11 @@
-\documentclass[a4paper,12pt,openright,oneside]{book}
+\documentclass[
+	a4paper,
+	12pt,
+	openright,
+	oneside,
+	subsubsection=Title
+	]{book}
+
 \usepackage[english,brazil]{babel}
 \usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
@@ -9,6 +16,7 @@
 \usepackage{float}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{indentfirst}
 \usepackage{array}
 \usepackage{csquotes}
 \usepackage{xcolor}               %Extend color definitions
@@ -18,15 +26,31 @@
 \usepackage[authoryear]{natbib}   %Use package to bibliography - author(year)
 \usepackage{makeidx}
 \usepackage{supertabular}         %permite tabela continuar em sucessivas p�ginas 
-%\usepackage{subfigure}            %manusear figuras (p.ex.: sub-fuguras dentro de figuras)
 \usepackage{marvosym}             %Simbolos diversos
-\usepackage[pdftex,colorlinks,linkcolor=blue, 
-citecolor= red!50!black,
-hyperindex]{hyperref} %Permite fazer hypertexto
+\usepackage{verbatim} 
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage[subfigure]{tocloft}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage[
+	pdftex,
+	colorlinks,
+	linkcolor=blue, 
+	citecolor=red!50!black,
+	hyperindex
+	]{hyperref} %Permite fazer hypertexto
 
 
+% Alteração da indentação dos itens do sumário
+\cftsetindents{chapter}{0pt}{42pt}
+\cftsetindents{section}{0pt}{42pt}
+\cftsetindents{subsection}{0pt}{42pt}
+\cftsetindents{subsubsection}{0pt}{42pt}
 
 \hypersetup{pdfstartview=FitH}
+
+\setcounter{secnumdepth}{3}
 
 \lstset{morekeywords=[1]{to,to-report,end, extensions,to-report,globals,breed,directed-link-breed, link-breed},
 	extendedchars=true, 
@@ -49,7 +73,47 @@ hyperindex]{hyperref} %Permite fazer hypertexto
 	morekeywords=[4]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, true, false},
 	keywordstyle=[4]{\color{orange}}}
 
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
 
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% https://tex.stackexchange.com/questions/83882/how-to-highlight-python-syntax-in-latex-listings-lstinputlistings-command()
+% https://nasa.github.io/nasa-latex-docs/html/examples/listing.html
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+		language=Python,
+		basicstyle=\footnotesize, 
+		keywordstyle=\footnotesize\color{deepblue},
+		emphstyle=\footnotesize\color{deepred},
+		commentstyle=\footnotesize\color{deepgreen},
+		stringstyle=\footnotesize\color{deepgreen},
+		showstringspaces=false,
+		breaklines=true,
+}}
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+	\pythonstyle
+	\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+		\pythonstyle
+		\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
 
 %Defini��es de Margens
 \addtolength{\textwidth}{2.0cm}
@@ -67,5 +131,8 @@ hyperindex]{hyperref} %Permite fazer hypertexto
 \pagestyle{plain}
 \includeonly{%
 	./capitulos/capitulo-1,
-	./capitulos/capitulo-2
+	./capitulos/capitulo-2,
+	./capitulos/capitulo-3,
+	./capitulos/capitulo-4,
+	./capitulos/capitulo-5
 }

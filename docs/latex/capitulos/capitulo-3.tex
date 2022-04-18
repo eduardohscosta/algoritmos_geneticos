@@ -1,0 +1,311 @@
+\chapter{Algoritmos Genéticos}
+\label{chap:altoritmos_geneticos}
+
+Neste capítulo, procura-se introduzir, aprofundar e discutir os principais componentes, e suas características, para a construção de um algoritmo genético simples.
+
+\section{Introdução aos Algoritmos Genéticos}
+\label{sec:introducao_aos_algoritmos_geneticos}
+
+Um algoritmo genético é uma meta-heurística\footnote{Heurística é uma técnica construída para encontrar, gerar ou selecionar uma solução para um problema específico dentro de um problema maior definido, sendo a meta-heurística, então, uma heurística de alto nível que busca por heurísticas para resolução de um dado problema principal.} com finalidades variadas que, conforme citado por \citet[pg.27]{MelanieMitchell98}, pode ser dividido em dois campos principais de aplicação: como uma técnica de busca de possíveis soluções de problemas tecnológicos e como um modelo computacional que objetiva simular sistemas naturais em busca de respostas como, por exemplo, um maior entendimento dos processos evolutivos e de seleção natural. No primeiro, a gama de aplicações é extensa, encontrando-se diversos trabalhos em problemas das ciências exatas e ciências sociais; em relação ao segundo, encontram-se diferentes empregos de algoritmos genéticos nas áreas das ciências biológicas. Neste trabalho, serão abordadas as aplicações relativas a problemas nas ciências sociais, em especial, nas ciências econômicas.
+
+Relativo às ciências econômicas, dentre as diversas aplicações encontradas na literatura, buscar-se-á abordar três principais: a busca por soluções ótimas de problemas de otimização, a procura por padrões ou características que podem ser entendidas como inovações em um dado processo ou contexto e, por último, o aprendizado que pode ser extraído dos processos de um AG através da aplicação de seus operadores e interação entre os elementos analisados. No presente capítulo, com o objetivo de abordar cada operador e processo de um AG simples, utilizar-se-á um exemplo de aplicação que busca encontrar uma solução de um problema de otimização. As demais aplicações apresentadas acima serão aprofundadas no capítulo seguinte.
+
+De forma geral, um AG funciona da seguinte forma: definido um problema, o algoritmo realiza uma busca por uma solução global em um espaço de possíveis soluções, onde, ao realizar essa busca, ele pode encontrar ou não uma solução ótima. Inicialmente, estas possíveis soluções são construídas de forma aleatória e combinam suas características entre si, formando novas possíveis soluções. Tais características determinarão como e quais serão os atributos combinados ou ignorados neste processo, que é realizado de forma iterativa\footnote{Na programação, é uma ação que se repete sucessivamente até atingir um resultado desejado ou alguma ordem de término.}, onde cada iteração termina com novas soluções construídas através da troca de informações entre os elementos. Estas sucessivas iterações terminam quando o objetivo predefinido é alcançado ou o algoritmo não encontra nenhuma solução que satisfaz o problema. Um AG básico, ou seja, que contenha pelo menos a utilização dos operadores de reprodução, cruzamento e mutação, é de simples construção e parametrização. Embora simples, é capaz de procurar por soluções em um espaço de busca muito maior e um desempenho acima dos programas convencionais \citet[pg.66]{holland_genetic_1992} e, conforme cita \citet[pg.2]{goldberg_genetic_1989}, podem ser divididos em três métodos de busca principais: baseado em cálculo, enumerativo e aleatório ou randômico.
+
+O primeiro tipo, é uma heurística de busca local e é subdividido em duas classes: indireto e direto. Através da resolução de, normalmente, um conjunto de equações não lineares, as técnicas de busca indireta procuram por extremos locais resultantes de uma função objetivo igual a zero. Em outras palavras, conforme a direção definida pelo vetor gradiente, analisa-se se o ponto de aclive ou declive, que não possui mais nenhuma variação para qualquer direção, assume o valor de máximo ou mínimo com base nas funções calculadas. Em relação aos métodos diretos, com uma solução arbitrária inicial, são feitos repetidos incrementos nesta solução e, caso essa mudança apresente um resultado melhor, é feito um novo incremento, e assim sucessivamente, até não haver mais nenhuma melhoria, levando-se em consideração as restrições do problema.
+
+O segundo método, uma heurística de busca global, inicia buscando pelos valores da função objetivo em cada um dos pontos dentro de um espaço de busca delimitado ou um espaço de busca infinito discreto, parando ao encontrar um extremo global que se apresente como uma possível solução para o problema a ser resolvido. 
+
+Por último, o método de busca aleatória, também uma heurística de busca global, utiliza algum tipo de aleatoriedade ou probabilidade na busca por ótimos globais dentro de um espaço definido.
+
+\citet[pg.5]{goldberg_genetic_1989} também cita que os métodos acima apresentados, com um exemplo de extremo fictício ilustrado na \autoref{fig:SinglePeakCalculusBasedMethod}, foram perdendo a relevância ao longo do tempo, pois são métodos de busca úteis em um número muito pequeno de situações, não apresentando uma eficácia e eficiência satisfatórias na resolução de um espectro grande de problemas, de diferentes níveis de complexidade, conforme a realidade demanda. Dessa forma, os algoritmos genéticos foram se destacando por sua robustez na resolução de um número considerável de problemas de otimização através da adaptação para os sistemas artificiais de alguns conceitos da biologia e da genética, sobretudo, o conceito darwiniano de evolução dos indivíduos mais aptos.
+
+\figura
+	{Exemplo de um extremo local}
+	{.5}
+	{imagens/SinglePeakCalculusBasedMethod.png}
+	{SinglePeakCalculusBasedMethod}
+	{
+		\citet[p.3]{goldberg_genetic_1989}
+	}
+
+Dessa forma, nas seções subsequentes, serão explorados os principais conceitos, operadores e processos para a construção de um algoritmo genético simples.
+
+\section{Algoritmos e Linguagem de Máquina}
+\label{sec:algoritmos_e_linguagem_de_maquina}
+
+Para \citet[pg.2]{cormen_introduction_2009}, um algoritmo é um \enquote{procedimento computacional bem definido que recebe um valor, ou um conjunto de valores, como entrada e produz algum valor, ou conjunto de valores, como saída}\footnote{[...] a well-defined computational procedure that takes some values, or set of values, as input and produces some value, or set of values, as output.} (tradução nossa). Não é diferente com um AG, que, dada uma função de otimização, depende de um conjunto de parâmetros de entrada para encontrar um, ou mais de um, ponto ótimo, ou próximo ao ótimo, como valor, ou valores, de saída.
+
+Sendo o desenho do AG uma simulação de um processo natural, é necessário que haja uma codificação dos valores de entrada para que o sistema computacional possa processá-los. Ou seja, é necessário realizar uma transformação das informações que os humanos interpretam, modificam e constroem, com base nos estudos dos processos naturais, em uma linguagem que o computador entenda, chamada linguagem ou código de máquina. 
+
+Como apresentado por \citet[pg.42]{fedeli_introducao_2009}, atualmente, os computadores utilizam apenas dois operadores básicos em sua linguagem, sendo eles os dígitos binários 0 e 1, também conhecidos como bit (do inglês, \textit{binary digit}). O bit é a menor informação armazenada pela memória e processada pela unidade central de processamento (UCP) de um computador, onde, em um determinado espaço da memória, é armazenado um e somente um bit (0 ou 1) por vez. De forma mais ilustrativa, pode-se entender o 0 como uma instrução para um corte de energia ou uma informação relativa à negação, impedimento ou inexistência; do contrário, o 1 é uma instrução para passagem de energia ou uma informação relativa à positivação, desimpedimento ou existência
+
+Existem várias formas de agrupamento destes dígitos, havendo interpretações e funções diferentes levando-se em consideração a quantidade e a ordem dos bits nestes agrupamentos, sendo o \textit{American Standard Code for Information Interchange (ASCII)} o método de armazenamento e representação de caracteres mais utilizado pelas plataformas de computadores pessoais \citep[pg.46]{fedeli_introducao_2009}, onde cada dígito é formado pela junção de 8 bits\footnote{Originalmente, o conjunto mínimo era de 7 bits \citet{gorn_american_1963}.}, unidade conhecida como byte (do inglês, \textit{binary term}). Dessa forma, quando o dígito \enquote{A}, por exemplo, é enviado para o computador, o ASCII o codifica, enviando a sequência $01000001$ para armazenamento na memória. O mesmo processo acontece de forma inversa, quando o computador gera algum dígito que precisa ser representado graficamente.
+
+Com isso, por questões relativas à facilidade de interpretação e desempenho computacional, os parâmetros de entrada de um AG são codificados em sequências de 0s e 1s, onde cada sequência tem origem de um determinado alfabeto \footnote{Aqui, alfabeto nada mais é que um conjunto finito de algorismos ou caracteres.}, que permite realizar a codificação e decodificação dos valores de entrada e saída, respectivamente, do algoritmo aplicado.
+
+\section{Componentes de um Algoritmo Genético}
+\label{sec:componentes_de_um_algoritmo_genetico}
+
+A forma como os parâmetros de um AG são definidos impacta diretamente na robustez de seu funcionamento e das possíveis soluções encontradas. Dessa forma, serão explorados a seguir os principais elementos, e suas características, para a construção de um AG simples. Para isso, será utilizado como exemplo o Problema da Caixa Preta\footnote{\label{rodape:problema_caixa_preta}Através de uma máquina ou dispositivo que possui um número específico de parâmetros de entrada (interruptores), o Problema da Caixa Preta consiste em obter o maior valor de saída possível com base na configuração destes parâmetros. O objetivo é analisar como um determinado sistema fechado relaciona os valores de entrada e a resposta, com base no estímulo destes valores, de saída.} apresentado por \citet[p.8]{goldberg_genetic_1989}.
+
+\subsection{Alelo e Locus}
+\label{subsec:alelo_e_locus}
+
+Conforme abordado anteriormente (ver \autoref{sec:algoritmos_e_linguagem_de_maquina}), o primeiro passo na construção de um AG é a codificação dos valores de entrada em um conjunto de 0s e 1s. Cada valor, é uma característica binária ou um detector chamado de alelo (equivalente ao gene de um cromossomo na biologia). A posição de cada caractere dentro deste conjunto é chamada de \textit{locus}. Pode-se analisar o locus à parte do gene (ou alelo). Por exemplo, supondo que as características (genes) do cabelo de um ser humano podem ser encontradas no cromossomo 2. Ao analisar os genes relativos ao cabelo dentro deste cromossomo, identifica-se no locus 3 (posição 3) que a cor do cabelo é preta (valor do alelo). Com isso, temos que o valor e a posição de cada elemento nesse conjunto apresentará uma característica específica, seja olhando para um único valor ou para um subconjunto de valores.
+
+\subsection{Cadeia de Caracteres}
+
+O conjunto codificado dos valores de entrada de um AG é chamado de cadeia de caracteres\footnote{Do inglês, \textit{string}.} ou vetor. Comparativamente, na biologia, o cromossomo é uma estrutura constituída por DNA (ácido desoxirribonucleico), sendo cada DNA composto por um número de genes que, por sua vez, são responsáveis por definirem a(s) característica(s) de um indivíduo. Dessa forma, temos que o vetor de um AG é um elemento artificial análogo ao cromossomo nos sistemas naturais. Como exemplo, o vetor com os possíveis valores da Caixa Preta pode ser representado da seguinte forma:
+
+\tabelasimples
+	{%
+		| >{\centering\arraybackslash}m{2.5cm}   % Coluna 1
+		| >{\centering\arraybackslash}m{2cm}   	 % Coluna 2
+		| >{\centering\arraybackslash}m{2cm}     % Coluna 3
+		| >{\centering\arraybackslash}m{2cm}     % Coluna 4
+		| >{\centering\arraybackslash}m{2cm}     % Coluna 5
+		| >{\centering\arraybackslash}m{2cm} |   % Coluna 6
+	}
+	{Cadeia de Caracteres ou Vetor Contendo 5 Genes}
+	{%
+		Característica Binária (Gene) & Interruptor 1 & Interruptor 2 & Interruptor 3 & Interruptor 4 & Interruptor 5 \\ \hline % Header
+		Valor da Característica Binária (Alelo) & $0$ & $1$ & $1$ & $0$ & $1$ \\ \hline % Linha 1
+		Posição ou Índice do Gene (Locus) & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline % Linha 2
+		Referência Caixa Preta & Desligado & Ligado & Ligado & Desligado & Ligado \\ \hline
+	}
+	{MatrizCadeiaCaracteresAleloLocus}
+	{adaptado de \citet[p.11]{goldberg_genetic_1989}}
+
+\subsection{População Inicial e Gerações}
+
+Inicialmente, o AG começa a realizar sua busca sobre um conjunto aleatório de indivíduos (cadeias de caracteres ou vetores), chamado de população inicial. Através dessa busca, o algoritmo analisa cada um dos elementos da população, identificando quais são os mais aptos a sobreviver levando-se em consideração os demais indivíduos e o ambiente em que estão localizados. Esta estrutura composta por vários indivíduos com genes específicos se manterá por toda a vida do organismo (na genética, esta estrutura é chamada de genótipo) e, à medida que as gerações (iterações) passam, os indivíduos interagem entre si e com o ambiente criando, assim, um novo organismo. Na genética, a nova estrutura resultante deste processo é conhecida como fenótipo.
+
+\tabelasimples
+	{%
+		| >{\centering\arraybackslash}m{2.5cm}   % Coluna 1
+		| >{\centering\arraybackslash}m{2cm}   	 % Coluna 2
+		| >{\centering\arraybackslash}m{2cm}     % Coluna 3
+		| >{\centering\arraybackslash}m{2cm}     % Coluna 4
+		| >{\centering\arraybackslash}m{2cm}     % Coluna 5
+		| >{\centering\arraybackslash}m{2cm} |   % Coluna 6
+	}
+	{População de tamanho 4}
+	{%
+		Indivíduo (População) & Interruptor 1 & Interruptor 2 & Interruptor 3 & Interruptor 4 & Interruptor 5 \\ \hline % Header
+		Vetor 1 & $0$ & $1$ & $1$ & $0$ & $0$ \\ \hline % Linha 1
+		Vetor 2 & $1$ & $1$ & $0$ & $0$ & $0$ \\ \hline % Linha 2
+		Vetor 3 & $0$ & $1$ & $0$ & $0$ & $0$ \\ \hline % Linha 3
+		Vetor 4 & $1$ & $0$ & $0$ & $1$ & $1$ \\ \hline % Linha 4
+	}
+	{PopulacaoTamanho4}
+	{Elaborado pelo autor.}
+	
+\subsection{Paisagem de Aptidão, Sobrevivência do Mais Apto e Função Objetivo}
+
+O ambiente em que os indivíduos (vetores) estão localizados é um elemento importante que compõe os processos de um AG, sendo um dos responsáveis por direcionar a escolha de quais indivíduos irão passar para a próxima geração e quais irão morrer. Ou seja, o algoritmo irá analisar cada indivíduo num dado espaço procurando os mais aptas a sobreviverem ao ambiente em que estão localizados com base em suas características. Este espaço de busca é conhecido como paisagem ou horizonte de aptidão\footnote{do inglês, \textit{fitness landscape}}, definido por \citeauthor{langdon_foundations_2002} da seguinte maneira:
+
+\citacao
+	{%
+		Na forma mais simples, uma paisagem de aptidão pode ser vista como um gráfico onde cada ponto na direção horizontal representa todos os genes em um indivíduo (genótipo) correspondente àquele ponto. A aptidão daquele indivíduo é plotada como a altura. Se os genótipos podem ser visualizados em duas dimensões, o gráfico pode ser visto como um mapa de três dimensões, que pode conter montes e vales. Grandes regiões de baixa aptidão podem ser consideradas pântanos, enquanto grandes regiões de alta aptidão, que se mantêm num mesmo nível, podem ser consideradas como platôs.
+	}{%
+	In its simplest form a fitness landscape can be seen as a plot where each point in the horizontal direction represents all the genes in an individual (known as its genotype) corresponding to that point. The fitness of that individual is plotted as the height. If the genotypes can be visualised in two dimensions, the plot can be seen as a three-dimensional map, which may contain hills and valleys. Large regions of low fitness can be considered as swamps, while large regions of similar high fitness may be thought of as plateaus.
+	}
+	{\citep[pg.4]{langdon_foundations_2002}}
+	{(tradução nossa).}
+
+ Como ilustrado na \autoref{fig:2DFitnessLandscape}, um AG possui um espaço de busca predeterminado (área cinza) contendo a população inicial a ser analisada, representada na imagem pelo ponto preto mais inferior, à esquerda. Com base nas características binárias (genes) da população ou estrutura (genótipo), o AG determinará quais indivíduos passarão para a próxima geração (seta branca), formando uma nova população. Esse processo acontece sucessivamente até que, com base no estado (fenótipo) de cada nova população, seja encontrada a que possui as maiores chances de sobrevivência, sendo a possível solução para um dado problema de otimização.
+
+\figura
+	{Paisagem de Aptidão Representada em 2 dimensões}
+	{.7}
+	{imagens/2DFitnessLandscape.PNG}
+	{2DFitnessLandscape}
+	{\citet[p.5]{langdon_foundations_2002}}
+
+Desse modo, como foi possível observar, o processo de busca pela população inicial, que é formada de forma randômica, e que determina como será formada a população na geração seguinte, possui grande peso da aleatoriedade, porém de forma diferente do tipo de busca aleatória ou randômica apresentada anteriormente (ver \autoref{sec:introducao_aos_algoritmos_geneticos}). Um dos grandes diferenciais do AG é a possibilidade de ter certo controle sobre seus processos aleatórios. Isso acontece, pois o algoritmo observa os dados históricos, que surgem a partir de cada nova geração, assim como segue alguns direcionamentos nas busca por novos pontos com maior chance de sobreviver ao ambiente. Estes direcionamentos são construídos por uma função objetivo (na biologia, chamada de função de aptidão\footnote{do inglês, \textit{fitness function}.}), sendo os seus parâmetros o que definirá quais serão os critérios de sobrevivência ou aptidão para que um ou mais indivíduos de uma população sigam para a geração seguinte, processo representado graficamente pelos pontos mais elevados na paisagem de aptidão na \autoref{fig:FitnessLandscapeAdaptado}.
+
+\figura
+	{Paisagem de Aptidão Representada em 3 dimensões}
+	{.7}
+	{imagens/FitnessLandscapeAdaptado.png}
+	{FitnessLandscapeAdaptado}
+	{adaptado de \citet[p.5]{langdon_foundations_2002}}
+
+\subsection{Reprodução ou Seleção}
+\label{subsec:reproducao_ou_selecao}
+
+Dado um primeiro conjunto de indivíduos, chamado de população inicial, o AG precisa determinar quais destes indivíduos têm maior probabilidade de se adaptar ao ambiente e passar seus genes para a próxima geração através de seus descendentes. A esse processo é dado o nome de reprodução ou seleção.
+
+A reprodução é um processo em que os indivíduos são replicados, copiados, conforme seus valores de aptidão, que são calculados pela função objetivo. Os indivíduos que possuem os maiores valores de aptidão têm maior probabilidade de criarem novos descendentes, passando, dessa forma, parte dos seus genes para a população seguinte. Nos sistemas naturais, o que determinará se um indivíduo passará por esse processo é sua capacidade de sobreviver a qualquer elemento que o possa matar antes que consiga se reproduzir, sendo ele um predador, uma doença, etc. (\citet[p.11]{goldberg_genetic_1989})
+
+Conforme o exemplo da Caixa Preta apresentado na \autoref{sec:componentes_de_um_algoritmo_genetico}, foi sugerida uma população inicial, criada aleatoriamente, com os indivíduos (interruptores) 01101, 11000, 01000 e 10011 (ver \autoref{tab:MatrizCadeiaCaracteresAleloLocus}).
+
+O primeiro passo será calcular o valor de aptidão de cada indivíduo, sua participação na população como um todo e ordená-los por valor de aptidão (\autoref{tab:ValoresAptidaoIndividuosPopulacaoIndividual}).
+
+\tabelasimples
+	{%
+		| >{\centering\arraybackslash}m{1cm} % Coluna 1
+		| >{\centering\arraybackslash}m{2cm} % Coluna 2
+		| >{\centering\arraybackslash}m{2cm} % Coluna 3
+		| >{\centering\arraybackslash}m{2.5cm} % Coluna 4
+		| >{\centering\arraybackslash}m{2.5cm} % Coluna 5
+		| >{\centering\arraybackslash}m{2.5cm} | % Coluna 6
+	}
+	{Valores de Aptidão dos Indivíduos da População Inicial}
+	{%
+			Índice & Indivíduo & Valor de Aptidão & Valor de Aptidão Acumulado & Participação em Relação à População & Participação Acumulada \\ \hline % Header
+			1 & 11000 & 576 & 576 & 49,2\% & 49,2\% \\ \hline % Linha 1
+			2 & 10011 & 361 & 937 & 30,9\% & 80,1\% \\ \hline % Linha 2
+			3 & 01101 & 169 & 1106 & 14,4\% & 94,5\% \\ \hline % Linha 3
+			4 & 01000 & 64 & 1170 & 5,5\% & 100\% \\ \hline % Linha 4
+			Total & & 1170 & & 100\% & \\ \hline % Linha 5
+	}
+	{ValoresAptidaoIndividuosPopulacaoIndividual}
+	{adaptado de \citet[p.11]{goldberg_genetic_1989}}
+
+Com base no peso de cada indivíduo frente à população, o operador da reprodução pode ser aplicado através de uma roleta\footnote{O método da roleta é um dos vários possíveis na aplicação do operador de reprodução.} contendo 4 partes, cada parte relativa a um indivíduo, com proporções equivalentes às suas participações no total da população (\autoref{fig:RoletaReproducao}).
+
+\figura
+	{Roleta Enviesada para Aplicação do Operador de Reprodução}
+	{.6}
+	{imagens/RoletaReproducao.png}
+	{RoletaReproducao}
+	{adaptado de \citet[p.11]{goldberg_genetic_1989}}
+
+A reprodução ocorre a cada girada na roleta. No caso do nosso exemplo, 4 vezes. Sendo assim, os indivíduos selecionados pelo operador de reprodução são copiados de forma ordenada, sem nenhuma alteração, para um reservatório temporário de acasalamento\footnote{Do inglês, \textit{mating pool}.} conforme vão sendo selecionados. Ou seja, os que tiverem maior valor de aptidão, logo maior chance de sobrevivência, possuem maiores chances de criarem um número maior de descendentes, passando parte de suas características para a próxima geração. Para o nosso exemplo, será utilizada uma taxa de reprodução de 100\%, com todos os indivíduos sendo replicados. Esta taxa pode variar conforme o problema de otimização a ser resolvido.
+
+\subsection{Cruzamento}
+
+No reservatório de acasalamento, os indivíduos irão combinar suas características entre si, processo que é também realizado de forma aleatória. Supondo que, ao girar a roleta, os indivíduos com maior valor de aptidão foram selecionados primeiro que os indivíduos com menor aptidão, formando, assim, os seguintes pares:
+
+\tabelamultilinhas
+	{p{1cm} c}
+	{Pares Formados no Reservatório de Acasalamento}
+	{%
+		\multirow{2}{1cm} % Duas linhas;
+			{Par 1} % Multilinhas 
+				& Indivíduo 1: $11000$ \\ % Linha 1
+				& Indivíduo 2: $10011$ \\ \hline \\ % Linha 2
+		\multirow{2}{1cm} % Duas linhas;
+			{Par 2} % Multilinhas
+				& Indivíduo 3: $01101$ \\ % Linha 1
+				& Indivíduo 4: $01000$ \\ \hline % Linha 2
+	}
+	{ParesFormadosReservatorioAcasalamento}
+	{Elaborado pelo autor.}
+        
+Para aplicação do operador de cruzamento, assim como no operador de reprodução, também pode ser utilizada a roleta para o sorteio dos pontos onde os indivíduos serão divididos para cruzamento. Porém, agora, contendo quatro partes iguais, uma para cada ponto entre o locus de cada gene, assim como cada giro equivalerá a um cruzamento por par. Deste modo, ao girar a roleta, vamos supor que tenham sido sorteados os números 2 e 3. Todos os caracteres à direita dos pontos sorteados são trocados entre os indivíduos dos pares formados, o que será representado pelo símbolo separador \enquote{\textbar} (\autoref{tab:ParesFormadosReservatorioAcasalamentoSeparadoresCruzamento}) e, após o sorteio dos pontos de cruzamento, é realizada a recombinação dos pares (\autoref{tab:ParesFormadosReservatorioAcasalamentoAposCruzamento}).
+
+\tabelamultilinhas
+	{p{1cm} c}
+	{Pares Formados no Reservatório de Acasalamento com Separadores de Cruzamento}
+	{%
+		\multirow{2}{1cm} % Duas linhas;
+			{Par 1} % Multilinhas 
+			& Indivíduo 1: $1.1|0.0.0$ \\ % Linha 1
+			& Indivíduo 2: $1.0|0.1.1$ \\ \hline \\ % Linha 2
+		\multirow{2}{1cm} % Duas linhas;
+			{Par 2} % Multilinhas
+			& Indivíduo 3: $0.1.1.0|1$ \\ % Linha 1
+			& Indivíduo 4: $0.1.0.0|0$ \\ \hline % Linha 2
+	}
+	{ParesFormadosReservatorioAcasalamentoSeparadoresCruzamento}
+	{Elaborado pelo autor.}
+
+\tabelamultilinhas
+	{p{1cm} c}
+	{Pares Formados no Reservatório de Acasalamento Após o Cruzamento}
+	{%
+		\multirow{2}{1cm} % Duas linhas;
+		{Par 1} % Multilinhas 
+		& Indivíduo 1: $1.1|0.1.1$ \\ % Linha 1
+		& Indivíduo 2: $1.0|0.0.0$ \\ \hline \\ % Linha 2
+		\multirow{2}{1cm} % Duas linhas;
+		{Par 2} % Multilinhas
+		& Indivíduo 3: $0.1.1.0|0$ \\ % Linha 1
+		& Indivíduo 4: $0.1.0.0|1$ \\ \hline % Linha 2
+	}
+	{ParesFormadosReservatorioAcasalamentoAposCruzamento}
+	{Elaborado pelo autor.}
+
+As novas subcadeias de caracteres, ou subvetores, são chamadas de blocos de construção. A Hipótese dos Blocos de Construção de um AG\footnote{Do inglês, \textit{Building block hypothesis}.} será aprofundada mais à frente. Por agora, fica-se com a analogia apresentada por \citeauthor{goldberg_genetic_1989}:
+
+\citacao
+	{%
+		(...) considere uma população de $n$ cadeias de caracteres (...), onde cada uma é uma \textit{ideia} completa ou uma prescrição para realizar uma tarefa particular. As subcadeias de caracteres de cada cadeia de caracteres (ideia) contém várias \textit{noções} do que é importante ou relevante para a tarefa. (...) Então, a ação de cruzamento com reproduções prévias é especulada sobre novas ideias construídas através dos blocos de construção de alto desempenho (noções) de tentativas passadas. (...) A troca de noções para formar novas ideias é intuitiva se nós pensarmos em termos do processo de \textit{inovação}.
+	}{%
+	(...), consider a population of $n$ strings (...) over some appopriate alphabet, coded so that each is a complete \textit{idea} or prescription for performing a particular task (...). Substrings within each string (idea) contain various \textit{notions} of what is important or relevant to the task. Viewed in this way, the population contains not just a sample of $n$ ideas; rather, it contains a multitude of notions and rankings of those notions for task performance. (...) Thus, the action of crossover with previus reproduction speculates on new ideas constructed form high-performance building blockis (notions) of past trials. (...) Exchanging of notions to form new ideas is appealing intuitively, if we think in termos of the process of \textit{innovation}
+	}
+	{\citep[pg.13]{goldberg_genetic_1989}}
+	{(tradução nossa).}
+
+\subsection{Mutação}
+\label{subsec:mutacao}
+
+Após a aplicação dos operadores apresentados, ainda é necessário aplicar um último operador, o de mutação\footnote{\label{rodape:aplicacao_operador_mutacao}. O operador de mutação não precisa, necessariamente, ser aplicado na última parte do processo. Isso irá variar conforme as estratégias de construção do AG.}. Os operadores de reprodução e cruzamento mantêm as características, informação genética, dos indivíduos mais aptos, porém essa aptidão é relacionada exclusivamente à geração corrente. Dessa forma, o AG pode convergir para uma solução mais rápido que o desejado e perder genes importantes ao longo do processo (genes que estão localizados em locus específicos em cada indivíduo). Portanto, o operador de mutação é uma garantia secundária de que haja diversidade nas populações que serão geradas ao longo das gerações, permitindo que o AG procure por soluções mais robustas. Ou seja, através da paisagem de aptidão, o algoritmo irá buscar de forma mais ampla pelo maior pico possível (ótimo global), diminuindo as chances de apresentar como solução picos menores (ótimos locais).
+
+Em relação ao processo em si, a mutação é tão simples quanto a reprodução e o cruzamento. Utilizando novamente a roleta, será escolhido aleatoriamente, levando em consideração uma taxa, qual indivíduo sofrerá ou não uma mutação. Iremos nos aprofundar nesse ponto futuramente, mas, a título de exemplo, vamos utilizar uma taxa de mutação de 1\%. Será realizado o giro da roleta para cada um dos indivíduos com o objetivo de selecionar qual ou quais sofrerão uma mutação. Supondo-se que o indivíduo 2 seja sorteado, temos:
+
+ \figura
+	{Seleção Aleatória de um Indivíduo para Mutação}
+	{.8}
+	{imagens/RoletaMutacao.png}
+	{RoletaMutacao}
+	{Elaborado pelo autor.}
+
+Após a seleção dos indivíduos que sofreram a mutação, será definido, também de forma aleatória, em qual gene essa mutação ocorrerá. No caso do indivíduo 2, iremos supor que o gene no locus 2 foi o selecionado:
+
+\figura
+	{Mutação do Indivíduo Selecionado para Mutação}
+	{.8}
+	{imagens/RoletaMutacaoGene.png}
+	{RoletaMutacaoGene}
+	{Elaborado pelo autor.}
+
+Como podemos observar no \autoref{tab:ValoresAptidaoIndividuosPopulacaoSegundaGeracao}, através dos processos de reprodução, cruzamento e mutação é gerada uma nova população, com indivíduos contendo novas características, onde a segunda geração melhorou em relação à primeira, vide o valor total de aptidão de 1530 em comparação aos 1170 da primeira geração, o que a torna uma solução incrementalmente melhor, sendo o indivíduo 1 o que possui as características que mais auxiliarão na resolução do problema da Caixa Preta.
+
+\tabela
+	{Valores de Aptidão dos Indivíduos da População Inicial e População na Geração Seguinte}
+	{%
+		\begin{tabular}{c|c|c|c|c|c|c|c} % Construção Tabela 1
+			\cline{2-7}
+			\multirow{7}{0.5cm}{\rotatebox{90}{População 1}}
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm}| }{Índice} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm}| }{Indivíduo} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm}| }{Valor de Aptidão} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm}| }{Valor de Aptidão Acumulado} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm}| }{Participação em Relação à População}
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm}| }{Participação Acumulada}
+			& \\ 
+			\cline{2-7} & 1 & 11000 & 576 & 576 & 49,2\% & 49,2\%  \\ 
+			\cline{2-7} & 2 & 10011 & 361 & 937 & 30,9\% & 80,1\%  \\ 
+			\cline{2-7} & 3 & 01101 & 169 & 1106 & 14,4\% & 94,5\%  \\ 
+			\cline{2-7} & 4 & 01000 & 64 & 1170 &  5,5\% & 100\%  \\ 
+			\cline{2-7} & Total & & 1170 & & 100\% & \\
+			\cline{2-7} 
+		\end{tabular}
+		\begin{tabular}{cccccccc} % Construção Tabela em branco entre as duas tabelas com conteúdo
+		\end{tabular}
+		\begin{tabular}{c|c|c|c|c|c|c|c} % Construção Tabela 2
+			\cline{2-7}
+			\multirow{7}{0.5cm}{\rotatebox{90}{População 2}}
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm}| }{Índice} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm}| }{Indivíduo} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm}| }{Valor de Aptidão} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm}| }{Valor de Aptidão Acumulado} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm}| }{Participação em Relação à População}
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm}| }{Participação Acumulada}
+			& \\ 
+			\cline{2-7} & 1 & 11011 & 729 & 729 & 47,6\% & 47,6\%  \\ 
+			\cline{2-7} & 2 & 11000 & 576 & 1305 & 37,6\% & 85,3\%  \\ 
+			\cline{2-7} & 3 & 01100 & 144 & 1449 & 9,4\% & 94,7\%  \\ 
+			\cline{2-7} & 4 & 01001 & 81 & 1530 &  5,3\% & 100\%  \\ 
+			\cline{2-7} & Total & & 1530 & & 100\% & \\
+			\cline{2-7} 
+		\end{tabular}
+	}
+	{ValoresAptidaoIndividuosPopulacaoSegundaGeracao}
+	{Elaborado pelo autor.}
+
+Portanto, após apresentados todos os elementos da composição de um AG, assim como seus processos e operadores, fica mais claro como o algoritmo trabalhada para apresentar uma possível solução de um determinado problema. Claro, no exemplo da Caixa Preta, o indivíduo que apresentará as características que o definem como o mais apto, será o que contiver os genes $11111$, porém, não sabemos qual será a geração em que esse indivíduo, ou solução, será criado, assim como não foram consideradas restrições para aplicação do AG, assunto que será tratado no capítulo seguinte.

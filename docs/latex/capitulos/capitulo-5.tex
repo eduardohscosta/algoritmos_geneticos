@@ -1,0 +1,235 @@
+\chapter{Exemplos de Aplicações de Algoritmos Genéticos}
+
+Neste capítulo, busca-se demonstrar a matemática, assim como sua representação programática, por trás de um AG para a resolução de um problema de otimização, levando em consideração os elementos apresentados no \autoref{chap:altoritmos_geneticos}. Para isso, utilizar-se-á uma adaptação do exemplo da Caixa Preta do livro \textit{Genetic Algorithms in Search, Optimization and Machine Learning}, de David E. Goldberg \citeyearpar{goldberg_genetic_1989}, bem como os processos realizados pelo AG serão construídos em Python, possibilitando maior entendimento prático através de exemplos computacionais em uma das linguagens de programação mais populares da atualidade\footnote{Segundo dados divulgados pelo site TIOBE \citet{noauthor_index_nodate}} (código disponibilizado no \autoref{pythoncode:ConstrucaoAlgoritmoGenetico}). Ademais, foi disponibilizado no \autoref{appx:TerminologiaNaturalComputacional} uma tabela sumarizando os principais termos e conceitos que serão demonstrados no presente capítulo contendo os termos dos sistemas naturais e seus equivalentes nos sistemas artificiais.
+
+\section{Definição do Problema}
+
+Dada uma Caixa Preta \footnote{Ibid, p. \pageref{rodape:problema_caixa_preta}.} com 5 interruptores, onde cada interruptor possui um sinal de entrada 0 ou 1 (desligado ou ligado) e um único sinal de saída como resultado (recompensa) de uma configuração específica, será aplicado um AG para encontrar qual é a configuração que resultará no maior valor de recompensa, considerando o problema de maximização representado pela função
+
+\begin{center}
+	$f(x) = x^2$,
+\end{center}
+
+\noindent onde $x$ pode assumir qualquer inteiro no intervalo $\left[0, 31\right]$, função representada na \autoref{fig:GraficoFuncaoQuadraticaDeX}.
+
+\figura
+	{Gráfico da Função $\lowercase{f}(\lowercase{x}) = \lowercase{x}^2$}
+	{1}
+	{imagens/GraficoFuncaoQuadraticaDeX.png}
+	{GraficoFuncaoQuadraticaDeX}
+	{adaptado de \citet[pg.8]{goldberg_genetic_1989}}
+	
+\section{Construção da População Inicial}
+
+O AG é, inicialmente, agnóstico em relação a maioria dos parâmetros que irá utilizar ao longo do processo de um problema de otimização. Como explicado por \citet[pg.8]{goldberg_genetic_1989}, não há a necessidade de trabalhar diretamente com o conjunto de parâmetros de entrada, como outros algoritmos de otimização podem demandar, sendo necessário apenas codificar os valores de entrada em valores binários.
+
+Como visto anteriormente (ver \autoref{sec:algoritmos_e_linguagem_de_maquina}), o primeiro passo é codificar os parâmetros de entrada do algoritmo, o que será realizado através de um alfabeto binário representado por $V = \left\{0,1\right\}$. Assim, havendo 5 parâmetros de entrada (interruptores com sinal de desligado ou ligado), é possível construir uma representação através de um vetor, ou cadeia de caracteres, de 5 dígitos, que vai de $00000$ (inteiro $0$) a $11111$ (inteiro $31$). Esse vetor pode ser expressado como
+
+\begin{center}
+	$A_i = a_1a_2a_3a_4a_5 ... a_n$, \\
+	FONTE: adaptado de \citet[pg.25]{goldberg_genetic_1989}
+\end{center}
+
+\noindent onde a notação $A$ representa um vetor (indivíduo) e $a$ representa uma característica específica (gene), subscrita por seu locus, contendo o alelo com valor $0$ ou $1$. As características não precisam, necessariamente, estarem ordenadas. Para ganho de desempenho, por exemplo, podem ser construídos vetores onde as características estejam fora de ordem em relação às suas posições originais, porém continuam com as subscrições de seus locus como, por exemplo, a variação do vetor anterior
+
+\begin{center}
+	$A'_i = a_3a_1a_5a_2a_4 ... a_n$, \\
+	FONTE: adaptado de \citet[pg.25]{goldberg_genetic_1989}
+\end{center}
+
+\noindent sendo o apóstrofo (\textquotesingle) um símbolo de variação ou derivação de algum vetor específico.
+
+Após a decodificação dos valores de entrada, é formada uma população inicial aleatória de tamanho $n$. Será considerada uma população inicial de tamanho $n = 5$ vetores, denotada por $\textbf{A}_j, j = 1, 2, ..., n$, onde o caractere maiúsculo e em negrito $\textbf{A}$ representa uma população num dado momento $t$ (iteração ou geração). A construção randômica dessa população será realizada através do lançamento de uma moeda honesta ($p_{cara} = p_{coroa} = 50\%$) para cada característica dos 5 vetores, ou seja, 25 lançamentos. Em outras palavras, para cada coroa sorteada, é adicionado um 0 na população e, para cada cara, um 1. Assim, têm-se os seguintes resultados baseados em uma simulação:
+
+\tabelamulticolunas
+	{c|c|c|c|c|c|c|c|c|}
+	{População Inicial de Tamanho $\lowercase{n} = 5$}
+	{%
+		\cline{2-6}
+		& \multicolumn{5}{|c|}{População Inicial} \\
+		\cline{2-6}
+		& \multicolumn{5}{|c|}{$\textbf{A}_1 = 0101100111101111110001011$} \\
+		\cline{2-6}
+		& Vetor $A_{11}$ & Vetor $A_{21}$ & Vetor $A_{31}$ & Vetor $A_{41}$ & Vetor $A_{51}$ \\
+		\cline{2-6}
+		& $01011$ & $00111$ & $10111$ & $11100$ & $01011$ \\
+		\cline{2-6}
+	}
+	{GeracaoAleatoriaPopulacaoInicial}
+	{Elaborado pelo autor.}
+
+\section{Cálculo dos Valores de Aptidão}
+
+Com a população inicial construída, é necessário decodificar os valores binários de cada vetor, o que pode ser feito através da fórmula
+
+\begin{equation}
+	{a_{ij}}^{l-1-i},
+\end{equation}
+
+\noindent onde $l$ é o tamanho do vetor e $a$ é o valor do alelo no locus $i$ da geração $j$.
+
+Após a decodificação de cada valor binário, é feita a soma de todos os novos valores do vetor para, posteriormente, aplicar a função objetivo e ordenar os vetores conforme seus valores de aptidão (resultados apresentados na \autoref{tab:CalculoValoresAptidaoPopulacaoInicial}). Portanto, para o cálculo do valor total do vetor decodificado, aplica-se:
+
+\begin{equation}
+	x_n = \sum^{n}_{ij=1}{{a_{ij}}^{l-1-i}}
+\end{equation}
+
+\tabelamulticolunas
+	{ccccccc}
+	{Valores de Aptidão dos Vetores da População Inicial}
+	{%
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Nome Vetor} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Vetor} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.8cm} }{Vetor com Alelos Decodificados} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm} }{Valor de $x$}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm} }{Valor de Aptidão ($f(x) = {x_{ij}}^2$)}
+		& \\ \cline{2-7}
+		& $A_4$ & $11100$ & $\left[16,8,4,0,0\right]$ & 28 & 784 \\
+		& $A_3$ & $10111$ & $\left[16,0,4,2,1\right]$ & 23 & 529 \\ 
+		& $A_1$ & $01011$ & $\left[0,8,0,2,1\right]$ & 11 & 121 \\ 
+		& $A_5$ & $01011$ & $\left[0,8,0,2,1\right]$ & 11 & 121 \\ 
+		& $A_2$ & $00111$ & $\left[0,0,4,2,1\right]$ & 7 & 49 \\ 
+		\cline{2-7}
+		& & & Mínimo & 7 & 49 \\
+		& & & Média & 16 & 320,8 \\
+		& & & Soma & 80 & 1604 \\
+		& & & Máximo & 28 & 784 \\
+	}
+	{CalculoValoresAptidaoPopulacaoInicial}
+	{Elaborado pelo autor.}
+
+\section{Operadores de Reprodução, Cruzamento e Mutação}
+
+Calculados os valores de aptidão, o passo seguinte será criar uma nova geração de indivíduos através da aplicação dos operadores de reprodução, cruzamento e mutação.
+
+\subsection{Reprodução}
+
+Como visto na \autoref{subsec:reproducao_ou_selecao}, a reprodução é feita de forma aleatória levando em consideração uma probabilidade de seleção. Há diversas formas de \enquote{sortear} os vetores que serão selecionadas para o envio ao reservatório de acasalamento. Para este exemplo, a taxa de reprodução da população será de 100\%, ou seja, 5 vetores reproduzidos, e será aplicado o método da roleta para sorteio dos indivíduos que serão selecionados para o reservatório. A probabilidade de reprodução de cada indivíduo será igual ao peso do seu valor de aptidão em relação à população, assim como será calculada a probabilidade de seleção esperada como métrica de comparação, sendo a probabilidade calculada por
+
+\begin{equation}
+	p_{s}(x_{ij}) = \frac{f(x_{ij})}{\sum^{n}_{ij=1}{f(x_{ij})}}
+\end{equation}
+
+\noindent e a probabilidade esperada por
+
+\begin{equation}
+	E_{s}(x_{ij}) = \frac{f(x_{ij})}{{\overline{f}(x_{ij})}}
+\end{equation}
+
+Como é possível observar na \autoref{tab:CalculoOperadorReproducao}, a simulação através do método da roleta resultou em 3 reproduções do Vetor $A_4$, 1 reprodução dos Vetores $A_3$ e $A_5$ nenhuma reprodução de $A_1$ e $A_2$. O resultado foi próximo ao esperado, com um pequeno desvio no Vetor $A_3$, que estava mais próxima de 2 reproduções do que uma, e no Vetor $A_4$, que estava mais próxima de 2 reproduções do que as 3 resultantes. Contudo, pode-se observar que os resultados seguiram as ideias apresentadas até o momento, onde os indivíduos que possuem maior valor de aptidão em relação ao ambiente, têm uma tendência a serem selecionados para reprodução mais vezes, assim como os que possuem valores baixos de aptidão têm chances de serem selecionados poucas vezes ou não serem selecionados, o que significa a morte destes indivíduos.
+
+\tabelamulticolunas
+	{ccccccccc}
+	{Resultados Após a Reprodução dos Vetores da População Inicial}
+	{%
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1cm} }{Nome Vetor} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Vetor} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Valor de $x$}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.3cm} }{Valor de Aptidão ($f(x) = {x_i}^2$)}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.3cm} }{Probabilidade de Reprodução}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2cm} }{Nº Esperado de Seleções}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2cm} }{Nº de Seleções (Roleta)}
+		& \\ \cline{2-8}
+		& $A_4$ & $11100$ & 28 & 784 & 48,9\% & 2,44 & 3 \\
+		& $A_3$ & $10111$ & 23 & 529 & 33\% & 1,65 & 1 \\ 
+		& $A_1$ & $01011$ &  11 & 121 & 7,5\% & 0,38 & 0 \\ 
+		& $A_5$ & $01011$ & 11 &  121 & 7,5\% & 0,38 & 1 \\ 
+		& $A_2$ & $00111$ & 7 & 49 & 3,1\% & 0,15 & 0 \\ 
+		\cline{2-8}
+		& ~ & Mínimo & 7 & 49 & 0,7\% & 0,15 & 0 \\
+		& ~ & Média & 16 & 320,88 & 20\% & 1,00 & 1,00 \\
+		& ~ & Soma & 80 & 1604 & 100\% & 5,00 & 5,00 \\
+		& ~ & Máximo & 28 & 784 & 36,9\% & 2,44 & 3,00 \\
+	}
+	{CalculoOperadorReproducao}
+	{Elaborado pelo autor.}
+
+\subsection{Cruzamento}
+
+O passo seguinte, é a aplicação do operador de cruzamento entre os indivíduos que foram copiados para o reservatório de acasalamento. Este processo será feito em 3 partes, sendo elas: a formação aleatória de pares; a escolha aleatória dos pontos de cruzamento; e, por último, o cruzamento entre os pares e a construção das novos vetores.
+
+\subsubsection{Formação dos pares}
+
+Como foram replicados 5 vetores para o reservatório de acasalamento, se for seguida uma premissa de pares exclusivos, um dos vetores não encontrará um par, logo, não será capaz de efetivamente criar um descendente. Há várias estratégias que podem ser seguidas para lidar com esse ponto. Em relação à população construída no exemplo, será considerada a premissa de que todos os indivíduos façam parte de, ao menos, um par. Ou seja, haverá pelo menos um indivíduo que fará par com dois outros indivíduos da população. 
+
+Para a formação dos pares, será sorteado um vetor em seguida do outro, sendo que o último vetor selecionado formará par com o selecionado anteriormente. Estes, vão sendo retirados como opções no sorteio à medida que forem sendo escolhidos. No caso do último vetor, que ficaria sem par nesse processo, será realizado um novo sorteio para seleção de um dos 4 vetores já selecionados, resultando, assim, na formação de 3 pares para cruzamento. A probabilidade de seleção pode ser representada pela fórmula recursiva
+
+\textcolor{red}{
+	\begin{equation}
+		p_{c}(x_{n}) = {
+			\begin{cases}
+				1 &\text{se $n-1 = 1$} \\
+				\frac{1}{n-1} & \text{se $1 < n \leq n-1$}
+			\end{cases}
+		}
+	\end{equation}
+}
+
+\subsubsection{Escolha do ponto de cruzamento}
+
+Com a formação dos pares para cruzamento, será sorteado em qual ponto do vetor ocorrerá a troca de informações. Como ilustrado por \citet[p.12]{goldberg_genetic_1989}, este processo é bastante simples: escolhida uma posição $k$ de forma aleatória, os vetores pares trocarão todas as informações da posição $k + 1$ a $l$. Cada posição $k$, é localizada entre os valores binários e representada por um inteiro no intervalo $\left[1, l - 1\right]$, com probabilidade de escolha aleatória do ponto de cruzamento definida por
+
+\begin{equation}
+	p_{k}[x_{1}, x_{2}] = \frac{1}{{l - 1}}
+\end{equation}
+
+\subsubsection{Formação dos novos vetores}
+
+Por último, definido o ponto de cruzamento, os vetores trocam informações entre si, formando vetores filhos. Em outras palavras, utilizando como exemplo os Vetores $A_4 = 11100$ e $A_3 = 10111$, supondo um valor sorteado de $k = 2$ no intervalo $\left[1, 4\right]$ , todos os valores binários do locus 3 ao 5 serão trocados entre os dois vetores que formam o par, resultando nos vetores $A'_4 = 11111$ e $A'_3 = 10100$, que farão parte da geração seguinte. Os resultados da aplicação do operador de cruzamento nos indivíduos enviados para o reservatório de cruzamento são apresentados na \autoref{tab:FormacaoParesSorteioPontoCruzamento}.
+
+Como é possível observar, utilizando a premissa de que todos os indivíduos fizessem parte de ao menos um par, o Vetor $A_1$ foi sorteado como par do Vetor $A_0$ e do Vetor $A_4$, Par 2 e Par 3 respectivamente. Para o Par 1, foi selecionado o ponto de cruzamento $k = 3$ localizado entre o locus 3 e 4 e para os Pares 2 e 3, foi selecionado o ponto $k = 2$, entre os locus 2 e 3. Na \autoref{tab:VetoresAposAplicacaoOperadorCruzamento}, é possível observar os vetores após o cruzamento entre os pares.
+
+\tabelamulticolunas
+	{ccccccc}
+	{Formação dos Pares e Sorteio do Ponto de Cruzamento}
+	{
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Id Par} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2cm} }{Id Vetores} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.8cm} }{Vetores} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm} }{Ponto de Cruzamento Sorteado}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{3cm} }{Vetores com Ponto de Cruzamento}
+		& \\ \cline{2-7}
+		& Par 1 & $\left[A_2, A_3\right]$ & $\left[11100, 10111\right]$ & 3 & $\left[1.1.1|0.0, 1.0.1|1.1\right]$ \\
+		& Par 2 & $\left[A_1, A_0\right]$ & $\left[11100, 11100\right]$ & 2 & $\left[1.1|1.0.0, 1.1|1.0.0\right]$ \\ 
+		& Par 3 & $\left[A_4, A_1\right]$ & $\left[01011, 11100\right]$ & 2 & $\left[0.1|0.1.1, 1.1|1.0.0\right]$ \\
+		\cline{2-7}
+	}
+	{FormacaoParesSorteioPontoCruzamento}
+	{Elaborado pelo autor.}
+
+\tabelamulticolunas
+	{ccccccc}
+	{Vetores Após Aplicação do Operador de Cruzamento}
+	{%
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Id Par} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2cm} }{Id Vetores Pais} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.8cm} }{Vetores Pais} 
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{2.5cm} }{Id Vetor Filho (Após Cruzamento))}
+		& \multicolumn{1}{ >{\centering\arraybackslash}m{3cm} }{Vetor Filho (Após Cruzamento)}
+		& \\ \cline{2-7}
+		& Par 1 & $\left[A_2, A_3\right]$ & $\left[11100, 10111\right]$ & $A'_1$ & $11111$\\
+		& Par 1 & $\left[A_2, A_3\right]$ & $\left[11100, 10111\right]$ & $A'_2$ & $10100$ \\ 
+		& Par 2 & $\left[A_1, A_0\right]$ & $\left[11100, 11100\right]$ & $A'_3$ & $11100$ \\
+		& Par 2 & $\left[A_1, A_0\right]$ & $\left[11100, 11100\right]$ & $A'_4$ & $11100$ \\
+		& Par 3 & $\left[A_4, A_1\right]$ & $\left[01011, 11100\right]$ & $A'_5$ & $01100$ \\ 
+		& Par 3 & $\left[A_4, A_1\right]$ & $\left[01011, 11100\right]$ & $A'_6$ & $11011$ \\
+		\cline{2-7}
+	}
+	{VetoresAposAplicacaoOperadorCruzamento}
+	{Elaborado pelo autor.}
+
+\subsection{Mutação}
+
+O operador final a ser aplicado, é o de mutação\footnote{Ibid, p. \pageref{rodape:aplicacao_operador_mutacao}.}. Como apresentado na \autoref{subsec:mutacao}, a mutação é um recurso secundário para evitar que o algoritmo retorne picos locais, ao invés do pico global, como resultado da busca. A taxa de mutação é aplicada bit a bit, o que, em outras palavras, significa que cada elemento da característica de um indivíduo possui uma probabilidade bem pequena de mudança devido à pressão do ambiente. Para o presente exemplo, será considerada a probabilidade de mutação apresentada por \citet[pg.25]{goldberg_genetic_1989} de 0,1\%, ou:
+
+\begin{equation}
+	p_{m}(a_{ij}) = 0,001
+\end{equation}
+
+\noindent e o número esperado de bits que sofrerão mutação por
+
+\begin{equation}
+	E_{m}(a_{ij}) = n \cdot l \cdot p_{m}(a_{ij})
+\end{equation}
+
+Esperava-se que 0.025 ($5 \cdot 5 \cdot 0,001$) bits sofressem mutação, ou seja, nenhum. Após a aplicação do operador de mutação nos dados simulados, como esperado, nenhum dos 30 bits sofreu mutação.

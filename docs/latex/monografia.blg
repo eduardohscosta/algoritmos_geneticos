@@ -1,0 +1,104 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: monografia.aux
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+The style file: apa.bst
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+Database file #1: auxiliar/referencias.bib
+Repeated entry---line 10277 of file auxiliar/referencias.bib
+ : @book{cormen_introduction_2009
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10299 of file auxiliar/referencias.bib
+ : @book{fedeli_introducao_2009
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10317 of file auxiliar/referencias.bib
+ : @book{langdon_foundations_2002
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10347 of file auxiliar/referencias.bib
+ : @article{gorn_american_1963
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10577 of file auxiliar/referencias.bib
+ : @book{rechenberg_cybernetic_1965
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10639 of file auxiliar/referencias.bib
+ : @book{rechenberg_cybernetic_1965
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10657 of file auxiliar/referencias.bib
+ : @article{cavicchio_adaptive_1970
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10679 of file auxiliar/referencias.bib
+ : @collection{university_of_michigan_artificial_1971
+ :                                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10707 of file auxiliar/referencias.bib
+ : @book{holland_adaptation_1975
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10735 of file auxiliar/referencias.bib
+ : @article{jong_analysis_1975
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in noauthor_editorial_1993
+Warning--to sort, need author or key in noauthor_index_nodate
+Warning--empty year in noauthor_index_nodate
+Warning--empty author in noauthor_editorial_1993
+Warning--empty journal in bremermann_optimization_1962
+Warning--empty year in search_evolution_biophysics_1965
+Warning--empty journal in search_evolution_biophysics_1965
+Warning--empty journal in cavicchio_adaptive_1970
+Warning--empty booktitle in Fogel1966ArtificialIT
+Warning--empty year in holland_1967
+Warning--empty journal in holland_1967
+Warning--can't use both author and editor fields in university_of_michigan_artificial_1971
+Warning--empty publisher in university_of_michigan_artificial_1971
+Warning--empty journal in jong_analysis_1975
+Warning--can't use both author and editor fields in langdon_foundations_2002
+You've used 26 entries,
+            1940 wiz_defined-function locations,
+            621 strings with 7533 characters,
+and the built_in function-call counts, 8743 in all, are:
+= -- 837
+> -- 297
+< -- 18
++ -- 100
+- -- 94
+* -- 719
+:= -- 1530
+add.period$ -- 80
+call.type$ -- 26
+change.case$ -- 169
+chr.to.int$ -- 26
+cite$ -- 43
+duplicate$ -- 381
+empty$ -- 635
+format.name$ -- 130
+if$ -- 1704
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 37
+newline$ -- 131
+num.names$ -- 72
+pop$ -- 186
+preamble$ -- 1
+purify$ -- 177
+quote$ -- 0
+skip$ -- 283
+stack$ -- 0
+substring$ -- 463
+swap$ -- 69
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 15
+while$ -- 59
+width$ -- 0
+write$ -- 326
+(There were 10 error messages)
