@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.17)  18 APR 2022 01:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.17)  22 APR 2022 18:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -745,32 +745,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.72 	{xx de Abril de 2022}
+l.72 	{25 de Abril de 2022}
                             [2]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.78 	{XXXXXXX}
-                [1]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.87 ...mization; inovation; adaptative learning.}
+l.91 ...mization; inovation; adaptative learning.}
                                                    [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.92 \listafiguras
-                   [1] (monografia.lof
-Overfull \hbox (50.09302pt too wide) in paragraph at lines 8--8
- [][] [][][]\OT1/cmr/m/n/12 ROLETA EN-VI-E-SADA PARA APLICA[][]AO DO OPE-RA-DOR
- DE REPRODU[][]AO[][] []  
- []
-
-)
+l.96 \listafiguras
+                   [1] (monografia.lof)
 \tf@lof=\write4
 \openout4 = `monografia.lof'.
 
@@ -779,8 +767,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 \listatabelas
-                   [1] (monografia.lot
+l.101 \listatabelas
+                    [1] (monografia.lot
 Overfull \hbox (10.94882pt too wide) in paragraph at lines 10--10
  [][] [][][]\OT1/cmr/m/n/12 PARES FOR-MA-DOS NO RE-SER-VAT[]ORIO DE ACA-SA-LA-M
 ENTO COM 
@@ -807,59 +795,66 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 	}
+l.113 	}
          [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.114 \sumario
-               [1] (monografia.toc)
+l.118 \sumario
+               [1] (monografia.toc
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 ...ine {chapter}{Referências}{34}{chapter.6}
+                                                  % [1])
 \tf@toc=\write6
 \openout6 = `monografia.toc'.
 
- [1] (capitulos/capitulo-1.tex
+ [1]
+(capitulos/capitulo-1.tex
 Cap\'{\i }tulo 1.
-) (capitulos/capitulo-2.tex [2
+[2
 
-]
+]) (capitulos/capitulo-2.tex [3]
 Cap\'{\i }tulo 2.
-[3
+[4
 
-] [4] [5] [6] [7]) (capitulos/capitulo-3.tex [8]
+] [5] [6] [7] [8]) (capitulos/capitulo-3.tex [9]
 Cap\'{\i }tulo 3.
-[9
+[10
 
 ]
-<imagens/SinglePeakCalculusBasedMethod.png, id=390, 354.32375pt x 294.09875pt>
+<imagens/SinglePeakCalculusBasedMethod.png, id=423, 354.32375pt x 294.09875pt>
 File: imagens/SinglePeakCalculusBasedMethod.png Graphic file (type png)
 <use imagens/SinglePeakCalculusBasedMethod.png>
 Package pdftex.def Info: imagens/SinglePeakCalculusBasedMethod.png  used on inp
 ut line 30.
 (pdftex.def)             Requested size: 223.45274pt x 185.47615pt.
- [10] [11 <./imagens/SinglePeakCalculusBasedMethod.png (PNG copy)>] [12]
-[13]
-<imagens/2DFitnessLandscape.PNG, id=444, 656.4525pt x 316.18124pt>
+ [11] [12 <./imagens/SinglePeakCalculusBasedMethod.png (PNG copy)>]
+[13] [14]
+<imagens/2DFitnessLandscape.PNG, id=477, 656.4525pt x 316.18124pt>
 File: imagens/2DFitnessLandscape.PNG Graphic file (type png)
 <use imagens/2DFitnessLandscape.PNG>
 Package pdftex.def Info: imagens/2DFitnessLandscape.PNG  used on input line 124
 .
 (pdftex.def)             Requested size: 312.83247pt x 150.67493pt.
- [14]
-<imagens/FitnessLandscapeAdaptado.png, id=458, 825.0825pt x 481.8pt>
+ [15]
+<imagens/FitnessLandscapeAdaptado.png, id=491, 825.0825pt x 481.8pt>
 File: imagens/FitnessLandscapeAdaptado.png Graphic file (type png)
 <use imagens/FitnessLandscapeAdaptado.png>
 Package pdftex.def Info: imagens/FitnessLandscapeAdaptado.png  used on input li
 ne 133.
 (pdftex.def)             Requested size: 312.83247pt x 182.6742pt.
- [15 <./imagens/2DFitnessLandscape.PNG>] [16 <./imagens/FitnessLandscapeAdaptad
+ [16 <./imagens/2DFitnessLandscape.PNG>] [17 <./imagens/FitnessLandscapeAdaptad
 o.png>]
-<imagens/RoletaReproducao.png, id=481, 365.365pt x 304.13625pt>
+<imagens/RoletaReproducao.png, id=515, 365.365pt x 304.13625pt>
 File: imagens/RoletaReproducao.png Graphic file (type png)
 <use imagens/RoletaReproducao.png>
 Package pdftex.def Info: imagens/RoletaReproducao.png  used on input line 174.
 (pdftex.def)             Requested size: 268.14603pt x 223.21956pt.
- [17 <./imagens/RoletaReproducao.png>]
+ [18 <./imagens/RoletaReproducao.png>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
 98.
 
@@ -868,19 +863,19 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 198.
- [18] [19]
-<imagens/RoletaMutacao.png, id=514, 904.88063pt x 295.85532pt>
+ [19] [20]
+<imagens/RoletaMutacao.png, id=547, 904.88063pt x 295.85532pt>
 File: imagens/RoletaMutacao.png Graphic file (type png)
 <use imagens/RoletaMutacao.png>
 Package pdftex.def Info: imagens/RoletaMutacao.png  used on input line 255.
 (pdftex.def)             Requested size: 357.52576pt x 116.8909pt.
-<imagens/RoletaMutacaoGene.png, id=515, 722.7pt x 439.6425pt>
+<imagens/RoletaMutacaoGene.png, id=548, 722.7pt x 439.6425pt>
 File: imagens/RoletaMutacaoGene.png Graphic file (type png)
 <use imagens/RoletaMutacaoGene.png>
 Package pdftex.def Info: imagens/RoletaMutacaoGene.png  used on input line 264.
 
 (pdftex.def)             Requested size: 357.52576pt x 217.49289pt.
- [20 <./imagens/RoletaMutacao.png>]
+ [21 <./imagens/RoletaMutacao.png>]
 Overfull \hbox (2.94595pt too wide) in paragraph at lines 309--309
  []|\OT1/cmr/m/n/10.95 Indiv^^S^^Pduo| 
  []
@@ -890,19 +885,19 @@ Overfull \hbox (2.94595pt too wide) in paragraph at lines 309--309
  []|\OT1/cmr/m/n/10.95 Indiv^^S^^Pduo| 
  []
 
-[21 <./imagens/RoletaMutacaoGene.png>]) (capitulos/capitulo-4.tex [22]
+[22 <./imagens/RoletaMutacaoGene.png>]) (capitulos/capitulo-4.tex [23]
 Cap\'{\i }tulo 4.
-[23
+[24
 
-]) (capitulos/capitulo-5.tex [24]
+]) (capitulos/capitulo-5.tex [25]
 Cap\'{\i }tulo 5.
-<imagens/GraficoFuncaoQuadraticaDeX.png, id=559, 1084.05pt x 433.62pt>
+<imagens/GraficoFuncaoQuadraticaDeX.png, id=593, 1084.05pt x 433.62pt>
 File: imagens/GraficoFuncaoQuadraticaDeX.png Graphic file (type png)
 <use imagens/GraficoFuncaoQuadraticaDeX.png>
 Package pdftex.def Info: imagens/GraficoFuncaoQuadraticaDeX.png  used on input 
 line 20.
 (pdftex.def)             Requested size: 446.9055pt x 178.76459pt.
-[25
+[26
 
 ]
 Overfull \hbox (3.95926pt too wide) in paragraph at lines 42--43
@@ -910,13 +905,13 @@ Overfull \hbox (3.95926pt too wide) in paragraph at lines 42--43
 e for-mada uma po-pula^^Xc~ao ini-cial aleat^^Soria
  []
 
-[26 <./imagens/GraficoFuncaoQuadraticaDeX.png>] [27]
+[27 <./imagens/GraficoFuncaoQuadraticaDeX.png>] [28]
 Overfull \hbox (29.86426pt too wide) in paragraph at lines 101--101
 |[]\OT1/cmr/bx/n/17.28 Operadores de Re-produ^^Xc~ao, Cru-za-mento e Muta^^Xc~a
 o| 
  []
 
-[28]
+[29]
 Overfull \hbox (1.0495pt too wide) in paragraph at lines 145--145
  []|\OT1/cmr/m/n/10.95 Probabilidade 
  []
@@ -926,44 +921,48 @@ Overfull \hbox (7.31773pt too wide) in paragraph at lines 145--145
  [][] 
  []
 
-[29] [30]
+[30] [31]
 Overfull \hbox (4.034pt too wide) in paragraph at lines 223--224
 []\OT1/cmr/m/n/12 O ope-ra-dor fi-nal a ser apli-cado, ^^Se o de muta^^Xc~ao[][
 ][][][]. Como apre-sen-tado na [][]Subse^^Xc~ao 3.3.7[][][],
  []
 
-) (monografia.bbl [31] [32] [33
+) (capitulos/capitulo-6.tex [32] [33]
+Cap\'{\i }tulo 6.
+) (monografia.bbl [34
 
-]) [34] [35
+] [35
+
+]) [36] [37
 
 ]
 Apêndice A.
 
-Overfull \hbox (4.18422pt too wide) in paragraph at lines 159--159
+Overfull \hbox (4.18422pt too wide) in paragraph at lines 164--164
  []|\OT1/cmr/m/n/12 Caracter^^S^^Pstica| 
  []
 
 
-Overfull \hbox (0.77585pt too wide) in paragraph at lines 159--159
+Overfull \hbox (0.77585pt too wide) in paragraph at lines 164--164
  []|\OT1/cmr/m/it/12 Reproduction| 
  []
 
 
-Overfull \hbox (27.6465pt too wide) in alignment at lines 159--159
+Overfull \hbox (27.6465pt too wide) in alignment at lines 164--164
  [] [] [] [] 
  []
 
-[36
+[38
 
-] [37]
+] [39]
 Apêndice B.
 (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 163.
+nput line 168.
 
-(auxiliar/monolito_algoritmo_genetico.py [38
+(auxiliar/monolito_algoritmo_genetico.py [40
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
@@ -976,8 +975,8 @@ File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 106.
- [39] [40] [41] [42] [43]
-[44] [45] [46] [47] [48]
+ [41] [42] [43] [44] [45]
+[46] [47] [48] [49] [50]
 Overfull \hbox (9.3606pt too wide) in paragraph at lines 663--664
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
@@ -1004,18 +1003,18 @@ Overfull \hbox (40.08685pt too wide) in paragraph at lines 689--690
 ][][][] 
  []
 
-) [49] (monografia.aux)
+) [51] (monografia.aux)
 Package rerunfilecheck Info: File `monografia.out' has not changed.
-(rerunfilecheck)             Checksum: 6813DACCAF99ABBB74EEBE9A52273085;5885.
+(rerunfilecheck)             Checksum: F9BEF8FC86B8C5DD791897B9B47CA33D;7370.
  ) 
 Here is how much of TeX's memory you used:
- 18581 strings out of 478552
- 293127 string characters out of 2851735
- 934629 words of memory out of 3000000
- 35618 multiletter control sequences out of 15000+600000
+ 18602 strings out of 478552
+ 293553 string characters out of 2851735
+ 934569 words of memory out of 3000000
+ 35628 multiletter control sequences out of 15000+600000
  483411 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,13n,82p,1574b,2217s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 74i,13n,82p,1574b,2215s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm0900.pk> <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\tcrm1095.pk> <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/
@@ -1035,9 +1034,9 @@ nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.
 pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on monografia.pdf (57 pages, 1002788 bytes).
+Output written on monografia.pdf (59 pages, 1014869 bytes).
 PDF statistics:
- 1669 PDF objects out of 1728 (max. 8388607)
- 861 named destinations out of 1000 (max. 500000)
- 276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1711 PDF objects out of 1728 (max. 8388607)
+ 869 named destinations out of 1000 (max. 500000)
+ 324 words of extra memory for PDF output out of 10000 (max. 10000000)
 
