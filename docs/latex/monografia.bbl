@@ -13,6 +13,11 @@ Back, T., Fogel, D.~B., and Michalewicz, Z. (1997).
 \newblock {\em Handbook of {Evolutionary} {Computation}}.
 \newblock IOP Publishing Ltd., GBR, 1st edition.
 
+\bibitem[\protect\astroncite{Blanchard}{2020}]{blanchard_macroeconomics_2020}
+Blanchard, O. (2020).
+\newblock {\em Macroeconomics (8th Edition)}.
+\newblock Pearson, 8 edition.
+
 \bibitem[\protect\astroncite{Bremermann}{1962}]{bremermann_optimization_1962}
 Bremermann, H.~J. (1962).
 \newblock Optimization through evolution and recombination.
@@ -114,6 +119,22 @@ Langdon, W.~B. and Poli, R. (2002).
 \newblock {\em Foundations of {Genetic} {Programming}}.
 \newblock Springer, Berlin, Heidelberg.
 
+\bibitem[\protect\astroncite{Lopes and Vasconcellos}{2015}]{vasconcellos2015}
+Lopes, L.~M. and Vasconcellos, M. A. S.~d. (2015).
+\newblock {\em Manual de macroeconomia: nível básico e nível
+  intermediário}.
+\newblock Atlas.
+
+\bibitem[\protect\astroncite{Mankiw}{1989}]{mankiw1989}
+Mankiw, N.~G. (1989).
+\newblock Real business cycles: A new keynesian perspective.
+\newblock {\em Journal of Economic Perspectives}, 3(3):79--90.
+
+\bibitem[\protect\astroncite{Mayer}{1994}]{mayer_1994}
+Mayer, T. (1994).
+\newblock {Why is there so much disagreement among economists?}
+\newblock {\em Journal of Economic Methodology}, 1(1):1--14.
+
 \bibitem[\protect\astroncite{Mitchell}{1998}]{MelanieMitchell98}
 Mitchell, M. (1998).
 \newblock {\em An Introduction to Genetic Algorithms}.
@@ -131,6 +152,17 @@ Rechenberg, I., Toms, B., and Establishment, R.~A. (1965).
 \newblock {\em Cybernetic {Solution} {Path} of an {Experimental} {Problem}:}.
 \newblock Library translation / {Royal} {Aircraft} {Establishment}. Ministry of
   Aviation.
+
+\bibitem[\protect\astroncite{Smith}{1996a}]{smith2020riquezav2}
+Smith, A. (1996a).
+\newblock {\em A Riqueza das Na{\c{c}}{\~o}es - Adam Smith: Vol. II}.
+\newblock Cole{\c{c}}{\~a}o Economia Pol{\'\i}tica. Nova Cultural.
+
+\bibitem[\protect\astroncite{Smith}{1996b}]{smith1996riqueza}
+Smith, A. (1996b).
+\newblock {\em A riqueza das na{\c{c}}{\~o}es: investiga{\c{c}}{\~a}o sobre sua
+  natureza e suas causas}.
+\newblock Os Economistas. Nova Cultural.
 
 \bibitem[\protect\astroncite{Snowdon and Vane}{2005}]{snowdon_modern_2005}
 Snowdon, B. and Vane, H.~R. (2005).

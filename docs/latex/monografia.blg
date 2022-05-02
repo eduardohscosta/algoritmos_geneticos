@@ -60,45 +60,45 @@ Warning--can't use both author and editor fields in university_of_michigan_artif
 Warning--empty publisher in university_of_michigan_artificial_1971
 Warning--empty journal in jong_analysis_1975
 Warning--can't use both author and editor fields in langdon_foundations_2002
-You've used 26 entries,
+You've used 32 entries,
             1940 wiz_defined-function locations,
-            621 strings with 7533 characters,
-and the built_in function-call counts, 8743 in all, are:
-= -- 837
-> -- 297
-< -- 18
-+ -- 100
-- -- 94
-* -- 719
-:= -- 1530
-add.period$ -- 80
-call.type$ -- 26
-change.case$ -- 169
-chr.to.int$ -- 26
-cite$ -- 43
-duplicate$ -- 381
-empty$ -- 635
-format.name$ -- 130
-if$ -- 1704
-int.to.chr$ -- 1
+            649 strings with 8232 characters,
+and the built_in function-call counts, 10603 in all, are:
+= -- 1016
+> -- 345
+< -- 24
++ -- 119
+- -- 108
+* -- 864
+:= -- 1864
+add.period$ -- 100
+call.type$ -- 32
+change.case$ -- 203
+chr.to.int$ -- 31
+cite$ -- 49
+duplicate$ -- 465
+empty$ -- 782
+format.name$ -- 152
+if$ -- 2070
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 37
-newline$ -- 131
-num.names$ -- 72
-pop$ -- 186
+missing$ -- 47
+newline$ -- 161
+num.names$ -- 90
+pop$ -- 220
 preamble$ -- 1
-purify$ -- 177
+purify$ -- 214
 quote$ -- 0
-skip$ -- 283
+skip$ -- 344
 stack$ -- 0
-substring$ -- 463
-swap$ -- 69
+substring$ -- 566
+swap$ -- 81
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 160
 warning$ -- 15
-while$ -- 59
+while$ -- 73
 width$ -- 0
-write$ -- 326
+write$ -- 403
 (There were 10 error messages)
