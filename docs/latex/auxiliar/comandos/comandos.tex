@@ -123,6 +123,24 @@
     \end{center}
 }
 
+\newcommand{\figuracomnota}[6]{%
+	\begin{center}
+		\small
+		\begin{figure}[H] % Places the float at precisely the location in the LATEX code
+			\centering
+			\uppercase{\caption{\centering\uppercase{#1}}} % Define figure title
+			\includegraphics[width=#2\textwidth]{#3} % Define figure proportion and the figure path
+			%ajustado p/ a largura da imagem
+			\begin{minipage}{#2\textwidth}
+				\vspace{0mm}
+				{\centering FONTE: ~#5 \par } % Define the figure source
+				\hspace{20pt} NOTA: ~#6 \par % Define the figure extra information
+			\end{minipage}
+		\label{fig:#4}
+		\end{figure}
+	\end{center}
+}
+
 % Citação
 % ----------------------------------------------------------
 \newcommand{\citacao}[4]{%
@@ -133,7 +151,7 @@
 		\setlength{\parindent}{0em}
 		#1~#3~#4
 	\end{minipage}
-	\footnote{#2}
+	\footnote{\textit{#2}}
 	\vspace{0.5cm}
 }
 
@@ -141,6 +159,10 @@
 % ----------------------------------------------------------
 \newcommand{\citeapud}[2]{%
 	(\Citealp{#1} apud \Citealp{#2})
+}
+
+\newcommand{\citeapudyear}[2]{%
+	(\citeyear{#1} apud \Citealp{#2})
 }
 
 \renewcommand{\footnotesize}{%
