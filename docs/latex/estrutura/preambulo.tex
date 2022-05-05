@@ -33,13 +33,14 @@
 \usepackage[subfigure]{tocloft}
 \usepackage{multirow}
 \usepackage{titlesec}
-\usepackage[
-	pdftex,
-	colorlinks,
-	linkcolor=blue, 
-	citecolor=red!50!black,
-	hyperindex
-	]{hyperref} %Permite fazer hypertexto
+\usepackage{hyperref} %Permite fazer hypertexto
+\usepackage{hyperref} %Permite fazer hypertexto
+\hypersetup{colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,urlcolor=cyan,
+	citecolor=blue!90!black,
+	pdfstartview=FitH,
+	bookmarksnumbered=true}
 
 
 % Alteração da indentação dos itens do sumário
@@ -47,8 +48,6 @@
 \cftsetindents{section}{0pt}{42pt}
 \cftsetindents{subsection}{0pt}{42pt}
 \cftsetindents{subsubsection}{0pt}{42pt}
-
-\hypersetup{pdfstartview=FitH}
 
 \setcounter{secnumdepth}{3}
 
