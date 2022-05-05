@@ -68,6 +68,12 @@ Friedberg, R.~M., Dunham, B., and North, J.~H. (1959).
 \newblock A learning machine: Part ii.
 \newblock {\em IBM J. Res. Dev.}, 3:282--287.
 
+\bibitem[\protect\astroncite{Geisendorf}{2007}]{Geisendorf2007}
+Geisendorf, S. (2007).
+\newblock Are genetic algorithms a good basis for economic learning models?
+\newblock {\em University of Kassel, Institute of Economics, papers on
+  agent-based economics}.
+
 \bibitem[\protect\astroncite{Goldberg}{1989}]{goldberg_genetic_1989}
 Goldberg, V. A. P. o. H. D.~E. (1989).
 \newblock {\em Genetic {Algorithms} in {Search}, {Optimization}, and {Machine}
