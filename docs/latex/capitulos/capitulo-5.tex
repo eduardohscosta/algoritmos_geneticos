@@ -2,7 +2,8 @@
 
 Neste capítulo, busca-se demonstrar a matemática, assim como sua representação programática, por trás de um AG para a resolução de um problema de otimização, levando em consideração os elementos apresentados no \autoref{chap:altoritmos_geneticos}. Para isso, utilizar-se-á uma adaptação do exemplo da Caixa Preta do livro \textit{Genetic Algorithms in Search, Optimization and Machine Learning}, de David E. Goldberg \citeyearpar{goldberg_genetic_1989}, bem como os processos realizados pelo AG serão construídos em Python, possibilitando maior entendimento prático através de exemplos computacionais em uma das linguagens de programação mais populares da atualidade\footnote{Segundo dados divulgados pelo site TIOBE \citet{noauthor_index_nodate}} (código disponibilizado no \autoref{pythoncode:ConstrucaoAlgoritmoGenetico}). Ademais, foi disponibilizado no \autoref{appx:TerminologiaNaturalComputacional} uma tabela sumarizando os principais termos e conceitos que serão demonstrados no presente capítulo contendo os termos dos sistemas naturais e seus equivalentes nos sistemas artificiais.
 
-\section{Definição do Problema}
+\section{Problema de Valor Máximo em Uma Caixa Preta}
+\label{sec:ProblemaValorMaximoCaixaPreta}
 
 Dada uma Caixa Preta \footnote{Ibid, p. \pageref{rodape:problema_caixa_preta}.} com 5 interruptores, onde cada interruptor possui um sinal de entrada 0 ou 1 (desligado ou ligado) e um único sinal de saída como resultado (recompensa) de uma configuração específica, será aplicado um AG para encontrar qual é a configuração que resultará no maior valor de recompensa, considerando o problema de maximização representado pela função
 
