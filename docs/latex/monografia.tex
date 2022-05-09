@@ -66,8 +66,8 @@
 	{Algoritmo Genético Aplicado a Problemas na Economia}
 	{Monografia apresentada como requisito à obtenção do grau de Bacharel em Ciências Econômicas pelo Curso de Ciências Econômicas, Setor de Ciências Sociais Aplicada, Universidade Federal do Paraná:}
 	{Prof. Dr. João Basilio Pereima}
-	{Profa. Dra. Adriana Sbicca}
-	{Prof. Dr. José Guilherme Vieira}
+	{xxxx. xxxx. xxxxxxxxxxxxx}
+	{xxxx. xxxx. xxxxxxxxxxxxx}
 	{Curitiba}
 	{25 de Abril de 2022}
 
@@ -82,11 +82,11 @@
 % ---------------------------------------------------------------------------------------------------
 \resumo
 	{%
-		Em economia, embora haja algumas teorias bem estabelecidas, não há um consenso de como se analisar certos comportamentos dos agentes econômicos. Algumas linhas de pensamento se destacaram e tornaram-se a principal forma de análise e previsão de conjecturas econômicas ao redor do mundo em diferentes momentos do século XX e XXI. Paralelamente, a partir da metade do século passado, os sistemas computacionais se demonstram uma ferramenta essencial para desenvolvimento e testes de modelos. Muitos destes, por sua vez, apresentam limitações na busca por respostas e soluções de problemas econômicos complexos, seja por restrições teóricas ou computacionais. Dessa forma, a presente monografia tem o objetivo de apresentar os algoritmos genéticos como alternativa para a análise e previsão de cenários econômicos, especialmente, no que diz respeito a problemas de otimização, inovação e aprendizado adaptativo. Realizou-se uma breve apresentação da história de criação e desenvolvimento dos algoritmos genéticos, o aprofundamento em sua estrutura, aplicações em problemas econômicos e uma aplicação passo-a-passo de um algoritmo simples na linguagem Python.
+		Em Economia, embora haja algumas teorias bem estabelecidas, não há um consenso de como se analisar certos comportamentos dos agentes. Desde o desenvolvimento dos primeiros modelos econômicos simples até os modelos computacionais recentes mais complexos, os objetivos gerais são basicamente os mesmos: captar e prever tais comportamentos. Com a formalização da Econometria como área de estudo na primeira metade do século XX e o desenvolvimento dos sistemas computacionais na segunda metade do século passado, inúmeros modelos surgiram buscando alcançar os objetivos citados. Muitos, por sua vez, apresentam limitações na busca por respostas e soluções de problemas econômicos complexos, seja por restrições teóricas ou computacionais. Dessa forma, a presente monografia tem o objetivo de apresentar os Algoritmos Genéticos como uma alternativa robusta para a análise e previsão do comportamento de agentes e cenários econômicos. Para isso, realizou-se uma breve apresentação da história de criação e desenvolvimento dos algoritmos genéticos, o aprofundamento em sua estrutura, a demonstração de exemplos de aplicações em problemas econômicos e, por fim, uma aplicação passo-a-passo de um algoritmo genético simples na linguagem Python, abordando os resultados de cada um de seus operadores.
 	}
 	{algoritmo genético; otimização; inovação; aprendizado adaptativo.}
 	{%
-		In economics, there are some theories well, there is no consensus on how to accept agent patterns. Some lines of thought stood out and became the main form of analysis and prediction of conjectures around the world at different times in the 20th and 21st. At the same time, from the middle of the last century, the computer systems of the century have been essential tools for model development and testing. Many of these, in turn, present solutions to complex problems by their answers, sometimes, proposals of complex problems, that is, sometimes, proposals, for their solution, in turn, proposals, for their solution. In this way, the monograph has the objective of innovation, the purpose of presenting genetic beings as the proposal of refuge and the prediction of environments, especially, the concern and prediction of environments, it does not concern optimization problems, especially, and adaptive learning. An evolution of the history of creation and development of animals was carried out, genetic deepening, applications in problems the development of a simple step-by-step application of a simple environment in its structure.
+		In Economics, although there are some well-established theories, there is no consensus on how to analyze certain behaviors of agents. From the development of the first simple economic models to the more complex recent computer models, the general goals are basically the same: to capture and predict such behaviors. With the formalization of Econometrics as a field of study in the first half of the 20th century and the development of computer systems in the second half of the last century, numerous models emerged seeking to achieve the aforementioned objectives. Many, in turn, have limitations in the search for answers and solutions to complex economic problems, either due to theoretical or computational restrictions. Thus, this undergraduate thesis aims to present Genetic Algorithms as a robust alternative for analyzing and predicting the behavior of agents and economic scenarios. For this, a brief presentation of the history of creation and development of genetic algorithms was carried out, the deepening of its structure, the demonstration of examples of applications in economic problems and, finally, a step-by-step application of a genetic algorithm in the Python language, covering the results of each of its operators.
 	}
 	{genetic algorithm; optimization; inovation; adaptative learning.}
 
@@ -109,7 +109,8 @@
 		CE - Computação Evolucionária \\
 		PE - Programação Evolucionária \\
 		EE - Estratégias Evolutivas \\
-		PIB - Produto Interno Bruto
+		PIB - Produto Interno Bruto \\
+		H-H - Indicador Herfindahl–Hirschman
 	}
 
 % ---------------------------------------------------------------------------------------------------
@@ -130,45 +131,47 @@
 \addcontentsline{toc}{chapter}{Referências}
 \bibliography{auxiliar/referencias}
 
+% ---------------------------------------------------------------------------------------------------
+% Contrução da Estrutura dos Apêndices
+% ---------------------------------------------------------------------------------------------------
 
 \appendixpage
 \begin{appendices}
-
-\chapter{Sumário de Terminologia Natural e Terminologia Artificial}
-\label{appx:TerminologiaNaturalComputacional}
-\tabelalonga
-	{%
-		| >{\centering\arraybackslash}m{0.15\textwidth}
-		| >{\centering\arraybackslash}m{0.15\textwidth}
-		| >{\centering\arraybackslash}m{0.15\textwidth}
-		| >{\centering\arraybackslash}m{0.50\textwidth} |
+	\chapter{Sumário de Terminologia Natural e Terminologia Artificial}
+	\label{appx:TerminologiaNaturalComputacional}
+	\tabelalonga
+		{%
+			| >{\centering\arraybackslash}m{0.15\textwidth}
+			| >{\centering\arraybackslash}m{0.15\textwidth}
+			| >{\centering\arraybackslash}m{0.15\textwidth}
+			| >{\centering\arraybackslash}m{0.50\textwidth} |
+			}
+		{%	
+			Terminologia Natural &   Terminologia Artificial & Terminologia Artificial (Inglês) & Descrição Curta \\ \hline
+			Locus & Locus &   \textit{Locus} & Posição de um gene (ou característica) dentro de uma cadeia de caracteres. \\ \hline
+			Alelo & Alelo &   \textit{Alelle} & Valor do gene (ou característica), sendo 0 ou 1. \\ \hline
+			Gene & Característica &   \textit{Gene} & Característica, caractere ou algoritmo de uma cadeia de caracteres. \\ \hline
+			Bloco de construção & Bloco de Construção &   \textit{Building Block} & Subvetor de alto desempenho. Responsável por formar novos vetores. \\ \hline
+			Cromossomo ou Indivíduo & Vetor ou Cadeia de caracteres &   \textit{String} & Conjunto de características agrupadas através de um conjunto de caracteres. Cada matriz pode ser uma possível solução para um problema ou fazer parte de uma solução global. \\ \hline
+			Genótipo & Estrutura &   \textit{Structure} & Conjunto de vetores que mantém uma carga ou estrutura genética. \\ \hline
+			Fenótipo & Estrutura decodificada &   \textit{Decoded structure} & Nova carga ou estrutura genética após as alterações das características principais de uma \\ \hline
+			População & População &   \textit{Population} & Conjunto de indivíduos construídos, inicialmente, de forma aleatória, onde o AG irá realizar suas buscas. Cada geração é composta por uma população que pode ser uma possível solução para o problema de otimização. \\ \hline
+			Geração & Iteração & \textit{Iteration} & Formação de uma nova população após a aplicação dos operadores de reprodução, cruzamento e mutação. \\ \hline 
+			Reprodução ou Seleção & Operador de Reprodução & \textit{Reproduction} & Seleção dos indivíduos com maior aptidão ao ambiente. \\ \hline 
+			Cruzamento & Operador de Cruzamento & \textit{Crossover} & Troca de genes, ou características, entre os indivíduos de uma população. \\ \hline 
+			Mutação & Operador de Mutação & \textit{Mutation} & Processo aleatório de alteração de uma ou mais características de um indivíduo. \\ \hline 
+			Valor de Aptidão & Valor de Aptidão & \textit{Fitness value} & Quantificação da qualidade de um indivíduo ou sua aptidão em relação ao ambiente. \\ \hline
+			Paisagem ou Horizonte de aptidão & Paisagem de Aptidão & \textit{Fitness landscape} & Espaço pelo qual o AG faz sua busca por soluções, ou seja, diz respeito ao problema a ser resolvido. \\ \hline
+			Função de aptidão & Função objetivo & \textit{objective function} & Função contendo os parâmetros para resolução do problema. \\ \hline
 		}
-	{%	
-		Terminologia Natural &   Terminologia Artificial & Terminologia Artificial (Inglês) & Descrição Curta \\ \hline
-		Locus & Locus &   \textit{Locus} & Posição de um gene (ou característica) dentro de uma cadeia de caracteres. \\ \hline
-		Alelo & Alelo &   \textit{Alelle} & Valor do gene (ou característica), sendo 0 ou 1. \\ \hline
-		Gene & Característica &   \textit{Gene} & Característica, caractere ou algoritmo de uma cadeia de caracteres. \\ \hline
-		Bloco de construção & Bloco de Construção &   \textit{Building Block} & Subvetor de alto desempenho. Responsável por formar novos vetores. \\ \hline
-		Cromossomo ou Indivíduo & Vetor ou Cadeia de caracteres &   \textit{String} & Conjunto de características agrupadas através de um conjunto de caracteres. Cada matriz pode ser uma possível solução para um problema ou fazer parte de uma solução global. \\ \hline
-		Genótipo & Estrutura &   \textit{Structure} & Conjunto de vetores que mantém uma carga ou estrutura genética. \\ \hline
-		Fenótipo & Estrutura decodificada &   \textit{Decoded structure} & Nova carga ou estrutura genética após as alterações das características principais de uma \\ \hline
-		População & População &   \textit{Population} & Conjunto de indivíduos construídos, inicialmente, de forma aleatória, onde o AG irá realizar suas buscas. Cada geração é composta por uma população que pode ser uma possível solução para o problema de otimização. \\ \hline
-		Geração & Iteração & \textit{Iteration} & Formação de uma nova população após a aplicação dos operadores de reprodução, cruzamento e mutação. \\ \hline 
-		Reprodução ou Seleção & Operador de Reprodução & \textit{Reproduction} & Seleção dos indivíduos com maior aptidão ao ambiente. \\ \hline 
-		Cruzamento & Operador de Cruzamento & \textit{Crossover} & Troca de genes, ou características, entre os indivíduos de uma população. \\ \hline 
-		Mutação & Operador de Mutação & \textit{Mutation} & Processo aleatório de alteração de uma ou mais características de um indivíduo. \\ \hline 
-		Valor de Aptidão & Valor de Aptidão & \textit{Fitness value} & Quantificação da qualidade de um indivíduo ou sua aptidão em relação ao ambiente. \\ \hline
-		Paisagem ou Horizonte de aptidão & Paisagem de Aptidão & \textit{Fitness landscape} & Espaço pelo qual o AG faz sua busca por soluções, ou seja, diz respeito ao problema a ser resolvido. \\ \hline
-		Função de aptidão & Função objetivo & \textit{objective function} & Função contendo os parâmetros para resolução do problema. \\ \hline
-	}
-
-\chapter{Código: Exemplo de Aplicação de um AG simples em Python (\autoref{sec:ProblemaValorMaximoCaixaPreta})}
-\label{pythoncode:ConstrucaoAlgoritmoGenetico}
-
-\pythonexternal{auxiliar/monolito_algoritmo_genetico.py}
-
-\end{appendices}
-\end{document} 
+	
+	\chapter{Código: Exemplo de Aplicação de um AG simples em Python (\autoref{sec:ProblemaValorMaximoCaixaPreta})}
+	\label{pythoncode:ConstrucaoAlgoritmoGenetico}
+	
+	\pythonexternal{auxiliar/monolito_algoritmo_genetico.py}
+	
+	\end{appendices}
+\end{document}
 
 
 
