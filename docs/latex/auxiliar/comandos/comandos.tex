@@ -168,3 +168,15 @@
 \renewcommand{\footnotesize}{%
 	\fontsize{9pt}{10pt}\selectfont
 }
+
+% Equação
+% ----------------------------------------------------------
+\newcommand{\equacao}[2]{%
+	\begin{equation}
+		#1
+	\end{equation}
+	\begin{minipage}{1\textwidth}
+		\centering
+		FONTE: ~#2
+	\end{minipage}
+}
