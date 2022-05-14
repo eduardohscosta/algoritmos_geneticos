@@ -1,11 +1,11 @@
-\chapter{Exemplos de Aplicações de Algoritmos Genéticos}
+\chapter{Exemplo de Aplicação de um Algoritmo Genético Simples}
 
 Neste capítulo, busca-se demonstrar a matemática, assim como sua representação programática, por trás de um AG para a resolução de um problema de otimização, levando em consideração os elementos apresentados no \autoref{chap:altoritmos_geneticos}. Para isso, utilizar-se-á uma adaptação do exemplo da Caixa Preta do livro \textit{Genetic Algorithms in Search, Optimization and Machine Learning}, de David E. Goldberg \citeyearpar{goldberg_genetic_1989}, bem como os processos realizados pelo AG serão construídos em Python, possibilitando maior entendimento prático através de exemplos computacionais em uma das linguagens de programação mais populares da atualidade\footnote{Segundo dados divulgados pelo site TIOBE \citet{noauthor_index_nodate}} (código disponibilizado no \autoref{pythoncode:ConstrucaoAlgoritmoGenetico}). Ademais, foi disponibilizado no \autoref{appx:TerminologiaNaturalComputacional} uma tabela sumarizando os principais termos e conceitos que serão demonstrados no presente capítulo contendo os termos dos sistemas naturais e seus equivalentes nos sistemas artificiais.
 
 \section{Problema de Valor Máximo em Uma Caixa Preta}
 \label{sec:ProblemaValorMaximoCaixaPreta}
 
-Dada uma Caixa Preta \footnote{Ibid, p. \pageref{rodape:problema_caixa_preta}.} com 5 interruptores, onde cada interruptor possui um sinal de entrada 0 ou 1 (desligado ou ligado) e um único sinal de saída como resultado (recompensa) de uma configuração específica, será aplicado um AG para encontrar qual é a configuração que resultará no maior valor de recompensa, considerando o problema de maximização representado pela função
+Dada uma Caixa Preta\footnote{Ibid, p. \pageref{rodape:problema_caixa_preta}.} com 5 interruptores, onde cada interruptor possui um sinal de entrada 0 ou 1 (desligado ou ligado) e um único sinal de saída como resultado (recompensa) de uma configuração específica, será aplicado um AG para encontrar qual é a configuração que resultará no maior valor de recompensa, considerando o problema de maximização representado pela função
 
 \begin{center}
 	$f(x) = x^2$,
@@ -104,6 +104,7 @@ Após a decodificação de cada valor binário, é feita a soma de todos os novo
 Calculados os valores de aptidão, o passo seguinte será criar uma nova geração de indivíduos através da aplicação dos operadores de reprodução, cruzamento e mutação.
 
 \subsection{Reprodução}
+\label{subsec:reproducao}
 
 Como visto na \autoref{subsec:reproducao_ou_selecao}, a reprodução é feita de forma aleatória levando em consideração uma probabilidade de seleção. Há diversas formas de \enquote{sortear} os vetores que serão selecionadas para o envio ao reservatório de acasalamento. Para este exemplo, a taxa de reprodução da população será de 100\%, ou seja, 5 vetores reproduzidos, e será aplicado o método da roleta para sorteio dos indivíduos que serão selecionados para o reservatório. A probabilidade de reprodução de cada indivíduo será igual ao peso do seu valor de aptidão em relação à população, assim como será calculada a probabilidade de seleção esperada como métrica de comparação, sendo a probabilidade calculada por
 
@@ -155,16 +156,14 @@ Como foram replicados 5 vetores para o reservatório de acasalamento, se for seg
 
 Para a formação dos pares, será sorteado um vetor em seguida do outro, sendo que o último vetor selecionado formará par com o selecionado anteriormente. Estes, vão sendo retirados como opções no sorteio à medida que forem sendo escolhidos. No caso do último vetor, que ficaria sem par nesse processo, será realizado um novo sorteio para seleção de um dos 4 vetores já selecionados, resultando, assim, na formação de 3 pares para cruzamento. A probabilidade de seleção pode ser representada pela fórmula recursiva
 
-\textcolor{red}{
-	\begin{equation}
-		p_{c}(x_{n}) = {
-			\begin{cases}
-				1 &\text{se $n-1 = 1$} \\
-				\frac{1}{n-1} & \text{se $1 < n \leq n-1$}
-			\end{cases}
-		}
-	\end{equation}
-}
+\begin{equation}
+	p_{c}(x_{n}) = {
+		\begin{cases}
+			1 &\text{se $n-1 = 1$} \\
+			\frac{1}{n-1} & \text{se $1 < n \leq n-1$}
+		\end{cases}
+	}
+\end{equation}
 
 \subsubsection{Escolha do ponto de cruzamento}
 
@@ -234,3 +233,98 @@ O operador final a ser aplicado, é o de mutação\footnote{Ibid, p. \pageref{ro
 \end{equation}
 
 Esperava-se que 0.025 ($5 \cdot 5 \cdot 0,001$) bits sofressem mutação, ou seja, nenhum. Após a aplicação do operador de mutação nos dados simulados, como esperado, nenhum dos 30 bits sofreu mutação.
+
+\section{Análise dos Resultados}
+
+Como podemos observar na \autoref{tab:ValoresAptidaoPopulacoes}, a população de vetores da segunda geração apresentaram um valor de aptidão, na média, muito superior aos vetores da população inicial. Como apresentado na \autoref{subsec:reproducao}, foi utilizada a premissa de que todos os vetores fariam parte de ao menos um par, sendo que um dos vetores, neste caso, faria parte de dois pares. Com isso, temos que a população 2 aumentou sua prole em relação à população inicial e, por consequência, o valor de aptidão total da população.
+
+Os resultados da simulação de apenas uma geração, foi extremamente promissor. A população, na média, saiu de um valor de aptidão de 320,88 da população inicial para 633,67 na geração seguinte, um salto de aproximadamente 197\%. Já na primeira geração, um dos vetores alcançou o valor máximo disponível de maximização da função objetivo ($961$), apresentando o alelo $1$ em todas as posições, assim como o valor de aptidão mínimo de aptidão na população 2 ($144$) é maior do que o valor de aptidão de 3 vetores da população inicial. 
+
+\tabela
+	{Valores de Aptidão da População 1 e População 2}
+	{%
+		\begin{tabular}{ccccc} % Construção Tabela 1
+			\multirow{7}{0.5cm}{\rotatebox{90}{População 1}}
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Vetor} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm} }{Valor de $x$} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm} }{Valor de Aptidão}
+			& \\ 
+			\cline{2-4} & 01011 & 28 & 784 \\ 
+			& 00111 & 23 & 529 \\ 
+			& 10111 & 11 & 121 \\ 
+			& 10111 & 11 & 121 \\ 
+			& 01011 & 7 & 49 \\
+			\cline{2-4} & Mínimo & 7 & 49 \\
+			& Média & 16 & 320,88 \\ 
+			& Soma & 80 & 1604 \\ 
+			& Máximo & 28 & 784 \\ 
+		\end{tabular}
+		\begin{tabular}{cccccc} % Construção Tabela em branco entre as duas tabelas com conteúdo
+		\end{tabular}
+		\begin{tabular}{ccccc} % Construção Tabela 2
+			\multirow{8}{0.5cm}{\rotatebox{90}{População 2}}
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.2cm} }{Vetor} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm} }{Valor de $x$} 
+			& \multicolumn{1}{ >{\centering\arraybackslash}m{1.5cm} }{Valor de Aptidão}
+			& \\ 
+			\cline{2-4} & 11111 & 31 & 961 \\ 
+			& 11100 & 28 & 784 \\
+			& 11100 & 28 & 784 \\ 
+			& 11011 & 27 & 729 \\
+			& 10100 & 20 & 400 \\
+			& 01100 & 12 & 144 \\
+			\cline{2-4} & Mínimo & 12 & 144 \\
+			& Média & 24,33 & 633,67 \\
+			& Soma & 146 & 21.316 \\ 
+			& Máximo & 31 & 961 \\ 
+		\end{tabular}
+	}
+	{ValoresAptidaoPopulacoes}
+	{Elaborado pelo autor.}
+	
+Através dos resultados apresentados, a simulação de um AG simples sobre uma população inicial pode demonstrar, conforme comportamento dos vetores da população 2, o poder de ajuste que os operadores de reprodução, cruzamento e mutação possuem frente ao ambiente, ou problema, em que são implementados. Embora tenha sido uma implementação simples, a configuração do AG foi a mais básica possível, com exceção apenas da adição da premissa dos pares para reprodução, demonstrando como sua estrutura permite essa flexibilidade ao longo dos processos e como este modelo se comporta extremamente bem em um problema de otimização.
+
+\section{Teoria da Cooperação e o Dilema do Prisoneiro}
+
+Dentre as inúmeras questões a serem analisadas em contextos econômicos, a cooperação entre os agentes é uma das mais desafiadoras. Um indivíduo pode decidir não cooperar com outro se achar que não receberá nada em troca, ou pode cooperar, porém com a esperança de que a sua atitude lhe dê algum retorno. Sua decisão egoísta ou altruísta perante um outro indivíduo pode definir se, em uma situação específica, terá alguma recompensa ou tomará um prejuízo. Há a possibilidade, ainda, de nada se alterar, ficando exatamente no mesmo estado que no momento prévio à decisão. Esta análise não fica restrita às pessoas expostas a determinadas situações em devem escolher cooperar ou não, a situação se encaixa para diversos tipos de contextos, seja no estudo do comportamento de firmas em uma indústria buscando o maior lucro e participação de mercado, ou de nações que buscam conquistar território e poder econômico perante as demais. Problemas assim fizeram a pesquisa do comportamento cooperativo entre os agentes econômicos um dos campos de estudo mais intrigantes em economia. Assim, Robert Axelrod buscou responder estas e outras questões em seu livro \enquote{\textit{The Evolution of Cooperation}} \cite{Axelrod84}:
+
+\citacao
+	{%
+		A Teoria da Cooperação [...] é baseada em uma investigação de indivíduos que buscam seus próprios interesses sem a ajuda de uma autoridade central para forçá-los a cooperar uns com os outros. A razão para assumir o interesse próprio é que permite um exame do caso difícil em que a cooperação não é completamente baseada na preocupação com os outros ou no bem-estar do grupo como um todo. [...] Um bom exemplo do problema fundamental da cooperação é o caso em que duas nações industrializadas ergueram barreiras comerciais às exportações uma da outra. Devido às vantagens mútuas do livre comércio, ambos os países estariam em melhor situação se essas barreiras fossem eliminadas. Mas se um dos países eliminar unilateralmente suas barreiras, enfrentará termos de troca que prejudicarão sua própria economia. Na verdade, o que quer que um país faça, o outro fica melhor mantendo suas próprias barreiras comerciais. Portanto, o problema é que cada país tem um incentivo para manter as barreiras comerciais, levando a um resultado pior do que seria possível se os dois países cooperassem entre si. Esse problema básico ocorre quando a busca do interesse próprio de cada um leva a um resultado ruim para todos. Para avançar na compreensão da vasta gama de situações específicas que possuem essa propriedade, é necessário um modo de representar o que é comum a essas situações sem se prender aos detalhes únicos de cada uma. Felizmente, existe tal representação disponível: o famoso jogo do \textbf{Dilema do Prisioneiro} (destacado por nós).
+	}{%
+		The Cooperation Theory[...] is based upon an investigation of individuals who pursue their own self-interest without the aid of a central authority to force them to cooperate with each other. The reason for assuming self-interest is that it allows an examination of the difficult case in which cooperation is not completely based upon a concern for others or upon the welfare of the group as a whole. [...] A good example of the fundamental problem of cooperation is the case where two industrial nations have erected trade barriers to each other's exports. Because of the mutual advantages of free trade, both countries would be better off if these barriers were eliminated. But if either country were to unilaterally eliminate its barriers, it would find itself facing terms of trade that hurt its own economy. In fact, whatever one country does, the other country is better off retaining its own trade barriers. Therefore, the problem is that each country has an incentive to retain trade barriers, leading to a worse outcome than would have been possible had both countries cooperated with each other. This basic problem occurs when the pursuit of self-interest by each leads to a poor outcome for all. To make headway in understanding the vast array of specific situations which have this property, a way is needed to represent what is common to these situations without becoming bogged down in the details unique to each. Fortunately, there is such a representation available: the famous Prisoner's Dilemma game.
+	}
+	{\Citet[p.6-7]{Axelrod84}}
+	{(tradução nossa).}
+
+\subsection{O Dilema do Prisioneiro}
+
+En 1984, Axelrod organizou um Torneio do Dilema do Prisioneiro\footnote{O Dilema do Prisioneiro, foi inventado em 1950  por Merril Flood e Melvin Dresher equanto trabalhavam na Rand Corporation.} com o objetivo de reunir vários especialistas na área de teoria dos jogos e identificar qual das estratégias propostas apresentava a melhor solução para um dado problema. O torneio consistia no envio de um programa de computador que implementava uma estratégia para resolução do Dilema do Prisioneiro levando em consideração o histórico de interações para realizar sua escolha entre cooperar ou não no momento presente. A estratégia vencedora do torneio foi a mesma para as duas rodadas disputadas, a estratégia chamada de \textit{TIT FOR TAT}\footnote{Em tradução livre, \enquote{olho por olho}.}, onde um jogador coopera com o outro na primeira interação e, a partir da segunda, toma exatamente a mesma decisão que o outro jogador tomou na jogada anterior, sendo a estratégia mais simples dentre todas as apresentadas.
+
+No Dilema do Prisioneiro apresentado por Axelrod, há dois jogadores que precisam realizar uma única ação de duas possíveis: cooperar ou abandonar. Cada jogador deve realizar uma escolha sem saber o que o outro escolherá. Independente do que o outro jogador decida, a escolha de abandonar possui uma recompensa maior do que de cooperar. Assim, o dilema se apresentada da seguinte forma: se os dois jogadores decidem abandonar, ambos se sairão pior do que se tivessem cooperado. Então, qual a melhor decisão a ser tomada?
+
+Como pode ser observado na \autoref{fig:AxelrodDilemaPrisioneiro}, um dos jogadores escolhe uma linha de decisão, a de cooperar ou a de abandonar. O segundo jogador escolhe, simultaneamente, uma coluna, cooperando ou abandonando. Conforme os resultados demonstrados na matriz a seguir, se os dois jogadores decidem cooperar, ambos se sairão relativamente bem, recebendo a recompensa, $R$, de 3 pontos cada. Se um jogador acha que o outro irá cooperar, ele fica tentado a abandonar, recebendo 5 pontos, em vez de 3. Por outro lado, se um dos jogadores acha que o outro irá abandonar, a decisão que trará o maior retorno ainda será a de abandonar, recebendo uma recompensa de 1 ponto ao invés de 0.
+
+\figura
+	{O Dilema Do Prisioneiro}
+	{0.6}
+	{imagens/AxelrodDilemaPrisioneiro.PNG}
+	{AxelrodDilemaPrisioneiro}
+	{adaptado de \Citet[p.8]{Axelrod84}}
+
+Como apresentado anteriormente, no problema proposto, o abandono sempre resultará em uma recompensa maior que a cooperação. Através dos resultados de todas as estratégias apresentadas no torneio, Axelrod sumarizou quatro propriedades de uma estratégia de sucesso: i) evitar conflitos desnecessários, cooperando, desde que o outro jogador o faça; ii) \enquote{provocabilidade} diante de um abandono indesejado do outro; iii) perdão após responder a uma provocação; iv) clareza de comportamento para que o outro jogador possa reconhecer e se adaptar ao seu padrão de ação \cite[p.20]{Axelrod84}. Ademais, as milhares de estratégias enviadas ao torneio deram visibilidade para outras condições necessárias para que haja cooperação: os jogadores não precisam ser racionais, já que, devido ao processo evolutivo, as decisões bem sucedidas prosperam em relação às demais, não havendo a necessidade por parte do jogador de como ou por quê; Não há, ainda, a necessidade de comunicação entre os jogadores, pois o que importará, em último caso, é a decisão (estratégia) de cada um; Os jogadores não precisam confiar um nos outros, a estratégia de reciprocidade pode tornar a estratégia de abandono improdutiva; As estratégias bem sucedidas fará com que um jogador egoísta tenda a cooperar com o objetivo de obter um retorno satisfatório; e, por fim, o "sistema" cooperativo baseado na reciprocidade funciona por si só, não sendo necessário um "agente" centralizador coordenando as decisões \citep{Axelrod84}.
+
+Assim, temos que, para que ocorra a cooperação entre os jogadores, a interação entre eles deve ocorrer por inúmeras vezes ou pelo menos ser desconhecida pelos jogadores. Isso é necessário, pois os jogadores não terão incentivo para cooperação no último lance, pois os dois podem prever o abandono do outro jogador. Na primeira jogada, ambos, que são egoístas, escolherão abandonar, já que é a melhor ação, independente da estratégia que o outro escolherá, porém este número indefinido de interações, em algum momento, implementará a incerteza na estratégia, havendo a possibilidade de surgir, então, uma estratégia cooperativa. Dessa forma, para que a cooperação entre eles seja consistente, o período que ocorrerá no futuro deve ser longo o bastante para que os mesmos dois jogadores se encontrem e a estratégia de abandono seja menos lucrativa que a de cooperar novamente.
+
+Entretanto, quando, em um mundo de indivíduos que não estão dispostos a cooperar, há apenas um indivíduo que esteja, a cooperação não prosperará se não houver outros indivíduos dispostos a retribuir tal cooperação. O que leva ao ponto que a cooperação, provavelmente, surgirá em pequenos grupos de indivíduos que levem a cooperação como estratégia, e não se mantendo com uma atitude egoísta, sendo a estratégia de um indivíduo de cooperar na primeira interação e discriminar entre aqueles que tiveram um comportamento recíproco dos demais. Dessa forma, no caso de ocorrer uma estratégia de nunca ser o primeiro a abandonar, e que esta mesma estratégia seja adotada por praticamente todos os indivíduos do grupo, os que adotaram esta "estratégia legal" obterá melhores retornos e, com isso, \enquote{[...] a cooperação mútua pode surgir em um mundo de egoístas sem controle central, começando com um grupo de indivíduos que dependem da reciprocidade. \Citet[p.69]{Axelrod84}}.
+
+Dessa forma, a cooperação evolui em uma população começando em pequenos grupos através dos indivíduos que usam estratégias "legais" (nunca será o primeiro a abandonar) e provocativas (descontentamento pela estratégia de abandono adotada pelo outro), fazendo com que o nível geral de cooperação tenda a aumentar e não a diminuir, como sintetizado por \citep{Axelrod84}:
+
+\citacao
+	{%
+		A base da cooperação não é realmente a confiança, mas a durabilidade do relacionamento. Quando as condições estão corretas, \textbf{os jogadores podem cooperar uns com os outros através do aprendizado por tentativa e erro sobre possibilidades de recompensas mútuas, através da imitação de outros jogadores de sucesso, ou mesmo através de um processo cego de seleção das estratégias mais bem-sucedidas com um eliminando os menos bem sucedidos} (destacado por nós). Se os jogadores confiam uns nos outros ou não é menos importante a longo prazo do que se as condições estão maduras para que eles construam um padrão estável de cooperação entre si.
+	}{%
+		The foundation of cooperation is not really trust, but the durability of the relationship. When the conditions are right, the players can come to cooperate with each other through trial-and-error learning about possibilities for mutual rewards, through imitation of other successful players, or even through a blind process of selection of the more successful strategies with a weeding out of the less successful ones. Whether the players trust each other or not is less important in the long run than whether the conditions are ripe for them to build a stable pattern of cooperation with each other.
+	}
+	{\Citet[p.182]{Axelrod84}}
+	{(tradução nossa).}

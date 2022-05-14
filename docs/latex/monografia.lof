@@ -2,16 +2,30 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \centering \uppercase {EXEMPLO DE UM EXTREMO LOCAL}\relax }}{12}{figure.caption.2}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \centering \uppercase {PAISAGEM DE APTIDÃO REPRESENTADA EM 2 DIMENSÕES}\relax }}{16}{figure.caption.5}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \centering \uppercase {PAISAGEM DE APTIDÃO REPRESENTADA EM 3 DIMENSÕES}\relax }}{17}{figure.caption.6}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \centering \uppercase {ROLETA ENVIESADA DO OPERADOR DE REPRODUÇÃO}\relax }}{18}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \centering \uppercase {SELEÇÃO ALEATÓRIA DE UM INDIVÍDUO PARA MUTAÇÃO}\relax }}{21}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \centering \uppercase {MUTAÇÃO DO INDIVÍDUO SELECIONADO PARA MUTAÇÃO}\relax }}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \centering \uppercase {EXEMPLO DE UM EXTREMO LOCAL}\relax }}{15}{figure.caption.2}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \centering \uppercase {PAISAGEM DE APTIDÃO REPRESENTADA EM 2 DIMENSÕES}\relax }}{19}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \centering \uppercase {PAISAGEM DE APTIDÃO REPRESENTADA EM 3 DIMENSÕES}\relax }}{20}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \centering \uppercase {ROLETA ENVIESADA DO OPERADOR DE REPRODUÇÃO}\relax }}{21}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \centering \uppercase {SELEÇÃO ALEATÓRIA DE UM INDIVÍDUO PARA MUTAÇÃO}\relax }}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \centering \uppercase {MUTAÇÃO DO INDIVÍDUO SELECIONADO PARA MUTAÇÃO}\relax }}{25}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \centering \uppercase {EQUILÍBRIO NO MERCADO DE TRABALHO}\relax }}{28}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \centering \uppercase {NÚMERO DE PUBLICAÇÕES COM APLICAÇÃO DE AGS EM ECONOMIA DE 1960-2007, POR TEMA}\relax }}{28}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \centering \uppercase {NÚMERO DE PUBLICAÇÕES COM APLICAÇÃO DE AGS EM ECONOMIA DE 1960-2007, POR ANO}\relax }}{29}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \centering \uppercase {RESULTADOS DOS VALORES MÉDIOS DE MAXIMIZAÇÃO DE UTILIDADE POR SIMULAÇÃO}\relax }}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \centering \uppercase {RESULTADOS DOS VALORES MÉDIOS DE MAXIMIZAÇÃO DA DEMANDA DO BEM $X$ POR SIMULAÇÃO}\relax }}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \centering \uppercase {RESULTADOS DOS VALORES MÉDIOS DE MAXIMIZAÇÃO DA DEMANDA DO BEM $Y$ POR SIMULAÇÃO}\relax }}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \centering \uppercase {RESULTADOS DO EXPERIMENTO DE CORRESPONDÊNCIA DE PROBABILIDADE COM UMA TENTATIVA DE ESCOLHA, POR SIMULAÇÃO}\relax }}{33}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \centering \uppercase {RESULTADOS DO EXPERIMENTO DE CORRESPONDÊNCIA DE PROBABILIDADE COM CINCO TENTATIVAS DE ESCOLHA, POR SIMULAÇÃO}\relax }}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \centering \uppercase {RESULTADOS DO EXPERIMENTO EM ESTRUTURAS DE MERCADO COM CUSTOS LINEARES, POR SIMULAÇÃO}\relax }}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \centering \uppercase {RESULTADOS DO EXPERIMENTO EM ESTRUTURAS DE MERCADO COM CUSTOS QUADRÁTICOS, POR SIMULAÇÃO}\relax }}{36}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \centering \uppercase {RESULTADOS DO INDICADOR H-H EM ESTRUTURAS DE MERCADO COM CUSTOS LINEARES, POR SIMULAÇÃO}\relax }}{37}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \centering \uppercase {RESULTADOS DO INDICADOR H-H EM ESTRUTURAS DE MERCADO COM CUSTOS QUADRÁTICOS, POR SIMULAÇÃO}\relax }}{37}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \centering \uppercase {RESULTADOS DO EXPERIMENTO EM UM MERCADO COM PROCESSOS DE INOVAÇÃO, POR SIMULAÇÃO}\relax }}{38}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \centering \uppercase {MODELO DE FIRMAS COMPETITIVAS QUE APRENDEM A MAXIMIZAR O LUCRO}\relax }}{43}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \centering \uppercase {MODELO DE FIRMAS COMPETITIVAS}\relax }}{43}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \centering \uppercase {GRÁFICO DA FUNÇÃO $\lowercase {F}(\lowercase {X}) = \lowercase {X}^2$}\relax }}{32}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \centering \uppercase {GRÁFICO DA FUNÇÃO $\lowercase {F}(\lowercase {X}) = \lowercase {X}^2$}\relax }}{45}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \centering \uppercase {O DILEMA DO PRISIONEIRO}\relax }}{53}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -8,15 +8,30 @@ index {\textbar} {TIOBE} - {The} {Software} {Quality} {Company}.
 \newblock Editorial {Introduction}.
 \newblock {\em Evolutionary Computation}, 1(1):iii--v.
 
+\bibitem[\protect\astroncite{Alander and
+  Nissen}{2000}]{indexed_bibliography_2000}
+Alander, J. and Nissen, V. (2000).
+\newblock An indexed bibliography of genetic algorithms in economics.
+
+\bibitem[\protect\astroncite{Arifovic}{1989}]{arifovic_1989}
+Arifovic, J. (1989).
+\newblock Learning by genetic algorithms in economic environments.
+
+\bibitem[\protect\astroncite{Axelrod}{1984}]{Axelrod84}
+Axelrod, R. (1984).
+\newblock {\em The Evolution of Cooperation}.
+\newblock Basic, New York.
+
 \bibitem[\protect\astroncite{Back et~al.}{1997}]{back_handbook_1997}
 Back, T., Fogel, D.~B., and Michalewicz, Z. (1997).
 \newblock {\em Handbook of {Evolutionary} {Computation}}.
 \newblock IOP Publishing Ltd., GBR, 1st edition.
 
-\bibitem[\protect\astroncite{Blanchard}{2020}]{blanchard_macroeconomics_2020}
-Blanchard, O. (2020).
-\newblock {\em Macroeconomics (8th Edition)}.
-\newblock Pearson, 8 edition.
+\bibitem[\protect\astroncite{Bagley}{1967}]{bagley_1967}
+Bagley, J.~D. (1967).
+\newblock {\em The behavior of adaptive systems which employ genetic and
+  correlation algorithms}.
+\newblock PhD thesis.
 
 \bibitem[\protect\astroncite{Bremermann}{1962}]{bremermann_optimization_1962}
 Bremermann, H.~J. (1962).
@@ -29,6 +44,10 @@ Bremermann H~J, R.~M. and S, S.
 \newblock Search by evolution biophysics and cybernetic.
 \newblock page 157–67.
 
+\bibitem[\protect\astroncite{Britannica}{2022}]{britannica_2022}
+Britannica, E. (2022).
+\newblock John henry holland.
+
 \bibitem[\protect\astroncite{Cavicchio}{1970}]{cavicchio_adaptive_1970}
 Cavicchio, D.~J. (1970).
 \newblock Adaptive search using simulated evolution.
@@ -38,6 +57,13 @@ Cavicchio, D.~J. (1970).
 Cormen, T., Leiserson, C., Rivest, R., and Stein, C. (2009).
 \newblock {\em Introduction to {Algorithms}, third edition}.
 \newblock Computer science. MIT Press.
+
+\bibitem[\protect\astroncite{De~Jong}{1975}]{de_jong_1975}
+De~Jong, A.~K. (1975).
+\newblock {\em Analysis of the behavior of a class of genetic adaptive
+  systems}.
+\newblock PhD thesis.
+\newblock Accepted: 2006-02-03T19:05:13Z.
 
 \bibitem[\protect\astroncite{Eiben et~al.}{1994}]{michalewicz_1994}
 Eiben, A., Hinterding, R., and Michalewicz, Z. (1994).
@@ -58,6 +84,12 @@ Fedeli, R., Polloni, E., and Peres, F. (2009).
 Fogel, L.~J., Owens, A.~J., and Walsh, M.~J. (1966).
 \newblock Artificial intelligence through simulated evolution.
 
+\bibitem[\protect\astroncite{Frantz}{1972}]{frantz_1972}
+Frantz, D.~R. (1972).
+\newblock {\em Nonlinearities in Genetic Adaptive Search.}
+\newblock PhD thesis, USA.
+\newblock AAI7311116.
+
 \bibitem[\protect\astroncite{Friedberg}{1958}]{learning_machine_1958}
 Friedberg, R.~M. (1958).
 \newblock A learning machine: Part i.
@@ -67,12 +99,6 @@ Friedberg, R.~M. (1958).
 Friedberg, R.~M., Dunham, B., and North, J.~H. (1959).
 \newblock A learning machine: Part ii.
 \newblock {\em IBM J. Res. Dev.}, 3:282--287.
-
-\bibitem[\protect\astroncite{Geisendorf}{2007}]{Geisendorf2007}
-Geisendorf, S. (2007).
-\newblock Are genetic algorithms a good basis for economic learning models?
-\newblock {\em University of Kassel, Institute of Economics, papers on
-  agent-based economics}.
 
 \bibitem[\protect\astroncite{Goldberg}{1989}]{goldberg_genetic_1989}
 Goldberg, V. A. P. o. H. D.~E. (1989).
@@ -99,10 +125,7 @@ Holland, J.~H. (1962).
 Holland, J.~H. (1975).
 \newblock {\em Adaptation in natural and artificial systems: {An} introductory
   analysis with applications to biology, control, and artificial intelligence.}
-\newblock Adaptation in natural and artificial systems: {An} introductory
-  analysis with applications to biology, control, and artificial intelligence.
-  U Michigan Press, Oxford, England.
-\newblock Pages: viii, 183.
+\newblock The MIT Press, 2nd edition, mit press, 1992 edition.
 
 \bibitem[\protect\astroncite{Holland}{1992}]{holland_genetic_1992}
 Holland, J.~H. (1992).
@@ -110,47 +133,30 @@ Holland, J.~H. (1992).
 \newblock {\em Scientific American}, 267(1):66--73.
 \newblock Publisher: Scientific American, a division of Nature America, Inc.
 
-\bibitem[\protect\astroncite{Hollstien}{1971}]{university_of_michigan_artificial_1971}
-Hollstien, R.~B. (1971).
-\newblock {\em Artificial genetic adaptation in computer control systems.}
-\newblock OCLC: 726084376.
+\bibitem[\protect\astroncite{Holland and Miller}{1986}]{miller_1986}
+Holland, J.~H. and Miller, J.~H. (1986).
+\newblock Artificial adaptive agents in economic theory.
+\newblock {\em The American Economic Review}, 81(2):365--370.
 
-\bibitem[\protect\astroncite{Jong and Alan}{1975}]{jong_analysis_1975}
-Jong, D. and Alan, K. (1975).
-\newblock Analysis of the behavior of a class of genetic adaptive systems.
-\newblock Accepted: 2006-02-03T19:05:13Z.
+\bibitem[\protect\astroncite{Holland and Miller}{1991}]{holland_miller_1991}
+Holland, J.~H. and Miller, J.~H. (1991).
+\newblock Artificial adaptive agents in economic theory.
+\newblock {\em American Economic Review}, 81(2):365--71.
+
+\bibitem[\protect\astroncite{Hollstien}{1971}]{hollstien1971artificial}
+Hollstien, R. (1971).
+\newblock {\em Artificial genetic adaptation in computer control systems}.
+\newblock PhD thesis.
 
 \bibitem[\protect\astroncite{Langdon and Poli}{2002}]{langdon_foundations_2002}
 Langdon, W.~B. and Poli, R. (2002).
 \newblock {\em Foundations of {Genetic} {Programming}}.
 \newblock Springer, Berlin, Heidelberg.
 
-\bibitem[\protect\astroncite{Lopes and Vasconcellos}{2015}]{vasconcellos2015}
-Lopes, L.~M. and Vasconcellos, M. A. S.~d. (2015).
-\newblock {\em Manual de macroeconomia: nível básico e nível
-  intermediário}.
-\newblock Atlas.
-
-\bibitem[\protect\astroncite{Mankiw}{1989}]{mankiw1989}
-Mankiw, N.~G. (1989).
-\newblock Real business cycles: A new keynesian perspective.
-\newblock {\em Journal of Economic Perspectives}, 3(3):79--90.
-
-\bibitem[\protect\astroncite{Mayer}{1994}]{mayer_1994}
-Mayer, T. (1994).
-\newblock {Why is there so much disagreement among economists?}
-\newblock {\em Journal of Economic Methodology}, 1(1):1--14.
-
 \bibitem[\protect\astroncite{Mitchell}{1998}]{MelanieMitchell98}
 Mitchell, M. (1998).
 \newblock {\em An Introduction to Genetic Algorithms}.
 \newblock The MIT Press.
-
-\bibitem[\protect\astroncite{Pindyck and
-  Rubinfeld}{2013}]{pindyck_microeconomia_2013}
-Pindyck, R.~S. and Rubinfeld, D.~L. (2013).
-\newblock {\em Microeconomia}.
-\newblock Pearson Universidades, 8ª edição edition.
 
 \bibitem[\protect\astroncite{Rechenberg
   et~al.}{1965}]{rechenberg_cybernetic_1965}
@@ -159,21 +165,14 @@ Rechenberg, I., Toms, B., and Establishment, R.~A. (1965).
 \newblock Library translation / {Royal} {Aircraft} {Establishment}. Ministry of
   Aviation.
 
-\bibitem[\protect\astroncite{Smith}{1996a}]{smith2020riquezav2}
-Smith, A. (1996a).
-\newblock {\em A Riqueza das Na{\c{c}}{\~o}es - Adam Smith: Vol. II}.
-\newblock Cole{\c{c}}{\~a}o Economia Pol{\'\i}tica. Nova Cultural.
+\bibitem[\protect\astroncite{Rosenberg}{1967}]{rosenberg_1967}
+Rosenberg, R.~S. (1967).
+\newblock {\em Simulation of genetic populations with biochemical properties}.
+\newblock PhD thesis.
 
-\bibitem[\protect\astroncite{Smith}{1996b}]{smith1996riqueza}
-Smith, A. (1996b).
-\newblock {\em A riqueza das na{\c{c}}{\~o}es: investiga{\c{c}}{\~a}o sobre sua
-  natureza e suas causas}.
-\newblock Os Economistas. Nova Cultural.
-
-\bibitem[\protect\astroncite{Snowdon and Vane}{2005}]{snowdon_modern_2005}
-Snowdon, B. and Vane, H.~R. (2005).
-\newblock {\em Modern {Macroeconomics}: {Its} {Origins}, {Development} and
-  {Current} {Stage}}.
-\newblock Edward Elgar Publishing Limited, Cheltenham - UK.
+\bibitem[\protect\astroncite{Weinberg}{1970}]{weinberg1969computer}
+Weinberg, R. (1970).
+\newblock {\em Computer Simulation of a Living Cell}.
+\newblock PhD thesis.
 
 \end{thebibliography}

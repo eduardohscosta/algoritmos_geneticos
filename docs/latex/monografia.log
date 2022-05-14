@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.17)  2 MAY 2022 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.11)  14 MAY 2022 19:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -618,7 +618,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package hyperref Info: Option `colorlinks' set `true' on input line 43.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 43.
 LaTeX Font Info:    Trying to load font information for T1+txtt on input line 7
-8.
+6.
 
 (C:\Program Files\MiKTeX\tex/latex/txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
@@ -758,7 +758,19 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.96 \listafiguras
-                   [1] (monografia.lof)
+                   [1] (monografia.lof
+Overfull \hbox (2.94482pt too wide) in paragraph at lines 14--14
+ [][] [][][]\OT1/cmr/m/n/12 RESULTADOS DOS VA-LO-RES M[]EDIOS DE MAXIMIZA[][]AO
+ DE UTI- 
+ []
+
+
+Overfull \hbox (37.84856pt too wide) in paragraph at lines 17--17
+ \OT1/cmr/m/n/12 PRO-BA-BI-LI-DADE COM UMA TEN-TA-TIVA DE ES-CO-LHA, POR SIMULA
+[][]AO[][] []  
+ []
+
+)
 \tf@lof=\write4
 \openout4 = `monografia.lof'.
 
@@ -767,8 +779,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
+l.97 
+      [1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
 l.101 \listatabelas
-                    [1] (monografia.lot
+                    [2] (monografia.lot
 Overfull \hbox (10.94882pt too wide) in paragraph at lines 10--10
  [][] [][][]\OT1/cmr/m/n/12 PARES FOR-MA-DOS NO RE-SER-VAT[]ORIO DE ACA-SA-LA-M
 ENTO COM 
@@ -795,19 +813,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 	}
+l.114 	}
          [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.118 \sumario
+l.119 \sumario
                [1] (monografia.toc
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...ne {5.4.3}Mutação}{37}{subsection.5.4.3}
+l.38 ...{\numberline {6}Conclusão}{56}{chapter.6}
                                                   % [1])
 \tf@toc=\write6
 \openout6 = `monografia.toc'.
@@ -821,40 +839,40 @@ Cap\'{\i }tulo 1.
 Cap\'{\i }tulo 2.
 [4
 
-] [5] [6] [7] [8]) (capitulos/capitulo-3.tex [9]
+] [5] [6] [7] [8] [9] [10] [11]) (capitulos/capitulo-3.tex [12]
 Cap\'{\i }tulo 3.
-[10
+[13
 
 ]
-<imagens/SinglePeakCalculusBasedMethod.png, id=437, 354.32375pt x 294.09875pt>
+<imagens/SinglePeakCalculusBasedMethod.png, id=530, 354.32375pt x 294.09875pt>
 File: imagens/SinglePeakCalculusBasedMethod.png Graphic file (type png)
 <use imagens/SinglePeakCalculusBasedMethod.png>
 Package pdftex.def Info: imagens/SinglePeakCalculusBasedMethod.png  used on inp
 ut line 30.
 (pdftex.def)             Requested size: 223.45274pt x 185.47615pt.
- [11] [12 <./imagens/SinglePeakCalculusBasedMethod.png (PNG copy)>]
-[13] [14]
-<imagens/2DFitnessLandscape.PNG, id=491, 656.4525pt x 316.18124pt>
+ [14] [15 <./imagens/SinglePeakCalculusBasedMethod.png (PNG copy)>]
+[16] [17]
+<imagens/2DFitnessLandscape.PNG, id=584, 656.4525pt x 316.18124pt>
 File: imagens/2DFitnessLandscape.PNG Graphic file (type png)
 <use imagens/2DFitnessLandscape.PNG>
 Package pdftex.def Info: imagens/2DFitnessLandscape.PNG  used on input line 124
 .
 (pdftex.def)             Requested size: 312.83247pt x 150.67493pt.
- [15]
-<imagens/FitnessLandscapeAdaptado.png, id=505, 825.0825pt x 481.8pt>
+ [18]
+<imagens/FitnessLandscapeAdaptado.png, id=598, 825.0825pt x 481.8pt>
 File: imagens/FitnessLandscapeAdaptado.png Graphic file (type png)
 <use imagens/FitnessLandscapeAdaptado.png>
 Package pdftex.def Info: imagens/FitnessLandscapeAdaptado.png  used on input li
 ne 133.
 (pdftex.def)             Requested size: 312.83247pt x 182.6742pt.
- [16 <./imagens/2DFitnessLandscape.PNG>] [17 <./imagens/FitnessLandscapeAdaptad
+ [19 <./imagens/2DFitnessLandscape.PNG>] [20 <./imagens/FitnessLandscapeAdaptad
 o.png>]
-<imagens/RoletaReproducao.png, id=529, 365.365pt x 304.13625pt>
+<imagens/RoletaReproducao.png, id=621, 365.365pt x 304.13625pt>
 File: imagens/RoletaReproducao.png Graphic file (type png)
 <use imagens/RoletaReproducao.png>
 Package pdftex.def Info: imagens/RoletaReproducao.png  used on input line 174.
 (pdftex.def)             Requested size: 268.14603pt x 223.21956pt.
- [18 <./imagens/RoletaReproducao.png>]
+ [21 <./imagens/RoletaReproducao.png>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
 98.
 
@@ -863,19 +881,19 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 198.
- [19] [20]
-<imagens/RoletaMutacao.png, id=561, 904.88063pt x 295.85532pt>
+ [22] [23]
+<imagens/RoletaMutacao.png, id=654, 904.88063pt x 295.85532pt>
 File: imagens/RoletaMutacao.png Graphic file (type png)
 <use imagens/RoletaMutacao.png>
 Package pdftex.def Info: imagens/RoletaMutacao.png  used on input line 255.
 (pdftex.def)             Requested size: 357.52576pt x 116.8909pt.
-<imagens/RoletaMutacaoGene.png, id=562, 722.7pt x 439.6425pt>
+<imagens/RoletaMutacaoGene.png, id=655, 722.7pt x 439.6425pt>
 File: imagens/RoletaMutacaoGene.png Graphic file (type png)
 <use imagens/RoletaMutacaoGene.png>
 Package pdftex.def Info: imagens/RoletaMutacaoGene.png  used on input line 264.
 
 (pdftex.def)             Requested size: 357.52576pt x 217.49289pt.
- [21 <./imagens/RoletaMutacao.png>]
+ [24 <./imagens/RoletaMutacao.png>]
 Overfull \hbox (2.94595pt too wide) in paragraph at lines 309--309
  []|\OT1/cmr/m/n/10.95 Indiv^^S^^Pduo| 
  []
@@ -885,40 +903,166 @@ Overfull \hbox (2.94595pt too wide) in paragraph at lines 309--309
  []|\OT1/cmr/m/n/10.95 Indiv^^S^^Pduo| 
  []
 
-[22 <./imagens/RoletaMutacaoGene.png>]) (capitulos/capitulo-4.tex [23]
+[25 <./imagens/RoletaMutacaoGene.png>]) (capitulos/capitulo-4.tex [26]
 Cap\'{\i }tulo 4.
-[24
+<imagens/CompilacaoPublicacoesAlgoritmosGeneticos.png, id=675, 531.951pt x 257.
+106pt>
+File: imagens/CompilacaoPublicacoesAlgoritmosGeneticos.png Graphic file (type p
+ng)
+<use imagens/CompilacaoPublicacoesAlgoritmosGeneticos.png>
+Package pdftex.def Info: imagens/CompilacaoPublicacoesAlgoritmosGeneticos.png  
+used on input line 14.
+(pdftex.def)             Requested size: 446.9055pt x 216.00287pt.
+[27
 
-] [25]
-Overfull \hbox (11.63632pt too wide) in paragraph at lines 28--28
-|[]\OT1/cmr/bx/n/17.28 As Prin-ci-pais Te-o-rias Ma-cro-e-con^omicas do S^^Secu
-lo
+]
+<imagens/CompilacaoPublicacoesAlgoritmosGeneticosPorAno.png, id=688, 618.018pt 
+x 225.351pt>
+File: imagens/CompilacaoPublicacoesAlgoritmosGeneticosPorAno.png Graphic file (
+type png)
+<use imagens/CompilacaoPublicacoesAlgoritmosGeneticosPorAno.png>
+Package pdftex.def Info: imagens/CompilacaoPublicacoesAlgoritmosGeneticosPorAno
+.png  used on input line 23.
+(pdftex.def)             Requested size: 446.9055pt x 162.96094pt.
+ [28 <./imagens/CompilacaoPublicacoesAlgoritmosGeneticos.png>] [29 <./imagens/C
+ompilacaoPublicacoesAlgoritmosGeneticosPorAno.png>] [30]
+<imagens/MillerAGBehaviors1.PNG, id=733, 663.98062pt x 442.65375pt>
+File: imagens/MillerAGBehaviors1.PNG Graphic file (type png)
+<use imagens/MillerAGBehaviors1.PNG>
+Package pdftex.def Info: imagens/MillerAGBehaviors1.PNG  used on input line 51.
+
+(pdftex.def)             Requested size: 312.83247pt x 208.55385pt.
+<imagens/MillerAGBehaviors2.PNG, id=736, 415.5525pt x 294.34969pt>
+File: imagens/MillerAGBehaviors2.PNG Graphic file (type png)
+<use imagens/MillerAGBehaviors2.PNG>
+Package pdftex.def Info: imagens/MillerAGBehaviors2.PNG  used on input line 60.
+
+(pdftex.def)             Requested size: 312.83247pt x 221.5971pt.
+ [31 <./imagens/MillerAGBehaviors1.PNG>]
+<imagens/MillerAGBehaviors3.PNG, id=744, 599.23875pt x 431.36156pt>
+File: imagens/MillerAGBehaviors3.PNG Graphic file (type png)
+<use imagens/MillerAGBehaviors3.PNG>
+Package pdftex.def Info: imagens/MillerAGBehaviors3.PNG  used on input line 67.
+
+(pdftex.def)             Requested size: 312.83247pt x 225.19788pt.
+ [32 <./imagens/MillerAGBehaviors2.PNG> <./imagens/MillerAGBehaviors3.PNG>]
+<imagens/MillerAGProbabilityMatching1.PNG, id=754, 588.69937pt x 408.77719pt>
+File: imagens/MillerAGProbabilityMatching1.PNG Graphic file (type png)
+<use imagens/MillerAGProbabilityMatching1.PNG>
+Package pdftex.def Info: imagens/MillerAGProbabilityMatching1.PNG  used on inpu
+t line 78.
+(pdftex.def)             Requested size: 312.83247pt x 217.22472pt.
+<imagens/MillerAGProbabilityMatching2.PNG, id=757, 804.00375pt x 566.115pt>
+File: imagens/MillerAGProbabilityMatching2.PNG Graphic file (type png)
+<use imagens/MillerAGProbabilityMatching2.PNG>
+Package pdftex.def Info: imagens/MillerAGProbabilityMatching2.PNG  used on inpu
+t line 85.
+(pdftex.def)             Requested size: 312.83247pt x 220.26567pt.
+ [33 <./imagens/MillerAGProbabilityMatching1.PNG>] [34 <./imagens/MillerAGProba
+bilityMatching2.PNG (PNG copy)>]
+<imagens/MillerAGMarketStructure1.PNG, id=778, 619.56468pt x 407.27156pt>
+File: imagens/MillerAGMarketStructure1.PNG Graphic file (type png)
+<use imagens/MillerAGMarketStructure1.PNG>
+Package pdftex.def Info: imagens/MillerAGMarketStructure1.PNG  used on input li
+ne 107.
+(pdftex.def)             Requested size: 312.83247pt x 205.63632pt.
+<imagens/MillerAGMarketStructure3.PNG, id=781, 599.99156pt x 405.76593pt>
+File: imagens/MillerAGMarketStructure3.PNG Graphic file (type png)
+<use imagens/MillerAGMarketStructure3.PNG>
+Package pdftex.def Info: imagens/MillerAGMarketStructure3.PNG  used on input li
+ne 114.
+(pdftex.def)             Requested size: 312.83247pt x 211.5691pt.
+ [35 <./imagens/MillerAGMarketStructure1.PNG>]
+<imagens/MillerAGMarketStructure2.PNG, id=790, 610.53094pt x 406.51875pt>
+File: imagens/MillerAGMarketStructure2.PNG Graphic file (type png)
+<use imagens/MillerAGMarketStructure2.PNG>
+Package pdftex.def Info: imagens/MillerAGMarketStructure2.PNG  used on input li
+ne 123.
+(pdftex.def)             Requested size: 312.83247pt x 208.30188pt.
+ [36 <./imagens/MillerAGMarketStructure3.PNG>]
+<imagens/MillerAGMarketStructure4.PNG, id=798, 804.00375pt x 566.115pt>
+File: imagens/MillerAGMarketStructure4.PNG Graphic file (type png)
+<use imagens/MillerAGMarketStructure4.PNG>
+Package pdftex.def Info: imagens/MillerAGMarketStructure4.PNG  used on input li
+ne 130.
+(pdftex.def)             Requested size: 312.83247pt x 220.26567pt.
+ [37 <./imagens/MillerAGMarketStructure2.PNG> <./imagens/MillerAGMarketStructur
+e4.PNG (PNG copy)>]
+<imagens/MillerAGInnovation.PNG, id=807, 804.00375pt x 566.115pt>
+File: imagens/MillerAGInnovation.PNG Graphic file (type png)
+<use imagens/MillerAGInnovation.PNG>
+Package pdftex.def Info: imagens/MillerAGInnovation.PNG  used on input line 141
+.
+(pdftex.def)             Requested size: 312.83247pt x 220.26567pt.
+ [38 <./imagens/MillerAGInnovation.PNG (PNG copy)>]
+Overfull \hbox (15.25916pt too wide) in paragraph at lines 147--148
+[]\OT1/cmr/m/n/12 Ademais, o in-te-resse de Ari-fo-vic em pes-qui-sar mo-de-los
+ de AGs nas din^amicas econ^omicas
  []
 
-[26]
-<imagens/AbordagemClassicaEquilibrioMercadoTrabalho.PNG, id=630, 770.88pt x 492
-.33937pt>
-File: imagens/AbordagemClassicaEquilibrioMercadoTrabalho.PNG Graphic file (type
- png)
-<use imagens/AbordagemClassicaEquilibrioMercadoTrabalho.PNG>
-Package pdftex.def Info: imagens/AbordagemClassicaEquilibrioMercadoTrabalho.PNG
-  used on input line 53.
-(pdftex.def)             Requested size: 357.52576pt x 228.34195pt.
- [27] [28 <./imagens/AbordagemClassicaEquilibrioMercadoTrabalho.PNG>]
-[29]) (capitulos/capitulo-5.tex [30]
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+
+ []
+
+[41]
+<imagens/ArifovicMarket1.0.PNG, id=863, 518.6878pt x 298.86656pt>
+File: imagens/ArifovicMarket1.0.PNG Graphic file (type png)
+<use imagens/ArifovicMarket1.0.PNG>
+Package pdftex.def Info: imagens/ArifovicMarket1.0.PNG  used on input line 234.
+
+(pdftex.def)             Requested size: 402.21222pt x 231.7651pt.
+ [42]
+<imagens/ArifovicMarket.PNG, id=870, 703.62875pt x 681.54625pt>
+File: imagens/ArifovicMarket.PNG Graphic file (type png)
+<use imagens/ArifovicMarket.PNG>
+Package pdftex.def Info: imagens/ArifovicMarket.PNG  used on input line 241.
+(pdftex.def)             Requested size: 223.45274pt x 216.43532pt.
+) (capitulos/capitulo-5.tex [43 <./imagens/ArifovicMarket1.0.PNG> <./imagens/Ar
+ifovicMarket.PNG (PNG copy)>]
 Cap\'{\i }tulo 5.
 
 Overfull \hbox (5.3444pt too wide) in paragraph at lines 5--5
 |[]\OT1/cmr/bx/n/17.28 Problema de Va-lor M^^Saximo em Uma Caixa Preta| 
  []
 
-<imagens/GraficoFuncaoQuadraticaDeX.png, id=682, 1084.05pt x 433.62pt>
+<imagens/GraficoFuncaoQuadraticaDeX.png, id=887, 1084.05pt x 433.62pt>
 File: imagens/GraficoFuncaoQuadraticaDeX.png Graphic file (type png)
 <use imagens/GraficoFuncaoQuadraticaDeX.png>
 Package pdftex.def Info: imagens/GraficoFuncaoQuadraticaDeX.png  used on input 
 line 21.
 (pdftex.def)             Requested size: 446.9055pt x 178.76459pt.
-[31
+[44
 
 ]
 Overfull \hbox (3.95926pt too wide) in paragraph at lines 43--44
@@ -926,69 +1070,77 @@ Overfull \hbox (3.95926pt too wide) in paragraph at lines 43--44
 e for-mada uma po-pula^^Xc~ao ini-cial aleat^^Soria
  []
 
-[32 <./imagens/GraficoFuncaoQuadraticaDeX.png>] [33]
+[45 <./imagens/GraficoFuncaoQuadraticaDeX.png>] [46]
 Overfull \hbox (29.86426pt too wide) in paragraph at lines 102--102
 |[]\OT1/cmr/bx/n/17.28 Operadores de Re-produ^^Xc~ao, Cru-za-mento e Muta^^Xc~a
 o| 
  []
 
-[34]
-Overfull \hbox (1.0495pt too wide) in paragraph at lines 146--146
+[47]
+Overfull \hbox (1.0495pt too wide) in paragraph at lines 147--147
  []|\OT1/cmr/m/n/10.95 Probabilidade 
  []
 
 
-Overfull \hbox (7.31773pt too wide) in paragraph at lines 146--146
+Overfull \hbox (7.31773pt too wide) in paragraph at lines 147--147
  [][] 
  []
 
-[35] [36]
-Overfull \hbox (4.034pt too wide) in paragraph at lines 224--225
+[48] [49]
+Overfull \hbox (4.034pt too wide) in paragraph at lines 223--224
 []\OT1/cmr/m/n/12 O ope-ra-dor fi-nal a ser apli-cado, ^^Se o de muta^^Xc~ao[][
 ][][][]. Como apre-sen-tado na [][]Subse^^Xc~ao 3.3.7[][][],
  []
 
-) (capitulos/capitulo-6.tex [37] [38]
+[50] [51] [52]
+<imagens/AxelrodDilemaPrisioneiro.PNG, id=980, 268.75406pt x 115.93312pt>
+File: imagens/AxelrodDilemaPrisioneiro.PNG Graphic file (type png)
+<use imagens/AxelrodDilemaPrisioneiro.PNG>
+Package pdftex.def Info: imagens/AxelrodDilemaPrisioneiro.PNG  used on input li
+ne 313.
+(pdftex.def)             Requested size: 268.14603pt x 115.671pt.
+ [53 <./imagens/AxelrodDilemaPrisioneiro.PNG>] [54])
+(capitulos/capitulo-6.tex [55]
 Cap\'{\i }tulo 6.
-) (monografia.bbl [39
+) (monografia.bbl [56
 
-] [40
+] [57
 
-] [41]) [42] [43
+] [58]) [59] [60
 
 ]
 Apêndice A.
 
-Overfull \hbox (4.18422pt too wide) in paragraph at lines 164--164
+Overfull \hbox (4.18422pt too wide) in paragraph at lines 167--167
  []|\OT1/cmr/m/n/12 Caracter^^S^^Pstica| 
  []
 
 
-Overfull \hbox (0.77585pt too wide) in paragraph at lines 164--164
+Overfull \hbox (0.77585pt too wide) in paragraph at lines 167--167
  []|\OT1/cmr/m/it/12 Reproduction| 
  []
 
 
-Overfull \hbox (27.6465pt too wide) in alignment at lines 164--164
+Overfull \hbox (27.6465pt too wide) in alignment at lines 167--167
  [] [] [] [] 
  []
 
-[44
+[61
 
-] [45]
+] [62]
 Apêndice B.
 (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 168.
+nput line 171.
 
-(auxiliar/monolito_algoritmo_genetico.py [46
+(auxiliar/monolito_algoritmo_genetico.py [63
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
- [47]
+ [64]
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 1
 06.
 
@@ -997,8 +1149,8 @@ File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 106.
- [48] [49] [50] [51] [52]
-[53] [54] [55] [56]
+ [65] [66] [67] [68] [69]
+[70] [71] [72] [73]
 Overfull \hbox (9.3606pt too wide) in paragraph at lines 663--664
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
@@ -1025,46 +1177,42 @@ Overfull \hbox (40.08685pt too wide) in paragraph at lines 689--690
 ][][][] 
  []
 
-[57]) [58] (monografia.aux)
-
-Package rerunfilecheck Warning: File `monografia.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `monografia.out':
-(rerunfilecheck)             Before: B1E5311A0613DE5D525B098CF03205C2;8806
-(rerunfilecheck)             After:  1870FD456D1E016E46FDDB33F2F56B8E;8850.
+[74]) [75] (monografia.aux)
+Package rerunfilecheck Info: File `monografia.out' has not changed.
+(rerunfilecheck)             Checksum: 68142D40532BBE0035FFD8A566003639;8459.
  ) 
 Here is how much of TeX's memory you used:
- 18669 strings out of 478552
- 295141 string characters out of 2851735
- 933039 words of memory out of 3000000
- 35671 multiletter control sequences out of 15000+600000
+ 18843 strings out of 478552
+ 299878 string characters out of 2851735
+ 938520 words of memory out of 3000000
+ 35782 multiletter control sequences out of 15000+600000
  483411 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,13n,82p,1901b,2152s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 74i,13n,82p,2437b,2152s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm0900.pk> <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\tcrm1095.pk> <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/
+0\tcrm1095.pk> <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\tcrm0900.pk> <C:\Users\eduhenrique\AppData\Local\MiKTeX\fonts/pk/
 ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on monografia.pdf (66 pages, 1084653 bytes).
+cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmti9.pfb>
+Output written on monografia.pdf (84 pages, 1980756 bytes).
 PDF statistics:
- 1812 PDF objects out of 2073 (max. 8388607)
- 892 named destinations out of 1000 (max. 500000)
- 345 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2082 PDF objects out of 2487 (max. 8388607)
+ 941 named destinations out of 1000 (max. 500000)
+ 407 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,38 +5,37 @@
 \contentsline {section}{\numberline {2.2}Programação Evolucionária}{5}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Estratégias Evolutivas}{7}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Algoritmos Genéticos}{8}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Algoritmos Genéticos}{10}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introdução aos Algoritmos Genéticos}{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Algoritmos e Linguagem de Máquina}{12}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Componentes de um Algoritmo Genético}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Alelo e Locus}{13}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Cadeia de Caracteres}{14}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}População Inicial e Gerações}{14}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Paisagem de Aptidão, Sobrevivência do Mais Apto e Função Objetivo}{15}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Reprodução ou Seleção}{17}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Cruzamento}{19}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Mutação}{21}{subsection.3.3.7}%
-\contentsline {chapter}{\numberline {4}Aplicação de Algoritmos Genéticos na Economia}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introdução}{24}{section.4.1}%
-\contentsline {section}{\numberline {4.2}As Principais Teorias Macroeconômicas do Século XX e XXI}{26}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Abordagem Clássica}{26}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Abordagem Keynesiana}{29}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Economia Evolucionária}{29}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Algoritmos Genéticos Aplicados a Problemas de Otimização}{29}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Algoritmos Genéticos Aplicados a Problemas de Inovação}{29}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Aprendizagem Adaptativa}{29}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Exemplos de Aplicações de Algoritmos Genéticos}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Problema de Valor Máximo em Uma Caixa Preta}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Construção da População Inicial}{32}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Cálculo dos Valores de Aptidão}{33}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Operadores de Reprodução, Cruzamento e Mutação}{34}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Reprodução}{34}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Cruzamento}{35}{subsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.1}Formação dos pares}{35}{subsubsection.5.4.2.1}%
-\contentsline {subsubsection}{\numberline {5.4.2.2}Escolha do ponto de cruzamento}{36}{subsubsection.5.4.2.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.3}Formação dos novos vetores}{36}{subsubsection.5.4.2.3}%
-\contentsline {subsection}{\numberline {5.4.3}Mutação}{37}{subsection.5.4.3}%
-\contentsline {chapter}{\numberline {6}Conclusão}{39}{chapter.6}%
-\contentsline {chapter}{Referências}{39}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Sumário de Terminologia Natural e Terminologia Artificial}{44}{appendix.a.A}%
-\contentsline {chapter}{\numberline {B}Código: Exemplo de Aplicação de um AG simples em Python (\autoref {sec:ProblemaValorMaximoCaixaPreta})}{46}{appendix.a.B}%
+\contentsline {subsection}{\numberline {2.4.1}A Evolução e as Contribuições Gerais para a Área}{9}{subsection.2.4.1}%
+\contentsline {chapter}{\numberline {3}Algoritmos Genéticos}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introdução}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Algoritmos e Linguagem de Máquina}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Componentes de um Algoritmo Genético}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Alelo e Locus}{16}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Cadeia de Caracteres}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}População Inicial e Gerações}{17}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Paisagem de Aptidão, Sobrevivência do Mais Apto e Função Objetivo}{18}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Reprodução ou Seleção}{20}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Cruzamento}{22}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Mutação}{24}{subsection.3.3.7}%
+\contentsline {chapter}{\numberline {4}Aplicação de Algoritmos Genéticos na Economia}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introdução}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Comportamento Econômico Adaptativo}{29}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Aprendizado de Agentes Econômicos}{39}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Exemplo de Aplicação de um Algoritmo Genético Simples}{44}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Problema de Valor Máximo em Uma Caixa Preta}{44}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Construção da População Inicial}{45}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Cálculo dos Valores de Aptidão}{46}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Operadores de Reprodução, Cruzamento e Mutação}{47}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Reprodução}{47}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Cruzamento}{48}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}Formação dos pares}{48}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}Escolha do ponto de cruzamento}{49}{subsubsection.5.4.2.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.3}Formação dos novos vetores}{49}{subsubsection.5.4.2.3}%
+\contentsline {subsection}{\numberline {5.4.3}Mutação}{50}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}Análise dos Resultados}{51}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Teoria da Cooperação e o Dilema do Prisoneiro}{52}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}O Dilema do Prisioneiro}{53}{subsection.5.6.1}%
+\contentsline {chapter}{\numberline {6}Conclusão}{56}{chapter.6}%
+\contentsline {chapter}{Referências}{56}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Sumário de Terminologia Natural e Terminologia Artificial}{61}{appendix.a.A}%
+\contentsline {chapter}{\numberline {B}Código: Exemplo de Aplicação de um AG simples em Python (\autoref {sec:ProblemaValorMaximoCaixaPreta})}{63}{appendix.a.B}%

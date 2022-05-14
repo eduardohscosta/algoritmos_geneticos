@@ -1,97 +1,241 @@
 \chapter{Aplicação de Algoritmos Genéticos na Economia}
 
-Neste capítulo, busca-se apresentar algumas aplicações de AGs em problemas na economia e discussões voltadas a contextos econômicos, especialmente, nas áreas de otimização, inovação e aprendizagem adaptativa.
+Neste capítulo, busca-se realizar uma breve apresentação de AGs aplicados à problemas de diversas áreas da economia, assim como um aprofundamento em alguns trabalhos de destaque na literatura.
 
 \section{Introdução}
 
-A economia, sendo uma ciência social, não possui um laboratório totalmente controlado para se testar hipóteses e modelos, havendo a necessidade de se utilizar premissas que tornem possível a aplicação matemática de conceitos e modelos teóricos em busca de encontrar respostas para as perguntas a serem respondidas sobre o comportamento dos agentes econômicos e da sociedade como um todo. Contudo, muitas vezes, os modelos se apresentam limitados ou insuficientes quando testados em problemas reais complexos.
+Desde os primeiros estudos realizados por Holland na primeira metade da década de 1960, os AGs se tornaram uma área importante de pesquisa dentro do campo de Inteligência Artificial, atraindo diversos pesquisadores e se demonstrando um modelo bastante robusto para resolução de problemas complexos. Devido às suas características, os AGs, naturalmente, tornaram-se objeto de estudos e aplicações em problemas voltados a contextos econômicos. \Citet{indexed_bibliography_2000}, realizaram um estudo referente ao número de publicações sobre AGs de 1960 até 2007, onde, analisando diversos periódicos e bancos de dados de publicações científicas, os autores contabilizaram 20.598 trabalhos relacionados à aplicação de AGs, sendo 1.515 em Economia (aproximadamente 7,3\%). As publicações foram divididas em 10 temas principais, conforme demonstrado na \autoref{fig:CompilacaoPublicacoesAlgoritmosGeneticos}:
 
-A gama de áreas que compõe a economia no que diz respeito ao escopo de análises dos agentes, políticas públicas, conjecturas, entre outras, é vasta. Porém, pode-se dividi-la em dois ramos principais: macroeconomia e microeconomia. Conforme apresenta \citet[pg.3]{pindyck_microeconomia_2013}, a microeconomia estuda os agentes a nível individual, sendo trabalhadores, consumidores, investidores, empresas, etc. Neste nível, analisa-se como os agentes que participam dos processos econômicos tomam suas decisões, fazem suas escolhas ou interagem entre si, formando agentes econômicos maiores que apenas uma unidade isolada. Assim sendo, a microeconomia não busca observar indicadores agregados como a taxa de crescimento da economia, a inflação, o nível de desemprego, entre outros. Cabe à macroeconomia a análise destes agregados, e será nela que iremos nos concentrar para entender as formas de aplicação dos AGs em contextos econômicos.
+\figura
+	{Número de Publicações com Aplicação de AGs em Economia de 1960-2007, por tema}
+	{1}
+	{imagens/CompilacaoPublicacoesAlgoritmosGeneticos.png}
+	{CompilacaoPublicacoesAlgoritmosGeneticos}
+	{adaptado de \Citet[p.5]{indexed_bibliography_2000}}
 
-O escopo de estudos da macroeconomia é apresentado por \citeauthor*{snowdon_modern_2005} da seguinte maneira:
+Alguns pontos interessantes podem ser observados. Podemos inferir que, ao menos, 62\% dos trabalhos foram aplicados a problemas de otimização (\textit{scheduling}\footnote{Scheduling, ou agendamento, em tradução livre, é um problema voltado à otimização da alocação de recursos em processos que precisam ser realizados com uma determinada frequência.} e \textit{traveling salesman problem\footnote{Traveling salesman problem, ou problema do caixeiro viajante, em tradução livre, é um problema voltado à otimização de rotas, principalmente, em processos logísticos.}}), resultado que não surpreende se olharmos a evolução da pesquisa dos AGs e suas aplicações (vide \autoref{sec:AlgoritmosGeneticos}). Quando observamos a distribuição das publicações ao longo do tempo, é possível notar que o número de pesquisas publicadas se concentrou, em grande parte, na década de 1990, com aproximadamente 82\% do total (\autoref{fig:CompilacaoPublicacoesAlgoritmosGeneticosPorAno}).
 
-\citacao
-	{%
-		A macroeconomia está preocupada com a estrutura, desempenho e comportamento da economia como um todo. A principal preocupação dos macroeconomistas é analisar e tentar entender os determinantes subjacentes das principais tendências agregadas da economia em relação à produção total de bens e servições (PIB), desemprego, inflação e transações nacionais. Em particular, a análise macroeconômica procura explicar a causa e o impacto das flutuações de curto prazo no PIB (o ciclo de negócios) e os principais determinantes da trajetória de longo prazo do PIB (crescimento econômico)
-	}{%
-		Macroeconomics is concerned with the structure, performance and behaviour of the economy as a whole. The prime concern of macroeconomists is to analyse and attempt to understand the underlying determinants of the main aggregate trends in the economy with respect to the total output of goods and services (GDP), unemployment, inflation and international transactions. In particular, macroeconomic analysis seeks to explain the cause and impact of short-run fluctuations in GDP (the business cycle), and the major determinants of the long-run path of GDP (economic growth).
-	}
-	{\citep[pg.1]{snowdon_modern_2005}}
-	{(tradução nossa).}
+\figura
+	{Número de Publicações com Aplicação de AGs em Economia de 1960-2007, por ano}
+	{1}
+	{imagens/CompilacaoPublicacoesAlgoritmosGeneticosPorAno.png}
+	{CompilacaoPublicacoesAlgoritmosGeneticosPorAno}
+	{adaptado de \Citet[p.6]{indexed_bibliography_2000}}
+	
+Não pretendemos, neste trabalho, analisar as causas do comportamento apresentado acima. Contudo, vale destacar que as publicações em Economia têm uma importante participação na área de pesquisa dos AGs, assim como uma gama de temas que carece de estudos e exemplos de aplicações, se apresentando como um campo com muitas oportunidades de pesquisa. Com isso, pretende-se, nas seções subsequentes, apresentar alguns exemplos de publicações voltadas a diferentes problemas econômicos, sobretudo, da segunda metade da década de 1980 até o o fim da década de 1990.
 
-Contudo, claro, os indicadores-objetivo da macroeconomia tem grande importância e impacto na vida das pessoas a nível individual. Uma economia que apresenta uma taxa de crescimento contínuo, e uma baixa taxa de desemprego e inflação, pode ser considerada bem sucedida em relação às suas políticas e estratégias econômicas que, por sua vez, impactarão positivamente o nível de felicidade e bem-estar da população como um todo. Em contrapartida, crises econômicas aumentam a insegurança e incerteza, assim como reduzem o nível geral de bem-estar e felicidade dos indivíduos. Dessa forma, as análises econômicas seguiram separadamente por um longo período, com uma alocação muito clara do que seria uma análise voltada à microeconomia ou macroeconomia, sendo a união dos conhecimentos e teorias destes dois campos de estudo relativamente recente (ver \autoref{sec:AsPrincipaisTeoriasEconomicasDoSeculoXXeXXI}).
+\section{Comportamento Econômico Adaptativo}
 
-Em termos de análises macroeconômicas, um dos principais objetivos, senão o principal, é a elaboração de políticas que visam manter uma estabilidade econômica frente aos choques endógenos e exógenos que podem afetar negativamente um conjunto de indicadores. Busca-se entender como determinados agregados, que compõem uma nação, se comportaram durante um período e como prevê-los no longo prazo como objetivo de antecipar diferentes tipos de cenários. Não há, contudo, uma forma correta, muito menos um consenso, de como se realizar tais análises, criando-se, ao longo do tempo, diferentes metodologias de como construir os argumentos em torno das análises conjecturais do passado, presente ou futuro. \citeauthor*{snowdon_modern_2005} ilustram muito bem a constituição de uma teoria econômica, onde, \enquote{organizada através de uma estrutura lógica (ou teórica), forma a base sobre a qual uma política econômica é projetada e implementada}, sendo que \enquote{[...] o problema intelectual para os economistas é como capturar, na forma de modelos específicos, o complicado comportamento interativo de milhões de indivíduos engajados na atividade econômica}\footnote{\textit{Macroeconomic theory, consisting of a set of views about the way the economy operates, organized within a logical framework (or theory), forms the basis upon which economic policy is designed and implemented. Theories, by definition, are simplifications of reality. This must be so given the complexity of the real world. The intellectual problem for economists is how to capture, in the form of specific models, the complicated interactive behaviour of millions of individuals engaged in economic activity.}} \citep[pg.4]{snowdon_modern_2005} (tradução nossa).
-
-Assim, parte-se, inicialmente, de modelos simples, generalizados e com uma série de hipóteses em busca de cobrir toda a complexidade da realidade. Por sua vez, embora simples, estes modelos apresentam as primeiras respostas para o entendimento de como determinados fenômenos ocorrem e qual seu impacto na sociedade como um todo, podendo se considerar uma teoria bem sucedida, a que apresenta um conjunto de modelos que preveem determinados cenários e quais políticas econômicas poderão ser implementadas visando alcançar objetivos definidos de uma nação que, de maneira prática, apresentam-se como a busca por uma taxa de crescimento econômico satisfatória sem a desestabilização da economia durante o processo.
-
-\section{As Principais Teorias Macroeconômicas do Século XX e XXI}
-\label{sec:AsPrincipaisTeoriasEconomicasDoSeculoXXeXXI}
-
-Em torno da pluralidade dos pensamentos e teorias econômicas ao longo do século XX e XXI, \citeauthor*{blanchard_macroeconomics_2020} \citeapudyear{blanchard_macroeconomics_2020}{snowdon_modern_2005}aponta que \enquote{o que os economistas acreditam hoje, é o resultado de um \textbf{processo evolutivo} (destacado por nós) no qual eles eliminaram aquelas ideias que falharam e mantiveram as que parecem explicar bem a realidade.}\footnote{\textit{What macroeconomists believe today is the result of an evolutionary process in which they have eliminated those ideas that failed and kept those that appear to explain reality well.}}
-
-Há um certo consenso de que o entendimento da macroeconomia, como uma área "formal" de estudos, acontece na primeira metade do século XX. Contudo, por todo o período seguinte, houve discordâncias e controvérsias acerca de qual seria a melhor e mais correta metodologia para análises macroeconômicas. \Citet[pg.1-14]{mayer_1994}, em seu artigo intitulado \enquote{\textit{Why is there so much disagreement among economists?}}, lista sete causas principais para a falta de alinhamento entre os macroeconomistas ao longo da história: i) um conhecimento limitado do funcionamento da economia, ii) o conjunto de assuntos investigados em constante crescimento, iii) a necessidade de considerar demais fatores que causam grande impacto na economia que subdivide-se em mais quatro causas como iv) os fatores políticos; v) os julgamentos de valor; vi) as empatias sociais; e, por último, vii) as metodologias.
-
-Ademais, como argumentam \Citet[pg.6-7]{snowdon_modern_2005}, a própria rigidez dos métodos de pesquisa científica convergem para um contexto de discussões e discordâncias, evitando que haja, por exemplo, uma estagnação no campo dos estudos macroeconômicos, assim como os embates se concentram mais nas questões teóricas, evidências apresentadas, ou empíricas, e das ferramentas utilizadas para resolução dos problemas, do que sobre quais são os reais objetivos das políticas econômicas (alto nível de emprego, estabilização dos preços e rápido crescimento econômico). Dessa forma, a escolha das ferramentas ou dos métodos que serão utilizados para resolver estes problemas dependerão dos diagnósticos das causas raízes dos problemas em uma economia. Neste ponto, divide-se os estudos em duas abordagens principais: clássica e keynesiana.
-
-\subsection{Abordagem Clássica}
-
-Dentre as diversas ideias apresentadas por \Citet{smith1996riqueza} em sua obra primordial da, futuramente conhecida como abordagem clássica, \enquote{A Riqueza das Nações: investigação sobre sua natureza e suas causas}, o \text{laissez-faire}\footnote{Expressão francesa que significa, de forma literal, \enquote{deixe estar ou deixe fazer}.} é a principal. Smith defendia que, em um cenário ideal, o governo deveria intervir o mínimo possível nos interesses e interações dos agentes privados, sobretudo, o comércio. Cabia ao governo, na figura do soberano à época, apenas três, importantes, deveres: i) \enquote{[...] o dever de proteger a sociedade contra a violência e a invasão de outros países independentes}; ii) \enquote{[...] o dever de proteger, na medida do possível, cada membro da sociedade contra a injustiça e a opressão de qualquer outro membro da mesma, ou seja, o dever de implementar uma administração judicial exata}; iii) \enquote{[...] o dever de criar e manter certas obras e instituições públicas que jamais algum indivíduo ou um pequeno contingente de indivíduos poderão ter o interesse de criar e manter [...]} \cite[pg.170]{smith2020riquezav2}.
-
-Como apontado por \Citet[pg.105]{vasconcellos2015}, o período dos estudos econômicos referente à Escola Clássica (pré Keynes) é formado pela contribuição de diversos autores que contribuíram de forma isolada ao longo do século XIX e início do XX, tendo, em grande parte, as ideias de Smith como precursoras. Assim sendo, quando se fala da abordagem clássica, ou Escola Clássica, entende-se como uma compilação das principais contribuições pré keynesianismo.
-
-Para a Escola Clássica, o mercado tende a sempre alcançar o equilíbrio econômico através do pleno emprego, ou seja, onde a oferta e a demanda por mão-de-obra são iguais. Assim, como existe uma predeterminação do nível de atividade e de emprego pelas forças de mercado, as chamadas variáveis reais, a variação dos preços é impactada apenas pela quantidade de moeda, isto é, não afeta os agregados econômicos nem os preços relativos. Com isso, valendo-se da máxima \enquote{a oferta cria sua própria demanda} (Lei de Say), as políticas monetárias não têm efeito sobre a oferta e demanda agregada (hipótese conhecida como a neutralidade da moeda\footnote{Na abordagem clássica há uma separação entre as variáveis reais (nível de emprego, produto, salário real, etc.) e as variáveis nominais ou monetárias (preços e salário nominal). A neutralidade da moeda parte da hipótese de que o estoque de moeda não afeta as variáveis reais, algo que ocorrerá apenas se existir alguma imperfeição ou distorção nos mercados.}), pois a demanda agregada não é um fator de impacto quando se olha para a oferta agregada que, por sua vez, é determinado pela produção total que as empresas e as famílias estão dispostas a ofertar por um determinado preço.
-
-Dessa forma, partindo do pressuposto de que o mercado de trabalho é do tipo concorrência perfeita, ou seja, com um grande número de ofertantes (sem fixação dos preços por parte de sindicatos, por exemplo) e um grande número de demandantes (sem fixação dos salários que serão pagos pela empresa), o equilíbrio no mercado de trabalho é alcançado quando a demanda por mão-de-obra se iguala à oferta por mão-de-obra. Em outras palavras, num dado nível de salário real, a empresa encontrará uma oferta de trabalho suficiente para suprir a demanda e todos os trabalhadores que quiserem trabalhar, encontrarão um emprego. No caso de um excesso na oferta de trabalho, o resultado será a queda do salário real ($\left(\frac{W}{P}\right)_{1}$ para $\left(\frac{W}{P}\right)_{E}$) e um excesso na demanda de trabalho resultará no aumento do salário real ($\left(\frac{W}{P}\right)_{2}$ para $\left(\frac{W}{P}\right)_{E}$). Assim, o mercado sempre forçará um equilíbrio entre a oferta e a demanda por mão-de-obra (vide \autoref{fig:AbordagemClassicaEquilibrioMercadoTrabalho}).
-
-\figuracomnota
-	{Equilíbrio no Mercado de Trabalho}
-	{.8}
-	{imagens/AbordagemClassicaEquilibrioMercadoTrabalho.PNG}
-	{AbordagemClassicaEquilibrioMercadoTrabalho}
-	{adaptado de \citet[p.113]{vasconcellos2015}}
-	{$N$: oferta de trabalho; $\frac{W}{P}$: salário real;}
-
-Então, definido o nível de emprego de equilíbrio do mercado de trabalho e um determinado produto de pleno emprego, as variáveis que irão impactar na oferta agregada serão apenas as variáveis reais, ou seja, os fatores que, quando alterados, podem impactar no mercado de trabalho, como o aumento ou queda na produção marginal do trabalho (variação do acúmulo de capital ou na tecnologia), que pode afetar a demanda por mão-de-obra, ou um aumento populacional, por exemplo, que afeta a oferta por mão-de-obra. Em relação à demanda agregada, a oferta de moeda tenderá a ser sempre igual à demanda de moeda que, por sua vez, é proporcional à quantidade do produto total. Assim, para uma determinada quantidade de moeda ofertada, quanto maior o nível de preços, menor será o estoque de moeda disponível para satisfazer as transações em uma economia e, por consequência, também será menor a quantidade de bens e serviços a serem demandados. No caso de um aumento no estoque de moeda, a demanda agregada aumentará, e, no caso de uma queda, a demanda agregada irá reduzir.
-
-Com isso, temos que o produto total de uma economia é afetado apenas pelas variáveis que influenciam a oferta agregada e que os fatores que influenciam a demanda agregada não impactam no produto total, já que afetam apenas os preços. O equilíbrio de pleno emprego, então, é alcançado através dos mecanismos de preços que operam a auto-regulação do mercado, evitando, assim, uma intervenção governamental em busca do equilíbrio.
-
-\subsection{Abordagem Keynesiana}
-
-A abordagem keynesiana é, sobretudo, uma negação da abordagem clássica. Como cita \citeauthor*{mankiw1989}, a ideia da auto-regulação dos agentes privados e intervenção mínima por parte do Estado frente às novas ideias apresentadas por Keynes de uma maior intervenção estatal em busca de regular a demanda agregada, visando manter um certo nível de produção e emprego, dominou as discussões econômicas ao longo do século XIX e XX:
+Uma das primeiras publicações com enfoque na análise e experimentação de AGs em problemas econômicos vem de John Miller, com participação de Holland, em artigo intitulado \enquote{\textit{Artificial Adaptive Agents in Economic Theory}} \citep{miller_1986}. Os autores tinham dois objetivos principais com este trabalho: demonstrar que alguns comportamentos econômicos são análogos ou similares a comportamentos biológicos de ecossistemas naturais e que estes comportamentos podem ser modelados e analisados \Citep[pg.1]{miller_1986}. Em 1991, Holland e Miller publicam outro trabalho argumentando como os agentes artificiais adaptativos, simulados por AGs, por exemplo, demonstram uma excelente performance e robustez para resolução de problemas em sistemas adaptativos complexos. Como apontado por \Citet{holland_miller_1991}:
 
 \citacao
 	{%
-		A Escola Clássica enfatiza a otimização dos atores econômicos privados, o ajuste dos preços para o equilíbrio da oferta e demanda e a eficiência dos mercados livres. A Escola Keynesiana acredita que o entendimento das flutuações econômicas requer, não apenas estudar os meandros do equilíbrio geral, mas também apreciar a possibilidade de falha de mercado em grande escala.
+		Muitos sistemas econômicos podem ser classificados como sistemas adaptativos complexos. Tal sistema é complexo em um sentido especial: (I) consiste em uma rede de agentes que interagem (processos, elementos); (ii) apresenta um comportamento dinâmico e agregado que emerge das atividades individuais dos agentes; e (iii) seu comportamento agregado pode ser descrito sem um conhecimento detalhado do comportamento dos agentes individuais. Um agente em tal é adaptativo se satisfaz um par adicional de critérios: pode ser atribuído um valor (desempenho, utilidade, recompensa, aptidão ou similar); e o agente se comporta de modo a aumentar esse valor ao longo do tempo.
 	}{%
-		The classical school emphasizes the optimization of private economic actors, the adjustment of relative prices to equate supply and demand, and the efficiency of unfettered markets. The Keynesian school believes that understanding economic fluctuations requires not just studying the intricacies of general equilibrium, but also appreciating the possibility of market failure on a grand scale.
+		Many economic systems can be classified as complex adaptive systems. Such a system is complex in a special sense: (I) It consists of a network of interacting agents (processes, elements); (ii) is exhibits a dynamic, aggregate behavior that emerges from the individual activities of the agents; e (iii) its aggregate behavior can be described without a detailed knowledge of the behavior of the individual agents. An agent in such is adaptive if it satisfies an additional pair of criteria: can be assigned a value (performance, utility, payoff, fitness, or the like); and the agent behaves so as to increase this value over time.
 	}
-	{\citep[pg.79]{mankiw1989}}
+	{\Citet[p.365]{holland_miller_1991}}
 	{(tradução nossa).}
 
-Segundo \Citet[pg.14]{snowdon_modern_2005}, Keynes via a teoria clássica como o grande problema da ineficiência de análises econômicas, à época, na resolução das dores sofridas pelas sociedades ao redor do mundo no período entre guerras, sendo desastrosa quando aplicada em problemas do mundo real. Para ele, o capitalismo não era a causa raiz, embora se apresentava como um sistema instável. Com isso, Keynes propôs novas ideias visando fortalecer este sistema por meio da diminuição ou eliminação completa das falhas mais pungentes do capitalismo através da busca pelo pleno emprego e estabelecendo as questões de eficiência, estabilidade e crescimento econômico como os temas centrais das políticas econômicas.
+Para apresentar alguns exemplos de aplicação do algoritmo em ambientes complexos, buscando captar o comportamento dos agentes, vamos nos aprofundar em algumas implementações realizadas no trabalho de Miller e Holland de 1986. Os AGs foram aplicados em diversos contextos econômicos distintos com o objetivo de analisar os resultados de um modelado adaptativo relativo ao comportamento, por exemplo, da demanda de um consumidor, sob incerteza, da estrutura de um mercado, entre outros. Abaixo, iremos nos aprofundar em alguns destes experimentos.
 
-\section{Economia Evolucionária}
+Na primeira aplicação, é realizada a implementação de um AG sobre um problema simples de demanda em uma economia contendo um único consumidor, com a finalidade de comparar diretamente um modelo padrão de otimização da utilidade\footnote{$\max_{x,y} U(x,y) ~ s \cdot t \cdot x + p_{y}y = I$, onde o consumidor está apto a comprar tanto o bem $x$ quanto o bem $y$. O primeiro é vendido ao preço de mercado de \$1, passando para \$2 a partir da 15ª simulação, e o segundo a \$$p_y$. O consumidor possui uma função de utilidade igual a $U_{(x,y)}$ e está sob uma restrição orçamentária de \$$I$. O consumidor também tem total conhecimento sobre a função de utilidade $U_{(x,y)}$ para todos os valores de $x$ e $y$, assim sabe otimizar o próprio retorno.} e um modelo adaptativo\footnote{$U_{(x,y)} = u(x,y) - \Gamma (x, y)$, sendo o comportamento do consumidor representado como um vetor $\{x,y\}$ (produtos disponíveis), a função de utilidade como $u(x,y)$ e a função de penalidade de violação da restrição orçamentária como $\Gamma (x, y)$. Dessa forma, o consumidor possui um conhecimento limitado de um conjunto de comportamentos e seus níveis de utilidade correspondentes. Diferentemente da abordagem de otimização padrão, não há uma função de utilidade predefinida, já que a mesma vai se formando ao longo de várias experiências passadas, bem como não possui o conhecimento necessário para maximizar uma função de utilidade arbitrária.} elaborado para resolução do problema. A experimentação consistiu na análise dos resultados de maximização da utilidade por cada um dos métodos, onde foram realizadas 30 simulações, com um conjunto predefinido de 20 comportamentos diferentes conhecidos pelo consumidor. Na 15ª simulação, foi implementada uma variação nos preços para verificar como seria a reação dos comportamentos frente à mudança. Os resultados são apresentados nas figuras \autoref{fig:MillerAGBehaviors1}, \autoref{fig:MillerAGBehaviors2} e \autoref{fig:MillerAGBehaviors3} com cada valor médio de utilidade sendo representado por um único ponto (equivalente ao desvio padrão) em cada geração, assim como a variância do modelo adaptativo é representada pela linha contínua em torno dos valores médios de utilidade.
 
-\section{Algoritmos Genéticos Aplicados a Problemas de Otimização}
-\label{subsec:AlgoritmosGeneticosAplicadosProblemasOtimizacao}
+Como é possível observar \autoref{fig:MillerAGBehaviors1}, os comportamentos se adaptam rapidamente nas primeiras simulações em busca de aumentar o valor médio de utilidade, assim como a utilidade média converge rapidamente para a maior de utilidade possível. Na simulação 15, os comportamentos que haviam se ajustado ao cenário anterior, são penalizados por ultrapassarem a restrição orçamentária com o impacto da mudança nos preços. Contudo, logo em seguida, os comportamentos se ajustam ao novo contexto, retornando para uma utilidade média mais elevada após a aplicação das penalidades do modelo.
 
-\section{Algoritmos Genéticos Aplicados a Problemas de Inovação}
-\label{subsec:AlgoritmosGeneticosAplicadosProblemasInovacao}
+\figura
+	{Resultados dos valores médios de maximização de utilidade por simulação}
+	{.7}
+	{imagens/MillerAGBehaviors1.PNG}
+	{MillerAGBehaviors1}
+	{\Citet{miller_1986}}
 
-\section{Aprendizagem Adaptativa}
+Em relação ao ajuste da demanda do bem $x$ e do bem $y$ frente aos comportamentos do consumidor e ao impacto do preço na 15ª iteração, a demanda de ambos os produtos se ajustaram rapidamente os níveis de ótimo, com destaque para o produto $y$ que alcança logo na 4ª simulação o nível ótimo. Dessa forma, os resultados gerais desta aplicação simples, onde foi necessário poucos ajustes para implementação, indicaram que, embora o modelo adaptativo tenha se apresentado positivamente reativo aos diferentes comportamentos do consumidor, alcançando os valores previsto pela função padrão de otimização, os resultados não acontecem instantaneamente.
 
-Como apresentado nas subseções anteriores, desde a criação dos AG por Holland em meados da década de 1950 até o período presente, os AGs foram aplicados em diversos tipos de contextos e objetivos, destacando-sem em alguns campos, conforme apresenta \Citet{Geisendorf2007}:
+\figura
+	{Resultados dos valores médios de maximização da demanda do bem $x$ por simulação}
+	{.7}
+	{imagens/MillerAGBehaviors2.PNG}
+	{MillerAGBehaviors2}
+	{\Citet{miller_1986}}
+
+\figura
+	{Resultados dos valores médios de maximização da demanda do bem $y$ por simulação}
+	{.7}
+	{imagens/MillerAGBehaviors3.PNG}
+	{MillerAGBehaviors3}
+	{\Citet{miller_1986}}
+
+A segunda implementação foi realizada sobre um modelo para análise de comportamentos sob um contexto de incerteza. No modelo básico, um experimento empírico de correspondência de probabilidade, os indivíduos precisam escolher entre dois dispositivos que irão retornar uma recompensa. O primeiro dispositivo tem um probabilidade de recompensa de $p$, quanto o segundo possui uma probabilidade de $1-p$. Os resultados empíricos apontam que os indivíduos tendem a escolher aleatoriamente um dispositivo com uma probabilidade parecida à probabilidade do dispositivo retornar uma recompensa.
+
+Como apresentado na \autoref{fig:MillerAGProbabilityMatching1}, os resultados do modelo de comportamento adaptativo ficaram bastante similares aos dos experimentos empíricos. Assim como no experimento da análise de comportamento da demanda de um consumidor, o modelo leva algumas gerações para atingir o nível ótimo, ajustando-se à probabilidade do indivíduo selecionar um dado dispositivo. Por ser um processo altamente estocástico devido à possibilidade de apenas uma escolha de cada um indivíduo por um dos dispositivos, o modelo apresentou uma variância em relação aos valores médios. Para redução deste efeito, foi realizado um segundo experimento aumentando de apenas uma tentativa de escolha para cinco, em cada uma das gerações. Com este ajuste, além da variância ter diminuído consideravelmente, a probabilidade ótima de escolher o dispositivo correto saiu de, aproximadamente, 80\% para 90\%, demonstrando que o aumento do número de tentativas de escolha permitiu um melhor ajuste do comportamento do modelo frente aos retornos em cada geração. 
+
+\figura
+	{Resultados do experimento de correspondência de probabilidade com uma tentativa de escolha, por simulação}
+	{.7}
+	{imagens/MillerAGProbabilityMatching1.PNG}
+	{MillerAGProbabilityMatching1}
+	{\Citet{miller_1986}}
+
+\figura
+	{Resultados do experimento de correspondência de probabilidade com cinco tentativas de escolha, por simulação}
+	{.7}
+	{imagens/MillerAGProbabilityMatching2.PNG}
+	{MillerAGProbabilityMatching2}
+	{\Citet{miller_1986}}
+	
+O terceiro experimento foi realizado para analisar a dinâmica da estrutura de um mercado. Diferentemente dos modelos padrões de equilíbrio que, apesar de apresentarem noções gerais das direções para o equilíbrio do mercado, são complexos de implementar e avaliar, os modelos adaptativos são bastante ajustáveis a problemas de estruturas dinâmicas. Como argumenta \Citet{miller_1986}:
 
 \citacao
 	{%
-		Primeiro, o modelo de simulação foi um procedimento muito bom de resolução de problemas, sendo capaz de detectar soluções quase ótimas mesmo em ambientes complexos. Assim, um procedimento bastante semelhante, Estratégias Evolucionárias, foi desenvolvido por engenheiros para projetar componentes técnicos [...] e os próprios AG foram usados para resolver problemas logísticos e tecnológicos [...] Em segundo lugar, os mecanismos que funcionam no AG parecem ser mecanismos comuns dos processos evolutivos em geral. São os mecanismos que explicam a origem da novidade e por que os sistemas em evolução são capazes de se adaptar tão bem ao seu ambiente
+		O modelo de base biológica apresentado aqui fornece uma representação particularmente boa da estrutura de mercado. Os mercados têm paralelos muito próximos nos ecossistemas biológicos. Como organismos que vivem em um mesmo ecossistema, as empresas que operam no mesmo mercado devem competir umas com as outras para sobreviver. As empresas que podem competir com sucesso florescerão e crescerão em tamanho; as empresas que não podem competir acabarão por falir.
 	}{%
-		First, the simulation model was a very good problem solving procedure, being able to detect almost optimal solutions even in complex enviroments.  Hence a quite similar procedure, Evolutionary Strategies, had been developed by engineers to design technical components [...] and GA themselves have been used to solve logistic and technological problems. [...] Second, the mechanisms working in GA seemed to be commom mechanisms of evolutionary processes in general. They are the mechanisms explaining the origin of novelty and why systemas undergoing evolution are able to adapt so well to their environmnet.
+		The biologically-based model presented here provides a particularly good representation of market structure. Markets have very close parallels in biological ecosystems. Like organisms living in a same ecosystem, firms operating in the same market must compete with one another to survive. Firms which can compete successfully will flourish and grow in size; firms which can not compete will eventually go out of business.
 	}
-	{\citep[pg.3]{Geisendorf2007}}
+	{\citep[p.11]{miller_1986}}
 	{(tradução nossa).}
 
-Destacamos, no presente trabalho, exemplos de aplicações, em contextos econômicos, em problemas de otimização (vide \autoref{subsec:AlgoritmosGeneticosAplicadosProblemasOtimizacao}) e inovação (vide \autoref{subsec:AlgoritmosGeneticosAplicadosProblemasInovacao}). Naturalmente, com o sucesso de tais aplicações, poderia-se inferir que os AGs também pudem ser utilizados em demais problemas econômicos como a descrição do processo de evolução econômica ou o aprendizado e adaptação dos agentes econômicos.
+O modelo foi implementado em uma estrutura de mercado de concorrência perfeita, contendo 20 firmas. Neste modelo, quanto maior o lucro da firma, melhor sua performance, assim como foi configurado que, conforme uma firma aumentasse suas perdas, sua performance seria reduzida. Foram realizadas 30 simulações, com variações nos custos na função de produção e na produção total da indústria, bem como utilizou-se o indicador de Herfindahl–Hirschman (H-H) para medir a concentração da indústria em cada simulação.
 
-Os modelos de aprendizagem econômica são modelos que partem da premissa que os agentes são racionais e que tal racionalidade é limitada.
+Os resultados das simulações realizadas em um mercado com custos lineares são apresentados na \autoref{fig:MillerAGMarketStructure1}. O modelo adaptativo apresentou valores de saída acima dos valores previstos sob concorrência perfeita em praticamente todas as simulações, refletindo o incentivo que as firmas possuem em aumentar seus resultados em níveis de preços próximos ao equilíbrio dos preços na indústria. No caso do aumento constante de custos, o modelo apresentou valores bem próximos aos valores esperados pela abordagem do modelo padrão de equilíbrio (vide \autoref{fig:MillerAGMarketStructure3}).
+
+\figura
+	{Resultados do experimento em estruturas de mercado com custos lineares, por simulação}
+	{.7}
+	{imagens/MillerAGMarketStructure1.PNG}
+	{MillerAGMarketStructure1}
+	{\Citet{miller_1986}}
+	
+\figura
+	{Resultados do experimento em estruturas de mercado com custos quadráticos, por simulação}
+	{.7}
+	{imagens/MillerAGMarketStructure3.PNG}
+	{MillerAGMarketStructure3}
+	{\Citet{miller_1986}}
+
+Em relação aos valores do indicador H-H, o mercado sob condições de custos lineares não sofreu grandes variações na concorrência entre as firmas ao longo das simulações, porém apresentando uma concentração acima do mercado sob condições de concorrência perfeita (\autoref{fig:MillerAGMarketStructure2}). No mercado com aumento constante de custos, o modelo adaptativo inicia as simulações apresentando uma concentração de mercado relativamente elevada, porém rapidamente se ajusta a um nível próximo ao índice perfeito de distribuição das firmas em uma indústria.
+
+\figura
+	{Resultados do indicador H-H em estruturas de mercado com custos lineares, por simulação}
+	{.7}
+	{imagens/MillerAGMarketStructure2.PNG}
+	{MillerAGMarketStructure2}
+	{\Citet{miller_1986}}
+
+\figura
+	{Resultados do indicador H-H em estruturas de mercado com custos quadráticos, por simulação}
+	{.7}
+	{imagens/MillerAGMarketStructure4.PNG}
+	{MillerAGMarketStructure4}
+	{\Citet{miller_1986}}
+
+Na quarta aplicação, os autores buscaram analisar como o modelo adaptativo se comportaria em um problema de inovação tecnológica. Neste experimento, é possível observar como algumas características dos AGs são bastante similares aos processos de inovação na dinâmica econômica. Os operadores de seleção e cruzamento, por exemplo, podem ser comparados aos processos que as firmas realizam de replicar os produtos que melhor se adaptaram ao mercado, assim como buscam combinar estes produtos esperando resultados ainda melhores. O operador de mutação, por sua vez, é uma boa analogia para a possibilidade de qualquer tecnologia em um mercado sofrer uma alteração que poderá melhorar ou piorar sua aptidão em relação a um dado contexto.
+
+No modelo elaborado, a indústria, contendo 20 firmas, é simulada através de 30 períodos. De início, as firmas desta indústria escolhem aleatoriamente seus planos de produção, e o mantêm até o 12º período, quando são retiradas as restrições de inovações tecnológicas e as firmas são liberadas para realizar alterações em seus planos de produção. Como pode ser observado na \autoref{fig:MillerAGInnovation}, as firmas vão lentamente melhorando seus resultados conforme o decorrer dos períodos, chegando próximo ao nível de máximo esperado. Após a retirada das restrições de inovação, a partir da inovação dos primeiros produtos, as demais empresas da indústria irão incorporar a característica inovadora em seu processo de produção. Com isso, a produção total da indústria apresenta um crescimento acelerado entre os períodos 11 e 21, estabilizando o crescimento a partir de então.
+
+\figura
+	{Resultados do experimento em um mercado com processos de inovação, por simulação}
+	{.7}
+	{imagens/MillerAGInnovation.PNG}
+	{MillerAGInnovation}
+	{\Citet{miller_1986}}
+	
+\section{Aprendizado de Agentes Econômicos}
+
+Em 1989, em seu artigo denominado \textit{\enquote{Learning by Genetics Algorithms in Economic Enviromnets}},  \Citet{arifovic_1989} implementa alguns modelos de AGs em diferentes contextos econômicos: um modelo de empresas competitivas que aprendem a prever o preço de seu produto e o quanto fornecer baseado neste aprendizado; dois modelos de geração sobreposta de moeda fiduciária com oferta de moeda constante e com déficit constante; e, por último, de um modelo que simula um mercado de ativos com agentes informados e desinformados. Exceto a 1ª implementação, os demais modelos possuem conceitos mais avançados, que não foram apresentados no presente trabalho. Dessa forma, iremos nos aprofundar apenas no primeiro problema apresentado pela autora. Os demais experimentos podem ser conferidos em \Citet[pg.12-24]{arifovic_1989}.
+
+Ademais, o interesse de Arifovic em pesquisar modelos de AGs nas dinâmicas econômicas é apresentado da seguinte maneira:
+
+\citacao
+	{%
+		Meu interesse em AGs e as razões pelas quais os considero mais atraentes do que outros algoritmos para estudar a aprendizagem de agentes econômicos se enquadram em quatro categorias principais, sendo a primeira que os AGs parecem ser mais realistas como modelos de cognição humana, a segunda suas vantagens como maneira de resolver problemas de otimização, a terceira é que se supõe menos competência preexistente exigida em relação a um problema específico, em comparação com outros modelos de aprendizagem em economia e a quarta é sua capacidade de representar o caráter descentralizado da aprendizagem em economia.
+	}{%
+		My interest in GAs and the reasons why I find them more appealing than other algorithms for studying learning of economic agents fall into four main categories, the first being that GAs seem to be more realistic as models of human cognition, the second their advantages as a way of solving optimization problems, the third being that less preexisting competence required in respect to a specific problem is assumed, compared to other learning models in economics and the fourth being their ability to represent the decentralized character of learning in economics.
+	}
+	{\citep[p.1]{arifovic_1989}}
+	{(tradução nossa).}
+
+Arifovic também enumera diversos fatores pelo qual considera os AGs como um modelo de aplicação bastante efetivo e flexível. Para a autora, devido ao processamento paralelo de informações, a competição entre regras alternativas e a seleção das regras com maior desempenho e maior probabilidade de replicação, os AGs genéticos se diferenciam dos demais algoritmos de aprendizado, pois possui uma maior similaridade em relação aos processos cognitivos dos seres humanos. Relativo às vantagens dos AGs na resolução de problemas de otimização, são destacados os seguintes pontos: são menos limitados que outros métodos, pois exploram de forma bastante ampla as similaridades entre os conjuntos de parâmetros devido à codificação implementada sobres tais parâmetros; por realizarem a busca através de uma população de pontos, além de escalar os diferentes picos do horizonte de aptidão simultaneamente, os AGs tem menor probabilidade de apresentar um falso ótimo como solução para o problema, muito comum em métodos ponto-a-ponto que podem convergir para ótimos locais; trabalham com informações de recompensa, sem a necessidade de informações auxiliares; realizam uma busca aleatória através das regiões do espaço de busca utilizando regras de transição probabilística.
+
+Ademais, quando aplicados como modelos de aprendizagem a problemas econômicos, apresentam uma performance satisfatória com poucas informações de entrada. Ao contrário dos outros algoritmos que pressupõem a maximização da função objetivo do agente, os agentes aplicados nos modelos de AGs aprendem a maximizar suas funções de utilidade durante os processos geracionais. AGs também são bastante eficientes em implementações com o objetivo de compreender o aprendizado descentralizado e como esta descentralização é diferente do processo centralizado, onde os agentes reagem de forma similar em um dado contexto.
+
+Em sua primeira aplicação, é simulado um mercado competitivo com $n$ firmas que são tomadoras de preços e produzem os mesmos bens, onde as quantidades produzidas devem ser decididas antes que o preço do mercado seja observado. Conforme apresenta \Citet{arifovic_1989}, a analogia dos processos realizados pelos AGs em relação aos processos do mercado podem ser o seguinte: o operador de reprodução (o qual reproduz ou selecionada os indivíduos mais aptos) funciona como a replicação que o mercado realiza das firmas que tomaram as melhores decisões de produção, obtendo, assim, maiores lucros. A replicação destas firmas ocorre, pois os investidores buscam realizar seus investimentos nas firmas que dão lucro, ou seja, as demais firmas que não obtiveram muito sucesso, podem ter que sair do mercado. Já os operadores de cruzamento e mutação trabalham como o processo de inovação de um mercado, onde, através da recombinação de bens, ou implementação de novas ideias, gera-se novos produtos ou processos neste mercado.
+
+Para ilustrar melhor o experimento, a autora formulou uma versão das expectativas racionais através de um modelo. O custo de produção de uma firma foi representado por:
+
+\equacao
+	{C_{t}^i = xq_{t}^i + \frac{1}{2}y(q_{t}^i)^2,}
+	{\Citet[pg.8]{arifovic_1989}}
+
+\noindent onde $C_{t}^i$ é um custo de produção da firma $i$ no momento $t$ e $q_{t}^i$ é a quantidade produzida para venda no momento $t$.
+
+O lucro de uma única empresa, é representado como:
+
+\equacao
+	{\Pi{t}^i = P_{t}q_{t}^i - xq_{t}^i - \frac{1}{2}y(q_{t}^i)^2,}
+	{\Citet[pg.8]{arifovic_1989}}
+
+No momento $t-1$, a firma escolhe uma quantidade, $q_{t}$, para encontrar o valor máximo de $E_{t-1}=x+yq_{t}^i$ com base na sua experiência adquirida sobre os preços, $P_t$, dado por
+
+\equacao
+	{E_{t-1}P_t = x+yq_{t}^i}
+	{\Citet[pg.8]{arifovic_1989}}
+
+O preço $P_t$ que prevalece no mercado, no momento $t$, é dado pela seguinte curva de demanda:
+
+\equacao
+	{P{t} = A-B\sum^{n}_{i=1}{q_{t}^i}}
+	{\Citet[pg.8]{arifovic_1989}}
+	
+Em um equilíbrio com expectativas racionais, a expectativa das firmas em torno do preço, $P_t$, de um bem no momento $t$ é igual ao preço de equilíbrio ($E_{t-1}Pt = P_{t}$). Dessa forma, $x + yq_t = A - Bnq_{t}$, sendo $q_t = q_{t}^i$ para cada firma $i$, ou
+
+\equacao
+	{q_t = q^* = \frac{A - x}{bn + y}}
+	{\Citet[pg.8]{arifovic_1989}}
+
+Assim, foi configurado um AG para identificar se as quantidades produzidas e disponibilizadas para venda pelas firmas que utilizam o AG como esquema de aprendizado convergem para a quantidade contante $q^*$. No algoritmo, a decisão de produção de cada firma (o quanto ela espera vender), num momento $t$, é representada por um vetor (firma) de tamanho finito contendo 0's e 1's (regra da decisão), sendo o conjunto destes vetores uma população (indústria). A decodificação do vetor para números decimais representa a quantidade que a empresa decidiu produzir no momento $t$ (geração). A decodificação do vetor pode ser feita com a seguinte fórmula:
+
+\equacao
+	{%
+		x_{k} = {
+			\begin{cases}
+				x_{k-1} + 2^{k-1} & \text{para $a_{i,k} = 1$} \\
+				x_{k-1} 		  & \text{para $a_{i,k} = 0$}
+			\end{cases}
+		}
+	}
+	{\Citet[pg.8]{arifovic_1989}}
+
+
+
+para $k = 1...l$ e onde $a_{i,k}$ é o k-ésimo alelo no cromossomo (vetor) e $x_k$ é um número real que representa a decodificação do valor do vetor até o alelo $k$. Após a decodificação é feita a normalização é feita a normalização de $x_l$ através de um coeficiente de normalização como, por exemplo, $q{t}^i = \frac{xl}{normc}$, onde $normc$ é o coeficiente escolhida para normalização do valor de $x_l$. Após a definição da quantidade que cada firma irá produzir, é feita a soma de todas as quantidades e o preço de mercado da geração $t$, $P_t$, é computada através de $P{t} = A-B\sum^{n}_{i=1}{q_{t}^i}$. Os custos de produção de cada firma, por sua vez, são calculados associados à quantidade a ser produzida ($C_{t}^i = xq_{t}^i + \frac{1}{2}y(q_{t}^i)^2$).
+
+Definido o preço de mercado $P_t$, as quantidades que serão produzidas $q{t}^i$ e os custos de produção $C_{t}^i$, o lucro de cada firma é calculado usando $\Pi{t}^i = P_{t}q_{t}^i - xq_{t}^i - \frac{1}{2}y(q_{t}^i)^2$. Os lucros, os responsáveis por determinar a probabilidade da empresa continuar no mercado em $t+1$, são a representação dos valores de aptidão de cada vetor (firma):
+
+\equacao
+	{\mu{t}^i = \Pi{t}^i, i = 1 para n}
+	{\Citet[pg.8]{arifovic_1989}}
+
+Por último, o AG aplica os operadores de reprodução, cruzamento e mutação, gerando uma nova população ou geração. A partir de uma população inicial (geração 0) gerada aleatoriamente, estes processos se repetem sequencialmente, onde cada ciclo (ou iteração do algoritmo) é uma geração.
+
+Os resultados iniciais não satisfatórios. O algoritmo convergiu rapidamente para um pico, que não o ótimo. Isso pode ter ocorrido, pois, embora os vetores (firmas) aprendem rapidamente como maximizar seus lucros, após esse processo de aprendizagem inicial, os operadores de reprodução e mutação podem interferir negativamente em um vetor com alto valor de aptidão e, caso o algoritmo alcance um ponto ótimo, ele pode entender que é o ponto ótimo global dentro do espaço em que está realizando a busca. Em outras palavras, supondo que numa geração $t$ seja criada a melhor solução possível para o problema proposto (solução ótima), ao ser aplicado o operador de cruzamento e mutação, essa solução ótima pode combinar sua \enquote{composição genética} com outra solução distante muito pior, resultando que ambos os indivíduos fiquem com um valor de aptidão pior que o de seus pais, perdendo material genético importante. 
+
+Para contornar o problema de convergência, Arifovic implementou um processo que calcula o valor de aptidão de um vetor filho antes que ele efetivamente entre para um próxima geração. Assim, supondo uma reprodução de 100\% (2 filhos para 2 pais), se apenas um filho tiver um valor de aptidão maior que seus dois pais, ele substitui o pai com menor aptidão. No caso dos dois filhos terem um valor de aptidão maior que seus pais, ambos os pais são substituídos. Do contrário, onde os dois filhos tem valores menores que seus pais, os pais seguem para a próxima geração, e não os filhos.
+
+Olhando pelo viés econômico, seria o equivalente à firma decidir se a decisão de produção no momento $t$ é melhor ou pior que a decisão no momento $t-1$, ajustando levando em consideração apenas as ideias que podem trazer lucro. 
+
+Como pode ser observado na \autoref{fig:ArifovicMarketTab}, foram construídos 5 modelos de AG, onde cada modelo foi simulado sobre 200 gerações. Em todas as 5 gerações, os preços e quantidades definidos pelo AG ficaram muito próximos ao equilíbrio de expectativas racionais, onde a expectativa de todas as firmas do quanto produzir e disponibilizar para venda convergiram para o mesmo valor, que é igual às quantidades ótimos se o preço de mercado for de conhecimento de todos. O mesmo comportamento pode ser observado graficamente, onde foram definidos os parâmetros $A = 100$, $B = 0,02$, $x = 30$ e $y = 1$ (vide \autoref{fig:ArifovicMarket}).
+
+\figura
+	{Modelo de Firmas Competitivas que Aprendem a Maximizar o Lucro}
+	{.9}
+	{imagens/ArifovicMarket1.0.PNG}
+	{ArifovicMarketTab}
+	{\Citet{arifovic_1989}}
+
+\figura
+	{Modelo de Firmas Competitivas}
+	{.5}
+	{imagens/ArifovicMarket.PNG}
+	{ArifovicMarket}
+	{\Citet{arifovic_1989}}

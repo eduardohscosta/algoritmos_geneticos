@@ -5,100 +5,112 @@ Reallocating 'name_of_file' (item size: 1) to 4 items.
 The style file: apa.bst
 Reallocating 'name_of_file' (item size: 1) to 21 items.
 Database file #1: auxiliar/referencias.bib
-Repeated entry---line 10277 of file auxiliar/referencias.bib
+I was expecting a `,' or a `}'---line 9781 of file auxiliar/referencias.bib
+ : 
+ : @book{goldberg_genetic_1989,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 10021 of file auxiliar/referencias.bib
+ : 
+ : @article{bremermann_optimization_nodate,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 10217 of file auxiliar/referencias.bib
  : @book{cormen_introduction_2009
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10299 of file auxiliar/referencias.bib
+Repeated entry---line 10239 of file auxiliar/referencias.bib
  : @book{fedeli_introducao_2009
  :                             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10317 of file auxiliar/referencias.bib
+Repeated entry---line 10257 of file auxiliar/referencias.bib
  : @book{langdon_foundations_2002
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10347 of file auxiliar/referencias.bib
+Repeated entry---line 10287 of file auxiliar/referencias.bib
  : @article{gorn_american_1963
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10577 of file auxiliar/referencias.bib
+Repeated entry---line 10517 of file auxiliar/referencias.bib
  : @book{rechenberg_cybernetic_1965
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10639 of file auxiliar/referencias.bib
+Repeated entry---line 10579 of file auxiliar/referencias.bib
  : @book{rechenberg_cybernetic_1965
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10657 of file auxiliar/referencias.bib
+Repeated entry---line 10597 of file auxiliar/referencias.bib
  : @article{cavicchio_adaptive_1970
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10679 of file auxiliar/referencias.bib
- : @collection{university_of_michigan_artificial_1971
- :                                                   ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 10707 of file auxiliar/referencias.bib
+Repeated entry---line 10647 of file auxiliar/referencias.bib
  : @book{holland_adaptation_1975
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10735 of file auxiliar/referencias.bib
- : @article{jong_analysis_1975
- :                            ,
+I was expecting a `,' or a `}'---line 10851 of file auxiliar/referencias.bib
+ :  
+ :  publisher = {Doctoral dissetartion, University of Michigan}
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in noauthor_editorial_1993
 Warning--to sort, need author or key in noauthor_index_nodate
 Warning--empty year in noauthor_index_nodate
 Warning--empty author in noauthor_editorial_1993
+Warning--empty journal in indexed_bibliography_2000
+Warning--empty journal in arifovic_1989
+Warning--empty school in bagley_1967
 Warning--empty journal in bremermann_optimization_1962
 Warning--empty year in search_evolution_biophysics_1965
 Warning--empty journal in search_evolution_biophysics_1965
 Warning--empty journal in cavicchio_adaptive_1970
+Warning--empty school in de_jong_1975
 Warning--empty booktitle in Fogel1966ArtificialIT
+Warning--empty school in frantz_1972
 Warning--empty year in holland_1967
 Warning--empty journal in holland_1967
-Warning--can't use both author and editor fields in university_of_michigan_artificial_1971
-Warning--empty publisher in university_of_michigan_artificial_1971
-Warning--empty journal in jong_analysis_1975
+Warning--empty school in hollstien1971artificial
 Warning--can't use both author and editor fields in langdon_foundations_2002
-You've used 33 entries,
+Warning--empty school in rosenberg_1967
+Warning--empty school in weinberg1969computer
+You've used 34 entries,
             1940 wiz_defined-function locations,
-            655 strings with 8424 characters,
-and the built_in function-call counts, 10876 in all, are:
-= -- 1042
-> -- 352
-< -- 25
-+ -- 121
+            656 strings with 8183 characters,
+and the built_in function-call counts, 10998 in all, are:
+= -- 1059
+> -- 353
+< -- 26
++ -- 122
 - -- 110
-* -- 883
-:= -- 1916
-add.period$ -- 103
-call.type$ -- 33
-change.case$ -- 209
-chr.to.int$ -- 32
-cite$ -- 50
-duplicate$ -- 478
-empty$ -- 802
-format.name$ -- 155
-if$ -- 2121
-int.to.chr$ -- 2
+* -- 907
+:= -- 1956
+add.period$ -- 101
+call.type$ -- 34
+change.case$ -- 213
+chr.to.int$ -- 34
+cite$ -- 56
+duplicate$ -- 476
+empty$ -- 785
+format.name$ -- 154
+if$ -- 2106
+int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 48
-newline$ -- 166
-num.names$ -- 93
-pop$ -- 225
+missing$ -- 36
+newline$ -- 169
+num.names$ -- 96
+pop$ -- 220
 preamble$ -- 1
-purify$ -- 220
+purify$ -- 225
 quote$ -- 0
-skip$ -- 355
+skip$ -- 365
 stack$ -- 0
-substring$ -- 578
-swap$ -- 83
+substring$ -- 608
+swap$ -- 82
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 166
-warning$ -- 15
-while$ -- 75
+type$ -- 184
+warning$ -- 20
+while$ -- 78
 width$ -- 0
-write$ -- 415
-(There were 10 error messages)
+write$ -- 419
+(There were 11 error messages)
